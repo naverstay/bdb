@@ -6,21 +6,21 @@ html {
   //overflow-y: scroll;
   //overflow-x: hidden;
 
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    padding-bottom: 1080/1920 * 100%;
-    background: url(../i/signboard.jpg) no-repeat 50% 50%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+  //position: relative;
+  //
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  left: 0;
+  //  padding-bottom: 1080/1920 * 100%;
+  //  background: url(../i/signboard.jpg) no-repeat 50% 50%;
+  //  -webkit-background-size: cover;
+  //  -moz-background-size: cover;
+  //  -o-background-size: cover;
+  //  background-size: cover;
+  //}
 
   &.ov_hidden {
     overflow: hidden;
@@ -55,6 +55,7 @@ body {
 }
 
 .wrapper {
+  width: 100%;
   position: relative;
   overflow: hidden;
   //min-height: 100%;
@@ -1112,21 +1113,92 @@ $blur: 5px;
   }
 }
 
+.friend_list {
+  position: relative;
+  padding: 75px;
+
+  .slide {
+    float: left;
+    border-left: 1px solid rgba(255, 255, 255, .25);
+  }
+}
+
+.friend_control {
+  @extend %slider_btn;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  margin-top: -25px;
+
+  &._prev {
+    left: -28px;
+  }
+
+  &._next {
+    right: -28px;
+  }
+}
+
+.friend_link {
+  display: block;
+  height: 175px;
+  line-height: 175px;
+  text-align: center;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+}
+
 .insta_holder {
   position: relative;
   height: 244px;
+}
 
-  .caroufredsel_wrapper {
-    width: 100%;
-    height: 100%;
-  }
+.insta_controls {
+  text-align: center;
+  padding: 62px 0 210px;
+  position: relative;
+}
+
+.insta_tag,
+.insta_url {
+  position: absolute;
+  top: 62px;
+  width: 50%;
+  font: 500 30px/50px $MuseoSansCyrl;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+.insta_url {
+  left: 0;
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.insta_tag {
+  right: 0;
+  padding-right: 110px;
+  padding-left: 75px;
+}
+
+.insta_control {
+  @extend %slider_btn;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .insta_list {
   width: 100%;
   display: block;
   position: relative;
-  
+
   .slide {
     float: left;
     border-left: 1px solid #333;
@@ -1294,7 +1366,7 @@ $blur: 5px;
 }
 
 .contacts_form {
-  padding-top: 65px;
+  padding: 65px 0 125px;
 
   .form_row {
     max-width: 100%;

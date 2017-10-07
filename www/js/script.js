@@ -1,4 +1,4 @@
-var s, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0,
+var s, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0, updateSkrlr,
   menu_timer;
 
 $(function ($) {
@@ -86,6 +86,9 @@ function initSlider(cb) {
       width: 'variable',
       visible: 1
     },
+    onCreate: function (el) {
+      updateSkrollr();
+    },
     scroll: _scroll
   });
 
@@ -98,30 +101,45 @@ function initSlider(cb) {
       width: 'variable',
       visible: 1
     },
+    onCreate: function (el) {
+      updateSkrollr();
+    },
     scroll: _scroll
   });
 
-  //$('.friendSlider').carouFredSel({
-  //  circular: true,
-  //  infinite: true,
-  //  width: '100%',
-  //  align: false,
-  //  items: {
-  //    width: 'variable',
-  //    visible: 1
-  //  },
-  //  scroll: _scroll
-  //});
+  $('.friendSlider').carouFredSel({
+    circular: true,
+    infinite: true,
+    responsive: true,
+    width: '100%',
+    align: false,
+    items: {
+      visible: 5,
+      start: 0
+    },
+    prev: '#friend_prev',
+    next: '#friend_next',
+    onCreate: function (el) {
+      updateSkrollr();
+    },
+    scroll: _scroll
+  });
 
   $('.instaSlider').carouFredSel({
     circular: true,
     infinite: true,
     responsive: true,
-    direction: "left",
-    width: 1440,
+    //direction: "left",
+    //width: 1440,
+    width: '100%',
     items: {
       visible: 6,
       start: 0
+    },
+    prev: '#insta_prev',
+    next: '#insta_next',
+    onCreate: function (el) {
+      updateSkrollr();
     },
     scroll: _scroll
   });
@@ -135,6 +153,9 @@ function initSlider(cb) {
       width: 'variable',
       visible: 1
     },
+    onCreate: function (el) {
+      updateSkrollr();
+    },
     scroll: _scroll
   });
 
@@ -146,6 +167,9 @@ function initSlider(cb) {
     items: {
       width: 'variable',
       visible: 1
+    },
+    onCreate: function (el) {
+      updateSkrollr();
     },
     scroll: _scroll
   });
@@ -325,6 +349,14 @@ function all_dialog_close_gl() {
   });
 }
 
+function updateSkrollr() {
+  clearTimeout(updateSkrlr);
+
+  updateSkrlr = setTimeout(function () {
+    if (s) s.refresh();
+  }, 100);
+}
+
 function initSkrollr() {
   var $window = $(window);		//Window object
 
@@ -366,7 +398,7 @@ function initSkrollr() {
   });
 
   s = skrollr.init({
-    forceHeight: true,
+    forceHeight: false,
     mobileCheck: function () {
       return false;
     },
@@ -382,19 +414,19 @@ $(window).on('scroll', function () {
 
   body_var.addClass('dom-is-loaded');
 
+  //setTimeout(function () {
   initSlider(function () {
-    setTimeout(function () {
-      //s.refresh();
+    boardGrid = $('.boardGrid').isotope({
+      percentPosition: true,
+      gutter: 0,
+      // main isotope options
+      itemSelector: '.gridItem',
+      // set layoutMode
+      layoutMode: 'packery'
+    });
 
-      boardGrid = $('.boardGrid').isotope({
-        percentPosition: true,
-        gutter: 0,
-        // main isotope options
-        itemSelector: '.gridItem',
-        // set layoutMode
-        layoutMode: 'packery'
-      });
-    }, 1000);
+    updateSkrollr();
+    //}, 1);
 
     checkScroll();
   });

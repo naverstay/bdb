@@ -1,20 +1,52 @@
 .footer {
-  padding-top: 10px;
-  line-height: 100px;
-  background: #686151;
-  border-bottom: 2px solid #fff;
-
-  .section_inner {
-    padding: 0 25px;
-  }
+  padding: 50px 0;
 }
 
 .popup {
   background: #f4f4f4;
   padding: 0 20px 20px;
   text-align: center;
-  
+
   p {
     margin-bottom: 20px;
+  }
+}
+
+.footer_logo_holder {
+  text-align: center;
+}
+
+.footer_logo {
+  display: inline-block;
+  vertical-align: top;
+
+  img {
+    display: block;
+  }
+}
+
+.dev_block,
+.copyright {
+  max-width: 40%;
+  position: absolute;
+  top: 20px;
+  font: 300 13px/60px 'MuseoSansCyrl', sans-serif;
+}
+
+.copyright {
+  left: 0;
+}
+
+.dev_block {
+  right: 0;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+
+  img {
+    display: block;
   }
 }
