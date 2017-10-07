@@ -1,0 +1,99 @@
+mixin dev_head(page_title)
+  head
+    title=page_title
+    | <!-- saved from url=(0014)about:internet -->
+    meta(charset='utf-8')
+    meta(name='viewport', content="width=device-width, initial-scale=1.0")
+    meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="format-detection", content="telephone=no")
+    //-style
+      include ../styles/main_global.css
+    link(rel='stylesheet', href='styles/lightslider.css', media='all')
+    link(rel='stylesheet', href='styles/main_global.css', media='all')
+
+
+mixin loop_while(counter)
+  -i=0;
+  while i < counter
+    -i++;
+    block
+
+mixin menu_holder()
+  .menu_holder
+    .main_menu
+    
+    
+mixin header()
+  div.header
+    .section_inner.clearfix
+      .nav_block
+        //<button class="c-nav_button js-nav-button" data-module="MenuButton">
+        //<div class="c-nav_button_inner">
+        //<span class="c-nav_button_icon -shape">
+        //<span class="c-nav_button_icon_item js-icon-item is-active">
+        //<div class="c-nav_burger">
+        //<span class="c-nav_burger_item"></span>
+        //<span class="c-nav_burger_item"></span>
+        //<span class="c-nav_burger_item"></span>
+        //<span class="c-nav_burger_item"></span>
+        //</div>
+        //</span>
+        //</span>
+        //</div>
+        //</button>
+          
+        <button id="burger" class="header__burger menuBtn allow-hover">
+          <span class="hover-step-2"></span>
+          <span class="hover-step-2"></span>
+          <span class="hover-step-2"></span>
+          <span class="hover-step-2"></span>
+        </button>
+            
+      .logo_block
+        a.logo(href='#')
+          .logo_slide.firstLogo(data-target='hero_section')
+            img.img_hover(src='i/bdb_a.png' width=144)
+            img(src='i/bdb_w.png' width=144)
+          .logo_slide.sectionLogo(data-target='bodro_section')
+            img(src='i/logo_bodro.png' width=174)
+          .logo_slide.sectionLogo(data-target='dobro_section')
+            img(src='i/logo_dobro.png' width=174)
+          .logo_slide.sectionLogo(data-target='bordo_section')
+            img(src='i/logo_bordo_w.png' width=174)
+          .logo_slide.sectionLogo(data-target='contact_section')
+            img.img_hover(src='i/bdb_a.png' width=144)
+            img(src='i/bdb_w.png' width=144)
+            
+      .callback_block
+        a.header_phone(href='#') 8 800 555 55 55
+          
+mixin exercise_info()
+  .exercise_info
+    .gl_table
+      .gl_table_cell
+        .exercise_name Название<br>упражнения
+        p Краткий текст описания<br>при ховере
+        
+
+mixin scripts()
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js")
+  //script(src='TweenMax.min.js')
+  //script(src='ScrollToPlugin.min.js')
+  script(src='//www.youtube.com/player_api')
+  script(src='js/jquery1.10.js')
+  script(src='js/jquery.plugin.js')
+  script(src='js/jquery.countdown.js')
+  script(src='js/jquery.countdown-ru.js')
+  script(src='js/skrollr.js')
+  //script(src='js/smooth-scrollbar.js')
+  script(src='js/jquery.carouFredSel-6.0.4-packed.js')
+  script(src='js/isotop/isotope.pkgd.js')
+  //script(src='js/isotop/cells-by-column.js')
+  //script(src='js/isotop/cells-by-row.js')
+  //script(src='js/isotop/fit-columns.js')
+  //script(src='js/isotop/horizontal.js')
+  //script(src='js/isotop/masonry-horizontal.js')
+  script(src='js/isotop/packery-mode.pkgd.js')
+  script(src='js/script.js')

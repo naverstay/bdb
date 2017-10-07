@@ -1,0 +1,80 @@
+.inp_hidden {
+  display: none;
+}
+
+.input_w {
+  position: relative;
+}
+
+.f_input {
+  display: block;
+  width: 100%;
+
+  &.f_input_v1 {
+    height: 50px;
+    padding: 13px;
+    font: 300 17px/24px 'MuseoSansCyrl', sans-serif;
+    border: 1px solid rgba(255, 255, 255, .25);
+    color: #fff;
+
+    &:focus {
+      border-color: rgba(255, 255, 255, .75);
+    }
+
+    &[readonly='readonly'] {
+      background: #1a1a1a;
+      border-color: rgba(255, 255, 255, .75) !important;
+    }
+  }
+}
+
+textarea.f_input.f_input_v1 {
+  height: 144px;
+}
+
+div.f_input_v1.f_input {
+  padding: 0;
+  line-height: 48px;
+  
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    max-height: 48px;
+    max-width: 100%;
+  }
+}
+
+.check_v1 {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+
+  .check_text {
+    display: block;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -34px;
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      background: #404040;
+      border: 1px solid #fff;
+    }
+  }
+
+  .inp_hidden:checked + .check_text {
+
+    &:before {
+      background: #404040 url(../i/check.png) no-repeat 50% 40%;
+    }
+  }
+}
+
+
+
