@@ -295,15 +295,19 @@
     //Triggers parsing of elements and a first reflow.
     _instance.refresh();
 
-    _addEvent(window, 'resize orientationchange', function () {
+    _addEvent(window, 'resize orientationchange skrollr.force', function (e) {
       var width = documentElement.clientWidth;
       var height = documentElement.clientHeight;
+      
+      if (e.type === 'skrollr.force') _requestReflow = true;
 
       //Only reflow if the size actually changed (#271).
       if (height !== _lastViewportHeight || width !== _lastViewportWidth) {
         _lastViewportHeight = height;
         _lastViewportWidth = width;
 
+        //debugger;
+        
         _requestReflow = true;
       }
     });

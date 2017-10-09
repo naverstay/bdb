@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'bdb_icons';
+  src:  url('fonts/bdb_icons.eot?ax41hg');
+  src:  url('fonts/bdb_icons.eot?ax41hg#iefix') format('embedded-opentype'),
+    url('fonts/bdb_icons.ttf?ax41hg') format('truetype'),
+    url('fonts/bdb_icons.woff?ax41hg') format('woff'),
+    url('fonts/bdb_icons.svg?ax41hg#bdb_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="i-"], [class*=" i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'bdb_icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-be:before {
+  content: "\e900";
+}
+.i-vk:before {
+  content: "\e901";
+}
+.i-yt:before {
+  content: "\e902";
+}
+.i-fb:before {
+  content: "\e903";
+}
+.i-close:before {
+  content: "\e904";
+}
+.i-chevron-down:before {
+  content: "\e905";
+}
+.i-instagram:before {
+  content: "\e90d";
+}

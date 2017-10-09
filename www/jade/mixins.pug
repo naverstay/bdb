@@ -9,9 +9,7 @@ mixin dev_head(page_title)
     meta(name="format-detection", content="telephone=no")
     style
       include ../styles/html.css
-    link(rel='stylesheet', href='styles/lightslider.css', media='all')
     link(rel='stylesheet', href='styles/main_global.css', media='all')
-
 
 mixin loop_while(counter)
   -i=0;
@@ -20,9 +18,76 @@ mixin loop_while(counter)
     block
 
 mixin menu_holder()
-  .menu_holder
-    .main_menu
-    
+  .menu_holder.winH
+    .section_inner
+      ul.lang_block
+        li 
+          a.lang_link._active(href='#') Rus
+        li 
+          a.lang_link(href='#') Eng
+    .gl_table
+      .gl_table_cell
+        .section_inner
+          .main_menu
+            ul.main_nav
+              li
+                .nav_item
+                  a.nav_link._nav_bodro(href='#')
+                    .nav_link_bg
+                      - var i=0;
+                        while i < 63
+                          - i++;
+                          .bg_dobro
+
+                    .gl_table
+                      .gl_table_cell
+                        span.nav_img
+                          img(src='i/logo_bodro_b.png' width=250)
+                      
+              li
+                .nav_item
+                  a.nav_link._nav_dobro(href='#')
+                    .nav_link_bg
+                      
+                    .gl_table
+                      .gl_table_cell
+                        span.nav_img
+                          img(src='i/logo_dobro_b.png' width=250)
+                      
+              li
+                .nav_item
+                  a.nav_link._nav_bordo(href='#')
+                    .nav_link_bg
+                      - var i=0;
+                        while i < 40
+                          - i++;
+                          .bg_bordo
+                        
+                    .gl_table
+                      .gl_table_cell
+                        span.nav_img
+                          img(src='i/logo_bordo_b.png' width=250)
+                      
+          .menu_links_w: ul.menu_links
+            li
+              a.menu_link(href='#')
+                span БЛОГ
+            li
+              a.menu_link(href='#')
+                span КОНТАКТЫ
+              
+          .main_menu_footer
+            ul.soc_list
+              li: a.soc_link(href='#')
+                span.i-fb
+              li: a.soc_link(href='#')
+                span.i-vk
+              li: a.soc_link(href='#')
+                span.i-instagram
+              li: a.soc_link(href='#')
+                span.i-be
+              li: a.soc_link(href='#')
+                span.i-yt
     
 mixin header()
   div.header
@@ -42,39 +107,105 @@ mixin header()
         //</span>
         //</div>
         //</button>
-          
+
         <button id="burger" class="header__burger menuBtn allow-hover">
-          <span class="hover-step-2"></span>
-          <span class="hover-step-2"></span>
-          <span class="hover-step-2"></span>
-          <span class="hover-step-2"></span>
+        <span class="hover-step-2"></span>
+        <span class="hover-step-2"></span>
+        <span class="hover-step-2"></span>
+        <span class="hover-step-2"></span>
         </button>
-            
-      .logo_block
+
+      //-.logo_block.sticky(data-margin-top=68)
         a.logo(href='#')
           .logo_slide.firstLogo(data-target='hero_section')
             img.img_hover(src='i/bdb_a.png' width=144)
             img(src='i/bdb_w.png' width=144)
-          .logo_slide.sectionLogo(data-target='bodro_section')
+          //.logo_slide.sectionLogo(data-target='bodro_section')
             img(src='i/logo_bodro.png' width=174)
-          .logo_slide.sectionLogo(data-target='dobro_section')
+          //.logo_slide.sectionLogo(data-target='dobro_section')
             img(src='i/logo_dobro.png' width=174)
-          .logo_slide.sectionLogo(data-target='bordo_section')
+          //.logo_slide.sectionLogo(data-target='bordo_section')
             img(src='i/logo_bordo_w.png' width=174)
-          .logo_slide.sectionLogo(data-target='contact_section')
+          //.logo_slide.sectionLogo(data-target='contact_section')
             img.img_hover(src='i/bdb_a.png' width=144)
             img(src='i/bdb_w.png' width=144)
-            
+
       .callback_block
         a.header_phone(href='#') 8 800 555 55 55
-          
+
 mixin exercise_info()
   .exercise_info
     .gl_table
       .gl_table_cell
         .exercise_name Название<br>упражнения
         p Краткий текст описания<br>при ховере
+
+mixin popups()
+  .modal_holder
+  #callback_popup.popup
+    .section_title
+      span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+      
+    p.text_center Расскажи коротко свою идею и оставь контакты!
+
+    form.popup_inner.callbackForm(action='#')
+      .form_row
+        .input_w
+          input.f_input_v1.f_input(placeholder='Как тебя зовут')
+
+      .form_row._half
+        .input_w
+          input.f_input_v1.f_input(placeholder='Твой номер телефона')
+
+        .input_w
+          input.f_input_v1.f_input(placeholder='Твой e-mail')
+
+      .form_row
+        .input_w
+          textarea.f_input_v1.f_input(placeholder='Расскажи коротко о своей идеи')
+
+      .form_row.text_center.captcha_row
+        .input_w.text_center
+          img(src='i/Captcha.png')
+
+      .form_row.text_center
+        .input_w
+          button.btn_v1.contact_btn.btn_white.fz_13(data-text='ОТПРАВИТЬ')
+            span ОТПРАВИТЬ
+
+      .form_row
+        .agreement_holder
+          label.check_v1
+            input#agreement_check.inp_hidden(type='checkbox')
+            span.check_text.fz_13 Я даю согласие на обработку своих персональных данных.
+
+          p.fz_13 В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
+          
+  #agreement_popup.popup.agreement_popup
+    form.popup_inner.callbackForm(action='#')
+      .form_row.text_center
+        .input_w
+          button.btn_v1.contact_btn.btn_white.fz_13(data-text='ОТПРАВИТЬ' disabled)
+            span ОТПРАВИТЬ
+  
+      p.text_center.fz_13 Необходимо дать согласие на обработку своих персональных данных.
+      p.text_center
+        span.i-chevron-down
         
+      .form_row
+        .agreement_holder
+          label.check_v1
+            input#agreement_check.inp_hidden(type='checkbox')
+            span.check_text.fz_13 Я даю согласие на обработку своих персональных данных.
+  
+          p.fz_13 В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
+        
+  #thanks_popup.popup.thanks_popup
+    .section_title
+      span(data-title='Спасибо') Спасибо
+      
+    p.text_center Мы рассмотрим твою идею и если она интересная обязательно свяжемся!
+          
 
 mixin scripts()
   script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
@@ -87,6 +218,8 @@ mixin scripts()
   script(src='js/jquery.countdown.js')
   script(src='js/jquery.countdown-ru.js')
   script(src='js/skrollr.js')
+  script(src='js/jquery-ui-1.11.4.js')
+  script(src='js/jquery.sticky-kit.min.js')
   //script(src='js/smooth-scrollbar.js')
   script(src='js/jquery.carouFredSel-6.0.4-packed.js')
   script(src='js/isotop/isotope.pkgd.js')

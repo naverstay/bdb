@@ -3,6 +3,9 @@ html, body {
 }
 
 html {
+  position: relative;
+  min-height: 530px;
+
   //overflow-y: scroll;
   //overflow-x: hidden;
 
@@ -36,6 +39,11 @@ body {
   overflow-x: hidden;
   opacity: 0;
 
+  &.modal_opened,
+  &.menu-is-open {
+    overflow: hidden;
+  }
+
   &.dom-is-loaded {
     opacity: 1;
   }
@@ -59,6 +67,33 @@ body {
   position: relative;
   overflow: hidden;
   //min-height: 100%;
+}
+
+.signboard {
+  position: relative;
+  text-align: center;
+  min-height: 530px;
+  //padding-bottom: 1080/1920 * 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+  }
+
+  img {
+    visibility: hidden;
+    opacity: 0;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 -1000px;
+    min-height: 100%;
+    min-width: 100%;
+  }
 }
 
 .hero_pager {
@@ -158,26 +193,65 @@ body {
   //height: 100%;
 }
 
-.hero_block {
-  //overflow: hidden;
-  position: relative;
-  height: 100vh;
-  min-height: 530px;
-  //min-height: 1080px;
-  padding: 40px 0 100px;
+.header_logo_holder {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
-  &:after {
+.hero_wrapper {
+  position: relative;
+  padding-bottom: 1080/1920 * 100%;
+
+  &:before {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
-    padding-bottom: 1080/1920 * 100%;
+    bottom: 0;
     background: rgba(0, 0, 0, .5);
   }
 
+  .section_logo {
+    z-index: 24;
+    //position: fixed !important;
+    //bottom: auto !important;
+    //top: 0 !important;
+        
+    .menu-is-open & {
+      display: none;
+    }
+  }
+}
+
+.hero_block {
+  //overflow: hidden;
+  //position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  min-height: 530px;
+  //min-height: 1080px;
+  padding: 40px 0 100px;
+
+  //&:after {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  left: 0;
+  //  padding-bottom: 1080/1920 * 100%;
+  //  background: rgba(0, 0, 0, .5);
+  //}
+
   .section_inner {
     max-width: 1600px;
+    white-space: nowrap;
   }
 
   .hero_caption {
@@ -359,20 +433,40 @@ body {
   padding: 0 30px;
 }
 
+.section_logo {
+  @extend %translate3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  &._stuck {
+    z-index: 23;
+  }
+
+  .menu-is-open & {
+    display: none;
+  }
+}
+
 .section {
   position: relative;
 
   &._bodro {
-    padding-top: 225px;
+    //padding-top: 225px;
+    padding-top: 240px;
   }
 
   &._dobro {
-    padding-top: 215px;
+    //padding-top: 215px;
+    padding-top: 240px;
     background: #7fa5d8;
   }
 
   &._bordo {
-    padding-top: 195px;
+    //padding-top: 195px;
+    padding-top: 240px;
     background: #840938;
   }
 
@@ -652,7 +746,7 @@ $glass_height: 110px;
 .projector_right {
   position: absolute;
   right: -120px;
-  bottom: -260px;
+  bottom: -660px;
   //bottom: 0;
 
   .projector {
@@ -694,9 +788,6 @@ $glass_height: 110px;
 
 .project_holder {
   @extend %clearfix;
-  //margin-bottom: 155px;
-  //max-width: 1440px;
-  //margin: 0 auto;
 
   &._bordo_projects {
     padding-top: 60px;
@@ -1022,6 +1113,7 @@ $blur: 5px;
 .section_info_block {
   float: left;
   width: 460px;
+  margin-bottom: 50px;
   padding-top: 67px;
 
   p {
@@ -1115,12 +1207,17 @@ $blur: 5px;
 
 .friend_list {
   position: relative;
-  padding: 75px;
+  padding: 75px 0;
+  margin-bottom: 135px;
 
   .slide {
     float: left;
     border-left: 1px solid rgba(255, 255, 255, .25);
   }
+}
+
+.friend_controls {
+  display: none;
 }
 
 .friend_control {
@@ -1140,6 +1237,7 @@ $blur: 5px;
 }
 
 .friend_link {
+  cursor: default;
   display: block;
   height: 175px;
   line-height: 175px;
@@ -1148,6 +1246,7 @@ $blur: 5px;
   img {
     display: inline-block;
     vertical-align: middle;
+    max-width: 90%;
     line-height: 1;
   }
 }
@@ -1211,6 +1310,7 @@ $blur: 5px;
   display: block;
   overflow: hidden;
   background: #1a1a1a;
+  cursor: default;
 }
 
 .partners_clouds {
@@ -1406,6 +1506,10 @@ $blur: 5px;
   p {
     color: #666;
   }
+}
+
+.subscribe_block {
+  padding: 60px 0 70px;
 }
 
 // **********  text

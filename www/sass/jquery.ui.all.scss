@@ -24,11 +24,9 @@
   }
 
   &.dialog_g_size_1 {
-    @include respond-to-max($resp_step_2) {
-      max-width: 95%;
-    }
+    //position: fixed !important;
+    top: 0 !important;
   }
-
 }
 
 .dialog_global {
@@ -57,8 +55,13 @@
   height: 100%;
   left: 0;
   top: 0;
-  //	background: #fff;
-  background: transparentize(#293b47, .6);
+  background: #000;
+
+  .modal_opened & {
+    display: none;
+  }
+
+  //background: transparentize(#293b47, .6);
 }
 
 .ui-helper-clearfix {
@@ -76,26 +79,27 @@
   .dialog_close_butt_mod_1 & {
     // виды крестиков закрытия
     @extend %icon_pseudo;
-    @extend .green_btn;
     cursor: pointer;
     position: absolute;
     top: 10px;
-    right: 20px;
-    width: 28px;
-    height: 28px;
-    border-radius: 100%;
+    right: 45px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    background: none;
 
     &:before {
-      content: '';
+      content: $i-close;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-      line-height: 28px;
-      text-align: center;
+      font-size: 34px;
+      line-height: 34px;
+      font-weight: 100;
     }
-
   }
 
   .no_close_mod & {
@@ -115,9 +119,10 @@
   }
 
   .dialog_g_size_1 & {
+    position: relative;
+    z-index: 2;
     padding: 10px 50px 10px 20px;
-    background: #f4f4f4;
-    color: #1d1d1b;
+    background: #000;
     font-size: 26px;
     font-weight: bold;
   }
@@ -125,7 +130,6 @@
   .title_center_mod & {
     text-align: center;
   }
-
 }
 
 .dialog_butt_wrap {

@@ -6,7 +6,7 @@ $resp_step_2: 1040px;
 $content-max-w: 1500px;
 
 $icomoon-font-path: "../fonts";
-$icomoon-font-name: 'cypro_icons';
+$icomoon-font-name: 'bdb_icons';
 
 $MuseoSansCyrl: 'MuseoSansCyrl', sans-serif;
 $OpenSans: 'Open Sans', sans-serif;
@@ -784,15 +784,15 @@ $placeholder_color: #ccc;
 }
 
 @mixin keyframe_sub($animation_name) {
-  @-webkit-keyframes $animation_name {
+  @-webkit-keyframes #{$animation_name} {
     @content;
   }
 
-  @-moz-keyframes $animation_name {
+  @-moz-keyframes #{$animation_name} {
     @content;
   }
 
-  @keyframes $animation_name {
+  @keyframes #{$animation_name} {
     @content;
   }
 }

@@ -1,14 +1,98 @@
 .footer {
-  padding: 50px 0;
+  padding: 50px 0 60px;
+}
+
+.modal_holder {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 150;
+  display: none;
+  background: #000;
+  overflow-y: auto;
+
+  .modal_opened & {
+    display: block;
+  }
 }
 
 .popup {
-  background: #f4f4f4;
-  padding: 0 20px 20px;
-  text-align: center;
+  background: #000;
+  padding: 40px 20px 1px;
 
-  p {
-    margin-bottom: 20px;
+  .section_title {
+    margin-bottom: 37px;
+
+    span {
+      font-size: 30px;
+    }
+  }
+
+  > p {
+    font: 300 17px 'MuseoSansCyrl', sans-serif;
+    margin-bottom: 40px;
+  }
+
+  &.thanks_popup {
+    .section_title {
+      margin: 70px 0 80px;
+    }
+
+    p {
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: .02em;
+    }
+  }
+
+  &.agreement_popup {
+
+    p {
+      letter-spacing: .02em;
+
+      + p {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+.popup_inner {
+  .form_row {
+    max-width: 100%;
+    width: 553px;
+    margin: 0 auto 34px;
+
+    &:first-child {
+      margin-top: 58px;
+    }
+
+    &.captcha_row {
+      margin: -10px auto 10px;
+    }
+
+    &._half {
+      &:before,
+      &:after {
+        content: " ";
+        display: table;
+      }
+      &:after {
+        clear: both;
+      }
+
+      .input_w {
+        float: left;
+        width: 46%;
+
+        + .input_w {
+          margin-left: 8%;
+        }
+      }
+    }
   }
 }
 
@@ -27,18 +111,19 @@
 
 .dev_block,
 .copyright {
+  opacity: .25;
   max-width: 40%;
   position: absolute;
-  top: 20px;
+  top: 12px;
   font: 300 13px/60px 'MuseoSansCyrl', sans-serif;
 }
 
 .copyright {
-  left: 0;
+  left: 30px;
 }
 
 .dev_block {
-  right: 0;
+  right: 35px;
 
   span {
     display: inline-block;

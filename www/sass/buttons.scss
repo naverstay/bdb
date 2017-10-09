@@ -95,6 +95,21 @@
       transform: translate3d(0, -25%, 0);
     }
   }
+
+  &[disabled='disabled'] {
+    opacity: .25;
+    color: #fff !important;
+    background: none !important;
+    cursor: default;
+    
+    span {
+      opacity: 1;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .btn_blue_transp {
