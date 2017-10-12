@@ -75,6 +75,9 @@
     transform: translate3d(0, 25%, 0);
     color: #000;
 
+    ._bordo_projects & {
+      color: #840938;
+    }
   }
 
   &:hover {
