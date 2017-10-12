@@ -156,7 +156,7 @@
 .nav_block {
   position: absolute;
   left: 20px;
-  top: 10px;
+  top: 8px;
 }
 
 .header__burger {
@@ -213,7 +213,7 @@
   position: absolute;
   left: 11px;
   width: 30px;
-  height: 1px;
+  height: 2px;
   background-color: #fff;
   transition: opacity 0ms linear .5s, background-color .2s cubic-bezier(.215, .61, .355, 1), -webkit-transform .5s ease .7s;
   transition: transform .5s ease .7s, opacity 0ms linear .5s, background-color .2s cubic-bezier(.215, .61, .355, 1);
@@ -565,6 +565,7 @@ body.menu-is-closing .header__burger span:nth-child(2):after {
 }
 
 .nav_link {
+  @extend %translate3d;
   @include transition_all(border-color .3s);
   position: absolute;
   top: 26px;

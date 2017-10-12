@@ -453,15 +453,15 @@ function updateSkrollr() {
 function initSkrollr() {
   var $window = $(window);		//Window object
 
-  var scrollTime = 1;			//Scroll time
-  var scrollDistance = 70;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
+  var scrollTime = .1;			//Scroll time
+  var scrollDistance = 50;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
 
   $window.on("mousewheel DOMMouseScroll", function (event) {
 
     event.preventDefault();
 
     var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
-    var scrollTop = $window.scrollTop();
+    var scrollTop = getScrollTop();
     var finalScroll = scrollTop - parseInt(delta * scrollDistance);
 
     TweenMax.to($window, scrollTime, {
@@ -470,10 +470,6 @@ function initSkrollr() {
       autoKill: true,
       overwrite: 5
     });
-
-    //$('.tm').each(function (ind) {
-    //    
-    //});
 
   });
 
@@ -487,16 +483,32 @@ function initSkrollr() {
 
   $('.hero_w').each(function (ind) {
     var el = $(this);
-    el.attr('style', el.attr('data-style'));
+/*    var dt = {
+      "data-950-center-top": "transform: translate(0, 100%);transform-origin: 50% 0% 0;",
+      "data-850-center-top": "transform: translate(0, 0%);transform-origin: 50% 0% 0;",
+      "data-150-center-top": "transform: translate(0, 0%);transform-origin: 50% 0% 0;",
+      "data--500-center-top": "transform: translate(0, -100%);transform-origin: 50% 0% 0;"
+    };
+
+    for (var property in dt) {
+      if (dt.hasOwnProperty(property)) {
+        el.attr(property, dt[property]);
+      }
+    }*/
+
+    console.log(el.offset().top);
+
+    //el.attr('style', el.attr('data-style'));
   });
 
   s = skrollr.init({
     forceHeight: false,
     //scale: .6,
-    mobileCheck: function () {
-      return false;
-    },
+    //mobileCheck: function () {
+    //  return false;
+    //},
     skrollrBody: 'scroll-content',
+    //edgeStrategy: 'style',
     easing: 'easeOutQuad'
   });
 }
@@ -569,7 +581,7 @@ function checkScroll() {
 
   $('.firstLogo').css('margin-top', -70 * cur_section);
 
-  var videos = $('.autoPlayMe'), fraction = 0.8;
+  var videos = $('.autoPlayMe'), fraction = .8;
 
   for (var i = 0; i < videos.length; i++) {
     var video = videos[i];
@@ -598,11 +610,11 @@ function checkScroll() {
     visible = visibleX * visibleY / (w * h);
 
     if (visible > fraction) {
-      $(video).css('opacity', 1).closest('.video_block').addClass('_playing');
+      $(video).closest('.video_block').addClass('_playing');
       callPlayer($(video), 'playVideo');
     }
     else if (visible < fraction) {
-      $(video).css('opacity', 0).closest('.video_block').removeClass('_playing');
+      $(video).closest('.video_block').removeClass('_playing');
       callPlayer($(video), 'pauseVideo');
     }
   }

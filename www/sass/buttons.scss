@@ -9,7 +9,7 @@
     display: inline-block;
     vertical-align: top;
     border-radius: 30px;
-    line-height: 58px;
+    line-height: 56px;
     padding: 0 30px;
     margin-top: 80px;
   }
@@ -20,7 +20,7 @@
     display: inline-block;
     vertical-align: top;
     border-radius: 30px;
-    line-height: 58px;
+    line-height: 56px;
     padding: 0 30px;
     background: none;
     min-width: 224px;
@@ -38,14 +38,14 @@
     display: inline-block;
     vertical-align: top;
     font-size: 13px;
-    line-height: 45px;
+    line-height: 43px;
     font-weight: 500;
     padding: 0 63px;
   }
 }
 
 .btn_white {
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   color: #fff;
 
   span {
@@ -75,9 +75,6 @@
     transform: translate3d(0, 25%, 0);
     color: #000;
 
-    ._bordo_projects & {
-      color: #840938;
-    }
   }
 
   &:hover {
@@ -96,12 +93,46 @@
     }
   }
 
+  .project_info & {
+    border-color: #840938;
+
+    &:hover {
+      background: #840938;
+
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+
+  .section._bodro & {
+    border-color: #ff0;
+    color: #ff0;
+
+    &:hover {
+      background-color: #ff0;
+      border-color: #ff0;
+
+      &:after {
+        color: #000;
+      }
+    }
+  }
+
+  .section._dobro & {
+    &:hover {
+      &:after {
+        color: #6ba3ee;
+      }
+    }
+  }
+
   &[disabled='disabled'] {
     opacity: .25;
     color: #fff !important;
     background: none !important;
     cursor: default;
-    
+
     span {
       opacity: 1;
     }
@@ -132,5 +163,3 @@
   color: #000;
   box-shadow: 0 3px 5px #7f7f7f;
 }
-
-
