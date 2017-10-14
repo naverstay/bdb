@@ -1,8 +1,10 @@
-var s, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0, updateSkrlr,
-  menu_timer, resizeTimer, thanks_popup, callback_popup, agreement_popup;
+var s, wnd, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0, updateSkrlr,
+  menu_timer, resizeTimer, thanks_popup, callback_popup, agreement_popup, reviewSlider, friendSlider, instaSlider,
+  partnerSlider;
 
 $(function ($) {
 
+  wnd = $(window);
   body_var = $('body');
   logoTrigger = $('.logoTrigger');
 
@@ -71,7 +73,8 @@ $(function ($) {
     });
 
   var today = new Date(),
-    friday = new Date((new Date()).getTime() + (today.getDay() >= 5 ? today.getDay() : 5 - today.getDay()) * 24 * 60 * 60 * 1000);
+    friday = new Date((new Date()).setHours(24, 0, 0, 0) + (today.getDay() > 5 ?
+      today.getDay() : 5 - today.getDay()) * 24 * 60 * 60 * 1000);
 
   $.countdown.regionalOptions['ru'];
 
@@ -98,6 +101,8 @@ function ScrollbarCallBack(r) {
 }
 
 function initSlider(cb) {
+  var w = wnd.width();
+
   var _scroll = {
     delay: 1000,
     easing: 'linear',
@@ -122,7 +127,7 @@ function initSlider(cb) {
     scroll: _scroll
   });
 
-  $('.partnerSlider').carouFredSel({
+  partnerSlider = $('.partnerSlider').carouFredSel({
     circular: true,
     infinite: true,
     width: '100%',
@@ -137,14 +142,17 @@ function initSlider(cb) {
     scroll: _scroll
   });
 
-  $('.friendSlider').carouFredSel({
+  friendSlider = $('.friendSlider').carouFredSel({
     circular: true,
     infinite: true,
     responsive: true,
     width: '100%',
     align: false,
     items: {
-      visible: 5,
+      visible: {
+        min: 1,
+        max: w >= 1280 ? 5 : (w >= 980 ? 4 : w >= 768 ? 3 : 2)
+      },
       start: 0
     },
     prev: '#friend_prev',
@@ -155,7 +163,7 @@ function initSlider(cb) {
     scroll: _scroll
   });
 
-  $('.instaSlider').carouFredSel({
+  instaSlider = $('.instaSlider').carouFredSel({
     circular: true,
     infinite: true,
     responsive: true,
@@ -163,7 +171,10 @@ function initSlider(cb) {
     //width: 1440,
     width: '100%',
     items: {
-      visible: 5,
+      visible: {
+        min: 1,
+        max: w >= 1280 ? 5 : (w >= 980 ? 4 : w >= 768 ? 3 : 2)
+      },
       start: 0
     },
     prev: '#insta_prev',
@@ -228,14 +239,17 @@ function initSlider(cb) {
     }
   });
 
-  $('.reviewSlider').carouFredSel({
+  reviewSlider = $('.reviewSlider').carouFredSel({
     circular: true,
     infinite: true,
     responsive: true,
     direction: "left",
     width: '100%',
     items: {
-      visible: 3,
+      visible: {
+        min: 1,
+        max: w >= 1280 ? 3 : (w >= 980 ? 2 : 1)
+      },
       start: 0
     },
     auto: {
@@ -252,9 +266,10 @@ function initSlider(cb) {
   $('.ideaSlider').carouFredSel({
     circular: true,
     infinite: true,
-    //responsive: true,
+    responsive: true,
     direction: "left",
     width: '100%',
+    height: '100%',
     items: {
       visible: 1,
       start: 0
@@ -453,64 +468,43 @@ function updateSkrollr() {
 function initSkrollr() {
   var $window = $(window);		//Window object
 
-  var scrollTime = .1;			//Scroll time
-  var scrollDistance = 50;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
+  if ($window.width() > 980) {
+    var scrollTime = .1;			//Scroll time
+    var scrollDistance = 50;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
 
-  $window.on("mousewheel DOMMouseScroll", function (event) {
+    $window.on("mousewheel DOMMouseScroll", function (event) {
+      event.preventDefault();
 
-    event.preventDefault();
+      var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
+      var scrollTop = getScrollTop();
+      var finalScroll = scrollTop - parseInt(delta * scrollDistance);
 
-    var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
-    var scrollTop = getScrollTop();
-    var finalScroll = scrollTop - parseInt(delta * scrollDistance);
-
-    TweenMax.to($window, scrollTime, {
-      scrollTo: {y: finalScroll, autoKill: true},
-      ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
-      autoKill: true,
-      overwrite: 5
+      TweenMax.to($window, scrollTime, {
+        scrollTo: {y: finalScroll, autoKill: true},
+        ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
+        autoKill: true,
+        overwrite: 5
+      });
     });
 
-  });
+    s = skrollr.init({
+      forceHeight: false,
+      //scale: .6,
+      mobileCheck: function () {
+        return false;
+      },
+      skrollrBody: 'scroll-content',
+      //edgeStrategy: 'style',
+      easing: 'easeOutQuad'
+    });
 
-  //var sectionLogo = [];
-
-  //$('.sectionLogo').each(function (ind) {
-  //  if ($(this).attr('data-target') && $($(this).attr('data-target')).length) {
-  //    sectionLogo.push($($(this).attr('data-target')));
-  //  }
-  //});
-
-  $('.hero_w').each(function (ind) {
-    var el = $(this);
-/*    var dt = {
-      "data-950-center-top": "transform: translate(0, 100%);transform-origin: 50% 0% 0;",
-      "data-850-center-top": "transform: translate(0, 0%);transform-origin: 50% 0% 0;",
-      "data-150-center-top": "transform: translate(0, 0%);transform-origin: 50% 0% 0;",
-      "data--500-center-top": "transform: translate(0, -100%);transform-origin: 50% 0% 0;"
-    };
-
-    for (var property in dt) {
-      if (dt.hasOwnProperty(property)) {
-        el.attr(property, dt[property]);
-      }
-    }*/
-
-    console.log(el.offset().top);
-
-    //el.attr('style', el.attr('data-style'));
-  });
-
-  s = skrollr.init({
-    forceHeight: false,
-    //scale: .6,
-    //mobileCheck: function () {
-    //  return false;
-    //},
-    skrollrBody: 'scroll-content',
-    //edgeStrategy: 'style',
-    easing: 'easeOutQuad'
-  });
+  } else {
+    if (s) {
+      var elements = $('.skrollable');
+      s.destroy();
+      elements.removeAttr('style');
+    }
+  }
 }
 
 $(window).on('scroll', function () {
@@ -539,11 +533,52 @@ $(window).on('scroll', function () {
   });
 
 }).on('resize', function () {
+  var w = wnd.width();
 
   checkFullHeight();
 
   checkScroll();
 
+  initSkrollr();
+
+  if (reviewSlider) {
+    reviewSlider
+      .trigger("finish")
+      .trigger("configuration", {
+        items: {
+          visible: {
+            max: w >= 1280 ? 3 : (w >= 980 ? 2 : 1)
+          }
+        },
+        reInit: true //not sure that you need this
+      });
+  }
+
+  if (friendSlider) {
+    friendSlider
+      .trigger("finish")
+      .trigger("configuration", {
+        items: {
+          visible: {
+            max: w >= 1280 ? 5 : (w >= 980 ? 4 : w >= 768 ? 3 : 2)
+          }
+        },
+        reInit: true //not sure that you need this
+      });
+  }
+
+  if (instaSlider) {
+    instaSlider
+      .trigger("finish")
+      .trigger("configuration", {
+        items: {
+          visible: {
+            max: w >= 1280 ? 5 : (w >= 980 ? 4 : w >= 768 ? 3 : 2)
+          }
+        },
+        reInit: true //not sure that you need this
+      });
+  }
 });
 
 function checkFullHeight() {

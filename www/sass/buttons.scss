@@ -1,5 +1,13 @@
 //************  buttons
 
+@mixin respond-to-max($custom) {
+  @media only screen and (max-width: $custom - 1) {
+    @content;
+  }
+}
+
+$resp_step_1: 980px;
+
 .btn_v1 {
   height: 60px;
 
@@ -12,6 +20,14 @@
     line-height: 56px;
     padding: 0 30px;
     margin-top: 80px;
+
+    @include respond-to-max($resp_step_1) {
+      height: 40px;
+      line-height: 36px;
+      font-size: 11px;
+      padding: 0 25px;
+      margin-top: 25px;
+    }
   }
 
   &.contact_btn {
@@ -25,6 +41,15 @@
     background: none;
     min-width: 224px;
     margin-top: 20px;
+
+    @include respond-to-max($resp_step_1) {
+      height: 40px;
+      line-height: 36px;
+      font-size: 11px;
+      padding: 0 45px;
+      margin-top: 25px;
+      min-width: 0;
+    }
   }
 }
 

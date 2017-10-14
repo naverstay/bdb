@@ -1,5 +1,17 @@
+@mixin respond-to-min($custom1) {
+  @media only screen and (min-width: $custom1) {
+    @content;
+  }
+}
+
+$resp_step_1: 980px;
+
 .footer {
   padding: 50px 0 60px;
+  
+  @include respond-to-max($resp_step_1) {
+    padding: 25px 0;
+  }
 }
 
 .modal_holder {
@@ -112,18 +124,25 @@
 .dev_block,
 .copyright {
   opacity: .25;
-  max-width: 40%;
-  position: absolute;
   top: 12px;
-  font: 300 13px/60px 'MuseoSansCyrl', sans-serif;
+  font: 300 11px/60px 'MuseoSansCyrl', sans-serif;
+
+  @include respond-to-min($resp_step_1) {
+    position: absolute;
+    font-size: 13px;
+  }
 }
 
 .copyright {
-  left: 30px;
+  float: left;
+
+  @include respond-to-min($resp_step_1) {
+    left: 30px;
+  }
 }
 
 .dev_block {
-  right: 35px;
+  float: right;
 
   span {
     display: inline-block;
@@ -133,5 +152,9 @@
 
   img {
     display: block;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    right: 35px;
   }
 }

@@ -22,7 +22,12 @@ html#skrollr-body(lang='ru')
               .gl_table
                 .gl_table_cell
                   .section_inner
-                    .hero_caption Креативное агентство<br>№1 во Вселенной*
+                    .hero_caption 
+                      span Креативное
+                      span.mob_only <br> 
+                      span  агентство<br>№1 во 
+                      span.mob_only <br> 
+                      span  Вселенной*
                     p *по данным межгалактического креативного союза
         
         .hero_pager
@@ -190,6 +195,7 @@ html#skrollr-body(lang='ru')
 
             .section_inner
               .idea_slider
+                .idea_slider_splash
                 .ideaSlider.slider_inner
                   +loop_while(3)
                     .slide
@@ -197,13 +203,15 @@ html#skrollr-body(lang='ru')
                         img(src='i/slide_1.jpg')
                       .slide_text
                         p 
-                          span Есть идеи, что ещё должно быть на нашем сайте?!<br>Присылай на 
+                          span Есть идеи, что ещё должно быть на нашем сайте?!
+                          span.dt_only <br>
+                          span  Присылай на 
                           a.slide_link(href='#') ideas@bodro.agency!
                           span <br>На кону 2 заряженных на успех футболки!
               
                 .idea_controls
-                  #idea_prev.idea_control._prev
-                  #idea_next.idea_control._next
+                  #idea_prev.idea_control._prev.mob_hidden
+                  #idea_next.idea_control._next.mob_hidden
                     
                   #idea_pager.idea_pager
                   
@@ -235,15 +243,15 @@ html#skrollr-body(lang='ru')
                     .exercise_box
                       +exercise_info()
                 
-                  .exercise_item.gridItem
+                  .exercise_item.gridItem.mob_hidden
                     .exercise_box
                       +exercise_info()
                 
-                  .exercise_item.gridItem
+                  .exercise_item.gridItem.dt_only
                     .exercise_box
                       +exercise_info()
                 
-                  .exercise_item.gridItem
+                  .exercise_item.gridItem.dt_only
                     .exercise_box
                       +exercise_info()
                       
@@ -287,19 +295,23 @@ html#skrollr-body(lang='ru')
                 )
                   img(src='i/dobroman_web.png')
                   
-              .dobro_preview
+              .dobro_preview._bodro
                 .section_info_block
                   .info_caption(
                   _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
-                  ) Заголовок<br>к видео в 2 строки
+                  ) 
+                    span Заголовок 
+                    span.dt_only <br>
+                    span.mob_only <br>
+                    span  к видео в 2 строки
                   p(
                   _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ) Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
-                  p(
+                  p.dobro_preview_more(
                   _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
@@ -328,7 +340,7 @@ html#skrollr-body(lang='ru')
                     .info_caption Заголовок статьи из блога
                     
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
-                    p: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                    p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
                     
                 li
@@ -337,16 +349,16 @@ html#skrollr-body(lang='ru')
                     .info_caption Заголовок статьи из блога<br>в две строки
                     
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
-                    p: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                    p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
                     
-                li
+                li.dt_only
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога
                     
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
-                    p: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                    p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
                       
               .blog_footer
@@ -458,13 +470,18 @@ html#skrollr-body(lang='ru')
                 p До пятницы осталось
                 #getting-started.bordo_counter
                     
-              .dobro_preview
+              .dobro_preview._bordo
                 .section_info_block
                   .info_caption(
                   _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
-                  ) Заголовок<br>к видео в 2 строки
+                  )
+                    span Заголовок 
+                    span.dt_only <br>
+                    span  к видео
+                    span.mob_only <br>
+                    span  в 2 строки
                   p(
                   _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
@@ -480,12 +497,12 @@ html#skrollr-body(lang='ru')
                   .video_btn
                     
               .project_holder._bordo_projects
-                .bordo_glass(
+                .bordo_glass._left.mob_hidden(
                 _style='left: 50%;'
                 data-45p-center-top='left: 50%;'
                 data--30p-center-top='left: -20%;'
                 )
-                .bordo_glass(
+                .bordo_glass._right.mob_hidden(
                 _style='left: 50%;'
                 data-45p-center-top='left: 50%;'
                 data--30p-center-top='left: 120%;'
@@ -657,60 +674,61 @@ html#skrollr-body(lang='ru')
                     )
                       label.check_v1
                         input.inp_hidden(type='checkbox')
-                        span.check_text.fz_13 Я даю согласие на обработку своих персональных данных.
+                        span.check_text Я даю согласие на обработку своих персональных данных.
                         
-                      p.fz_13 В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
-                        
-              .insta_holder
-                .instaSlider.insta_list
-                  +loop_while(15)
-                    .slide: a.insta_link(href='#')
-              .insta_controls
-                #insta_prev.insta_control._prev
-                #insta_next.insta_control._next
-                .insta_url @bodro.agency
-                .insta_tag #bdbgroup
+                      p В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
+              
+              .insta_container
+                .insta_holder
+                  .instaSlider.insta_list
+                    +loop_while(15)
+                      .slide: a.insta_link(href='#')
+                .insta_controls
+                  #insta_prev.insta_control._prev
+                  #insta_next.insta_control._next
+                  .insta_url @bodro.agency
+                  .insta_tag #bdbgroup
                   
-              .section_inner
-                .section_title(
-                _style='transform: translate(0, 100%); opacity: 0;'
-                data-450-center-top='transform: translate(0, 100%); opacity: 0;'
-                data-300-center-top='transform: translate(0, 0%); opacity: 1;'
-                )
-                  span(data-title='Друзья и партнеры') Друзья и партнеры
+            .section_inner
+              .section_title(
+              _style='transform: translate(0, 100%); opacity: 0;'
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Друзья и партнеры') Друзья и партнеры
 
-                .friend_list
-                  .friendSlider
-                    +loop_while(2)
-                      .slide: a.friend_link(href='#')
-                        img(src='i/friend_1.png')
-                      .slide: a.friend_link(href='#')
-                        img(src='i/friend_2.png')
-                      .slide: a.friend_link(href='#')
-                        img(src='i/friend_3.png')
-                      .slide: a.friend_link(href='#')
-                        img(src='i/friend_4.png')
-                      .slide: a.friend_link(href='#')
-                        img(src='i/friend_5.png')
-                        
-                  .friend_controls
-                    #friend_prev.friend_control._prev
-                    #friend_next.friend_control._next
+              .friend_list
+                .friendSlider
+                  +loop_while(2)
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_1.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_2.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_3.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_4.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_5.png')
                       
-                .section_title(
-                _style='transform: translate(0, 100%); opacity: 0;'
-                data-450-center-top='transform: translate(0, 100%); opacity: 0;'
-                data-300-center-top='transform: translate(0, 0%); opacity: 1;'
-                )
-                  span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
-                  
-                .text_center.subscribe_block
-                  a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
-                    span СВЯЗАТЬСЯ
-                  
+                .friend_controls
+                  #friend_prev.friend_control._prev
+                  #friend_next.friend_control._next
+                    
+              .section_title(
+              _style='transform: translate(0, 100%); opacity: 0;'
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+                
+              .text_center.subscribe_block
+                a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
+                  span СВЯЗАТЬСЯ
+                
             .footer
-              .section_inner
-                .footer_logo_holder
+              .section_inner.clearfix
+                .footer_logo_holder.mob_hidden
                   a.footer_logo
                     img(src='i/bdb_w.png' width=124)
                   
@@ -723,3 +741,4 @@ html#skrollr-body(lang='ru')
     +popups()
 
     +scripts()
+    
