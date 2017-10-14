@@ -126,7 +126,7 @@ mixin popups()
     .section_title
       span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
       
-    p.text_center Расскажи коротко свою идею и оставь контакты!
+    p.text_center.mob_hidden Расскажи коротко свою идею и оставь контакты!
 
     form.popup_inner.callbackForm(action='#')
       .form_row
@@ -157,34 +157,37 @@ mixin popups()
         .agreement_holder
           label.check_v1
             input#agreement_check.inp_hidden(type='checkbox')
-            span.check_text.fz_13 Я даю согласие на обработку своих персональных данных.
+            span.check_text Я даю согласие на обработку своих персональных данных.
 
-          p.fz_13 В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
+          p В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
           
   #agreement_popup.popup.agreement_popup
     form.popup_inner.callbackForm(action='#')
       .form_row.text_center
         .input_w
-          button.btn_v1.contact_btn.btn_white.fz_13(data-text='ОТПРАВИТЬ' disabled)
+          button.btn_v1.contact_btn.btn_white.fz_13.popupSubmit(data-text='ОТПРАВИТЬ' disabled)
             span ОТПРАВИТЬ
   
-      p.text_center.fz_13 Необходимо дать согласие на обработку своих персональных данных.
+      p.text_center Необходимо дать согласие на обработку своих персональных данных.
       p.text_center
-        span.i-chevron-down
+        span.i-chevron-down.popup_icon
         
       .form_row
         .agreement_holder
           label.check_v1
-            input#agreement_check.inp_hidden(type='checkbox')
-            span.check_text.fz_13 Я даю согласие на обработку своих персональных данных.
+            input#agreement_check.inp_hidden.checkDisabler(type='checkbox' data-control='.popupSubmit')
+            span.check_text Я даю согласие на обработку своих персональных данных.
   
-          p.fz_13 В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
+          p В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
         
   #thanks_popup.popup.thanks_popup
     .section_title
       span(data-title='Спасибо') Спасибо
       
-    p.text_center Мы рассмотрим твою идею и если она интересная обязательно свяжемся!
+    p.text_center 
+      span Мы рассмотрим твою идею 
+      span.mob_only <br>
+      span  и если она интересная обязательно свяжемся!
           
 
 mixin scripts()

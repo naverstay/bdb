@@ -42,6 +42,13 @@ $(function ($) {
 
       return false;
     })
+    .delegate('.checkDisabler', 'change', function () {
+      var checkbox = $(this), target = $(checkbox.attr('data-control'));
+
+      if (target.length) {
+        target.attr('disabled', !checkbox.prop('checked'));
+      }
+    })
     .delegate('.menuBtn', 'click', function () {
       var btn = $(this);
 
