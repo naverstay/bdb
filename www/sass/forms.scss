@@ -45,6 +45,16 @@ $resp_step_1: 980px;
     @include respond-to-max($resp_step_1) {
       font-size: 13px;
     }
+
+    ._dobro_page & {
+      &::-webkit-input-placeholder {
+        color: #fff;
+      }
+
+      &::-moz-placeholder {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -85,6 +95,10 @@ div.f_input_v1.f_input {
       border-radius: 3px;
       background: #404040;
       border: 1px solid #fff;
+
+      ._dobro_page & {
+        background-color: rgba(255, 255, 255, .25) !important;
+      }
     }
   }
 

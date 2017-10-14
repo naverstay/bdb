@@ -27,7 +27,9 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   .bodro_hero_corner
                   .bodro_hero_text
                     .bodro_hero_title DOBRO пожаловать!
-                    p Мы искренне верим в то, что доброта спасёт мир. Let`s go словом и делом менять окружающий мир в лучшую сторону. Если у тебя есть благотворительный фонд, товар, услуга или ты просто добрый и идейный человек, то скорее напиши сюда – dobroman@bodro.agency
+                    p 
+                      span Мы искренне верим в то, что доброта спасёт мир. Let`s go словом и делом менять окружающий мир в лучшую сторону. Если у тебя есть благотворительный фонд, товар, услуга или ты просто добрый и идейный человек, то скорее напиши сюда – 
+                      a.hero_link(href='#') dobroman@bodro.agency
 
                 .hero_w(
                 data-850-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
@@ -36,7 +38,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                 )
                   img(src='i/dobroman_web.png')
                   
-              .dobro_preview._bodro
+              .dobro_preview._bodro._no_more
                 .section_info_block
                   .info_caption(
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
@@ -50,12 +52,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ) Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
-                  p.dobro_preview_more(
-                  data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
-                  data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
-                  ): a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ')
-                    span СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ
-                    
+                  
                 .video_block(
                 data-40p-center-top='transform: translate(100%, 0); opacity: 0;'
                 data-10p-center-top='transform: translate(0, 0%); opacity: 1;'
@@ -63,12 +60,80 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   .video_w
                   .video_btn
                     
+            .section_inner
+              .project_holder
+                .project_col._left
+                  .project_col_head
+                    .section_title(
+                    data-350-center-top='transform: translate(0, 100%); opacity: 0;'
+                    data-200-center-top='transform: translate(0, 0%); opacity: 1;'
+                    )
+                      span(data-title='Проекты') Проекты
+
+                    .text_center(
+                    data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
+                    data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
+                    )
+                      p Мы любим то, что делаем и гордимся своими проектами!
+
+                  .project_block
+                    img(src='i/project_3.jpg')
+                    .project_info
+                      .gl_table
+                        .gl_table_cell
+                          .project_name ХК “Ак Барс”
+                          .project_text Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+                          p.text_center
+                            a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ПРОЕКТ')
+                              span СМОТРЕТЬ ПРОЕКТ
+
+                .project_col._right
+                  .project_block
+                    img(src='i/project_2.jpg')
+                    .project_info
+                      .gl_table
+                        .gl_table_cell
+                          .project_name ХК “Ак Барс”
+                          .project_text Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+                          p.text_center
+                            a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ПРОЕКТ')
+                              span СМОТРЕТЬ ПРОЕКТ
+
+                  .more_projects
+                    a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='ЗАГРУЗИТЬ ЕЩЕ ПРОЕКТЫ')
+                      span ЗАГРУЗИТЬ ЕЩЕ ПРОЕКТЫ
+                      
+            .section_inner
+              .idea_slider
+                .ideaSlider.slider_inner
+                  +loop_while(3)
+                    .slide
+                      .slide_img
+                        img(src='i/slide_1.jpg')
+                      .slide_text
+                        p
+                          span Есть идеи, что ещё должно быть на нашем сайте?!
+                          span.dt_only <br>
+                          span  Присылай на 
+                          a.slide_link(href='#') ideas@bodro.agency!
+                          span <br>На кону 2 заряженных на успех футболки!
+
+                .idea_controls
+                  #idea_prev.idea_control._prev.mob_hidden
+                  #idea_next.idea_control._next.mob_hidden
+
+                  #idea_pager.idea_pager
+
+            .section_inner
               .section_title(
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
                 span(data-title='Блог') Блог
                 
+              .dobro_preview_text.mob_only
+                p Производишь крутой товар или оказываешь уникальную услугу? Точно-точно!? Тогда давай дружить компаниями! Приходи к нам в гости или пригласи нас к себе, пообщаемся, расскажем о твоей компании в нашем блоге и обязательно найдём варианты взаимовыгодного сотрудничества!
+
               ul.blog_list
                 li
                   .blog_item
@@ -107,7 +172,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
               )
                 span(data-title='Добрые партнёры') Добрые партнёры
                 
-              .partner_block
+              .partner_block._mod_1
                 .partners_clouds
                   .cloud._c_1(
                   data-100p-center-top='transform: translate(50%, 0); opacity: 0;'
@@ -135,128 +200,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                     .slide: a.partner_link(href='#')
                       img(src='i/partner_1.png')
                       
-          #contact_section.logoTrigger.section._contacts
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='index.html')
-                .logo_slide.sectionLogo(data-target='contact_section')
-                  img.img_hover(src='i/bdb_a.png' width=144)
-                  img(src='i/bdb_w.png' width=144)
             .section_inner
-              .section_title(
-              data-350-center-top='transform: translate(0, 100%); opacity: 0;'
-              data-200-center-top='transform: translate(0, 0%); opacity: 1;'
-              )
-                span(data-title='Айда к нам!') Айда к нам!
-                
-              .contacts_form
-                p.text_center(
-                data-50p-center-top='transform: translate(0, 100%); opacity: 0; line-height: 2;'
-                data-25p-center-top='transform: translate(0, 0%); opacity: 1; line-height: 1.2;'
-                ) Ты энергичен/энергична, талантлив/талантлива и полон/полна смелых идей?!<br> Тогда заполняй бодрее форму, возможно, ты тот/та самый/самая кого мы ищем!
-                
-                form(action='#')
-                  .form_row
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      input.f_input_v1.f_input(placeholder='Как тебя зовут')
-                  .form_row
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      input.f_input_v1.f_input(placeholder='Твоя сфера деятельности')
-                    
-                  .form_row._half
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      input.f_input_v1.f_input(placeholder='Твой номер телефона')
-                    
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      input.f_input_v1.f_input(placeholder='Твой e-mail')
-                    
-                  .form_row
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      textarea.f_input_v1.f_input(placeholder='Несколько слов о себе')
-                    
-                  .form_row._half
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      .f_input_v1.f_input.text_center
-                        img(src='i/captcha_j.png')
-
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      input.f_input_v1.f_input(placeholder='Введите текст с картинки')
-                      
-                  .form_row.text_center
-                    .input_w(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      button.btn_v1.contact_btn.btn_white(data-text='ОТПРАВИТЬ')
-                        span ОТПРАВИТЬ
-                        
-                  .form_row
-                    .agreement_holder(
-                    data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
-                    data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
-                    )
-                      label.check_v1
-                        input.inp_hidden(type='checkbox')
-                        span.check_text Я даю согласие на обработку своих персональных данных.
-                        
-                      p В соответсвии со статьей 9 Федерального закона от 27 июля 2006 г. № 152-ФЗ «О персональных данных»
-              
-              .insta_container
-                .insta_holder
-                  .instaSlider.insta_list
-                    +loop_while(15)
-                      .slide: a.insta_link(href='#')
-                .insta_controls
-                  #insta_prev.insta_control._prev
-                  #insta_next.insta_control._next
-                  .insta_url @bodro.agency
-                  .insta_tag #bdbgroup
-                  
-            .section_inner
-              .section_title(
-              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
-              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
-              )
-                span(data-title='Друзья и партнеры') Друзья и партнеры
-
-              .friend_list
-                .friendSlider
-                  +loop_while(2)
-                    .slide: a.friend_link(href='#')
-                      img(src='i/friend_1.png')
-                    .slide: a.friend_link(href='#')
-                      img(src='i/friend_2.png')
-                    .slide: a.friend_link(href='#')
-                      img(src='i/friend_3.png')
-                    .slide: a.friend_link(href='#')
-                      img(src='i/friend_4.png')
-                    .slide: a.friend_link(href='#')
-                      img(src='i/friend_5.png')
-                      
-                .friend_controls
-                  #friend_prev.friend_control._prev
-                  #friend_next.friend_control._next
-                    
               .section_title(
               data-450-center-top='transform: translate(0, 100%); opacity: 0;'
               data-300-center-top='transform: translate(0, 0%); opacity: 1;'
@@ -279,7 +223,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   span 
                     img(src='i/friend_5.png' width=58)
                     
-    +popups()
+    +popups(true)
 
     +scripts()
     

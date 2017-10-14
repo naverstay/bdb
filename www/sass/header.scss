@@ -94,6 +94,10 @@
     .header_logo_holder & {
       max-width: 100px;
     }
+    
+    ._dobro_page & {
+      @include transform_translate(0, -58px);
+    }
   }
 
   span,

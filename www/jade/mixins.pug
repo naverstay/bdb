@@ -121,7 +121,7 @@ mixin exercise_info()
         .exercise_name Название<br>упражнения
         p Краткий текст описания<br>при ховере
 
-mixin popups()
+mixin popups(white)
   .modal_holder
   #callback_popup.popup
     .section_title
@@ -147,7 +147,10 @@ mixin popups()
 
       .form_row.text_center.captcha_row
         .input_w.text_center
-          img(src='i/Captcha.png')
+          - if (white)
+            img(src='i/Captcha1.png')
+          - else
+            img(src='i/Captcha.png')
 
       .form_row.text_center
         .input_w

@@ -28,6 +28,22 @@ $resp_step_1: 980px;
   .modal_opened & {
     display: block;
   }
+
+  ._dobro_page & {
+    background: #7fa5d8;
+
+    .dialog_g_size_1 .ui-dialog-titlebar {
+      background: #7fa5d8;
+    }
+  }
+
+  ._bordo_page & {
+    background: #840938;
+
+    .dialog_g_size_1 .ui-dialog-titlebar {
+      background: #840938;
+    }
+  }
 }
 
 .popup {
@@ -79,12 +95,20 @@ $resp_step_1: 980px;
 
       @include respond-to-max($resp_step_1) {
         font-size: 11px;
-        
+
         .popup_icon {
           font-size: 16px;
         }
       }
     }
+  }
+
+  ._dobro_page & {
+    background: #7fa5d8;
+  }
+
+  ._bordo_page & {
+    background: #840938;
   }
 }
 

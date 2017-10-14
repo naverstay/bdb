@@ -765,6 +765,18 @@ $glass_height: 110px;
 
     @include respond-to-max($resp_step_1) {
       margin-bottom: 5px;
+
+      ._dobro_page & {
+        margin-bottom: 20px;
+      }
+    }
+
+    ._dobro_page & {
+      margin-top: -35px;
+
+      @include respond-to-max($resp_step_1) {
+        margin-top: -15px;
+      }
     }
   }
 
@@ -846,7 +858,7 @@ $glass_height: 110px;
     margin-bottom: 30px;
   }
 
-  ._bodro_page & {
+  ._inner_page & {
     width: 846px;
     margin-bottom: 0;
 
@@ -898,6 +910,14 @@ $glass_height: 110px;
       width: 40px;
       height: 70px;
     }
+  }
+}
+
+.hero_link {
+  color: #fff;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
@@ -980,6 +1000,14 @@ $glass_height: 110px;
 
     ._wide.bodro_hero_msg ~ & {
       max-width: 42%;
+    }
+  }
+
+  ._dobro_page & {
+    margin-top: 50px;
+
+    @include respond-to-max($resp_step_1) {
+      margin-top: 25px;
     }
   }
 }
@@ -1123,6 +1151,7 @@ $glass_height: 110px;
 }
 
 .projectors_holder {
+  pointer-events: none;
   position: relative;
   margin-bottom: 65px;
 
@@ -1229,6 +1258,13 @@ $glass_height: 110px;
       padding-bottom: 90px;
     }
   }
+
+  @include respond-to-min($resp_step_1) {
+    ._dobro_page & {
+      padding-top: 40px;
+      padding-bottom: 35px;
+    }
+  }
 }
 
 .bordo_glass {
@@ -1266,7 +1302,7 @@ $glass_height: 110px;
     @include respond-to-max($resp_step_1) {
       margin-bottom: 20px;
 
-      ._bodro_page & {
+      ._inner_page & {
         margin-bottom: 10px;
       }
     }
@@ -1375,7 +1411,6 @@ $blur: 5px;
   .project_block:hover & {
     @include transform_translate(0, 0);
   }
-
 }
 
 .project_name {
@@ -1625,7 +1660,7 @@ $blur: 5px;
       //min-height: 520px;
     }
 
-    ._bodro_page & {
+    ._inner_page & {
       padding-top: 82px;
       padding-bottom: 65px;
     }
@@ -1635,6 +1670,17 @@ $blur: 5px;
     ._bodro_page & {
       margin-top: 35px;
       padding-bottom: 70px;
+    }
+  }
+
+  ._dobro_page & {
+    &:after,
+    &:before {
+      display: none !important;
+    }
+
+    @include respond-to-min($resp_step_1) {
+      margin-bottom: -25px;
     }
   }
 }
@@ -1758,6 +1804,10 @@ $blur: 5px;
     padding: 7px 20px 15px;
     line-height: 1.7;
     font-size: 13px;
+
+    ._dobro_page & {
+      padding-top: 25px;
+    }
   }
 }
 
@@ -1803,6 +1853,10 @@ $blur: 5px;
 
   @include respond-to-max($resp_step_1) {
     padding-bottom: 130px;
+
+    &._no_more {
+      padding-bottom: 50px;
+    }
   }
 
   @include respond-to-min($resp_step_2) {
@@ -1811,6 +1865,10 @@ $blur: 5px;
     .video_block {
       float: right;
       margin-bottom: 145px;
+    }
+
+    ._dobro_page & {
+      padding-top: 170px;
     }
   }
 }
@@ -1927,6 +1985,7 @@ $blur: 5px;
 }
 
 .blog_item {
+  position: relative;
 
   .info_caption {
     margin-bottom: 15px;
@@ -1961,6 +2020,17 @@ $blur: 5px;
       padding: 0 18px;
     }
   }
+
+  @include respond-to-max($resp_step_1) {
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -35px;
+      right: 0;
+      left: 0;
+      border-top: 1px solid rgba(255, 255, 255, .25);
+    }
+  }
 }
 
 .blog_img {
@@ -1973,11 +2043,15 @@ $blur: 5px;
   padding-top: 8px;
   padding-bottom: 147px;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, .25);
+  //border-top: 1px solid rgba(255, 255, 255, .25);
 
   @include respond-to-min($resp_step_1) {
     .project_btn {
       min-width: 294px;
+    }
+
+    ._dobro_page & {
+      padding-bottom: 170px;
     }
   }
 
@@ -1994,6 +2068,10 @@ $blur: 5px;
 
     .btn_v1.project_btn {
       margin-top: 20px;
+    }
+
+    ._dobro_page & {
+      padding-bottom: 97px;
     }
   }
 }
@@ -2026,6 +2104,14 @@ $blur: 5px;
 
   .slide {
     float: left;
+  }
+
+  &._mod_1 {
+    margin-bottom: 105px;
+
+    @include respond-to-min($resp_step_1) {
+      margin-bottom: 165px;
+    }
   }
 }
 
@@ -2514,9 +2600,13 @@ $blur: 5px;
   padding-left: 35px;
   font-weight: 300;
   font-size: 13px;
-
+  
   p {
     color: #666;
+
+    ._dobro_page & {
+      color: rgba(255, 255, 255, .5);
+    }
   }
 
   @include respond-to-max($resp_step_1) {
