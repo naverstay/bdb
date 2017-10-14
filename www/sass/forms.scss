@@ -4,6 +4,14 @@
   }
 }
 
+@mixin transition_all($property...) {
+  @if $all == true {
+    -webkit-transition: $property;
+    -ms-transition: $property;
+    transition: $property;
+  }
+}
+
 $resp_step_1: 980px;
 
 .inp_hidden {
@@ -66,7 +74,7 @@ div.f_input_v1.f_input {
   .check_text {
     display: block;
     position: relative;
-    
+
     &:before {
       content: '';
       position: absolute;
@@ -84,6 +92,61 @@ div.f_input_v1.f_input {
 
     &:before {
       background: #404040 url(../i/check.png) no-repeat 50% 40%;
+    }
+  }
+}
+
+.check_v2 {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+
+  .check_text {
+    display: block;
+    position: relative;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+      top: 0;
+      left: -43px;
+    }
+
+    &:before {
+      @include transition_all(border-color .3s);
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    &:after {
+      @include transition_all(opacity .3s);
+      background: #fff;
+      height: 10px;
+      width: 10px;
+      opacity: 0;
+      margin: 5px 0 0 5px;
+    }
+  }
+
+  &:hover {
+    .check_text {
+      &:before {
+        border-color: #fff;
+      }
+    }
+  }
+
+  .inp_hidden:checked + .check_text {
+
+    &:after {
+      opacity: 1;
+    }
+
+    &:before {
+      border-color: #fff;
     }
   }
 }

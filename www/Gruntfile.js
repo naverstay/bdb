@@ -4,7 +4,7 @@ module.exports = function (grunt) {
         watch: {
             templates: {
                 files: ['jade/*.jade', 'jade/*.pug'],
-                tasks: ['pug'],
+                tasks: ['newer:pug'],
                 options: {
                     spawn: false
                 }

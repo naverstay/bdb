@@ -4,8 +4,11 @@ html, body {
 
 html {
   position: relative;
-  min-height: 530px;
   overflow-x: hidden;
+
+  &._home {
+    min-height: 530px;
+  }
 
   //overflow-y: scroll;
   //overflow-x: hidden;
@@ -115,6 +118,16 @@ body {
     height: 10px;
     margin: 0 15px;
     border: 1px solid #fff;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -9px;
+      bottom: -9px;
+      left: -9px;
+      right: -9px;
+    }
 
     &.selected {
       background: #fff;
@@ -612,10 +625,13 @@ body {
     //padding-top: 225px;
     padding-top: 240px;
 
+    ._bodro_page & {
+      padding-top: 145px;
+    }
+
     @include respond-to-max($resp_step_1) {
       padding-top: 130px;
     }
-
   }
 
   &._dobro {
@@ -728,6 +744,7 @@ $glass_height: 110px;
       text-align: center;
       font-size: 2em;
       opacity: .1;
+      pointer-events: none;
     }
 
     @include respond-to-max($resp_step_1) {
@@ -762,6 +779,23 @@ $glass_height: 110px;
 
   @include respond-to-max($resp_step_1) {
     margin: 27px 0 22px;
+
+    ._bodro_page & {
+      margin-top: -33px;
+    }
+  }
+
+  &.bg_bodro {
+    height: 800px;
+    background: url(../i/bodro_man_bg.png) no-repeat 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    @include respond-to-max($resp_step_1) {
+      height: 400px;
+    }
   }
 }
 
@@ -811,6 +845,20 @@ $glass_height: 110px;
   @include respond-to-max($resp_step_1) {
     margin-bottom: 30px;
   }
+
+  ._bodro_page & {
+    width: 846px;
+    margin-bottom: 0;
+
+    &._wide {
+      width: 880px;
+      margin-top: -14px;
+
+      @include respond-to-max($resp_step_1) {
+        margin-top: 10px;
+      }
+    }
+  }
 }
 
 .bodro_hero_corner {
@@ -837,6 +885,12 @@ $glass_height: 110px;
     border-width: 0 0 1px 1px;
   }
 
+  @include respond-to-min($resp_step_1) {
+    ._bodro_page & {
+      left: 49%;
+    }
+  }
+
   @include respond-to-max($resp_step_1) {
     left: 42%;
 
@@ -844,6 +898,26 @@ $glass_height: 110px;
       width: 40px;
       height: 70px;
     }
+  }
+}
+
+.bodro_hero_title {
+  font: 500 30px/1.5 $MuseoSansCyrl;
+  margin-bottom: 15px;
+
+  @include respond-to-max($resp_step_1) {
+    font-size: 18px;
+  }
+}
+
+.bodro_hero_caption {
+  font: 500 25px/1.6 $MuseoSansCyrl;
+  max-width: 700px;
+  margin: 0 auto;
+
+  @include respond-to-max($resp_step_1) {
+    font-size: 18px;
+    line-height: 1.4;
   }
 }
 
@@ -860,7 +934,7 @@ $glass_height: 110px;
 
   @include respond-to-max($resp_step_1) {
     font-size: 13px;
-    padding: 22px 20px;
+    padding: 16px 20px;
     line-height: 1.7;
   }
 }
@@ -878,6 +952,23 @@ $glass_height: 110px;
     display: inline-block;
     vertical-align: top;
     max-width: 100%;
+
+    ._bodro_page & {
+      @include respond-to-min($resp_step_1) {
+        @include transform_translate(0, 48px);
+        margin-bottom: -10px;
+      }
+
+      @include respond-to-max($resp_step_1) {
+        @include transform_translate(0, 24px);
+        margin-bottom: 50px;
+      }
+    }
+
+    ._bodro_page .bodro_hero_msg._wide ~ & {
+      @include transform_translate(0, -5px);
+      margin-bottom: -20px;
+    }
   }
 
   @include respond-to-max($resp_step_1) {
@@ -885,6 +976,10 @@ $glass_height: 110px;
 
     .section._bordo & {
       max-width: 53%;
+    }
+
+    ._wide.bodro_hero_msg ~ & {
+      max-width: 42%;
     }
   }
 }
@@ -1033,6 +1128,10 @@ $glass_height: 110px;
 
   @include respond-to-min($resp_step_1) {
     margin-bottom: 215px;
+
+    ._bodro_page & {
+      margin-bottom: 135px;
+    }
   }
 }
 
@@ -1059,6 +1158,10 @@ $glass_height: 110px;
 
   @include respond-to-max($resp_step_1) {
     bottom: 50px;
+
+    ._bodro_page & {
+      bottom: -100px;
+    }
   }
 }
 
@@ -1083,6 +1186,10 @@ $glass_height: 110px;
 
   @include respond-to-max($resp_step_1) {
     bottom: -35px;
+
+    ._bodro_page & {
+      bottom: -185px;
+    }
   }
 }
 
@@ -1158,6 +1265,10 @@ $glass_height: 110px;
 
     @include respond-to-max($resp_step_1) {
       margin-bottom: 20px;
+
+      ._bodro_page & {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -1321,6 +1432,14 @@ $blur: 5px;
     height: 246px;
     margin-left: -88px;
     top: 275px;
+
+    ._bodro_page & {
+      width: 176px;
+      height: 246px;
+      margin-left: -88px;
+      top: 50%;
+      margin-top: 0;
+    }
   }
 }
 
@@ -1362,6 +1481,10 @@ $blur: 5px;
       height: 123px;
       margin-top: 65px;
       left: 0;
+
+      ._bodro_page & {
+        //top: 38%;
+      }
     }
   }
 
@@ -1376,6 +1499,10 @@ $blur: 5px;
       width: 75px;
       height: 105px;
       margin-top: 78px;
+
+      ._bodro_page & {
+        //top: 38%;
+      }
     }
   }
 
@@ -1394,7 +1521,6 @@ $blur: 5px;
 
   .idea_pager {
     text-align: center;
-    //padding: 38px 50px 125px;
     padding: 43px 50px 0;
 
     a {
@@ -1407,6 +1533,16 @@ $blur: 5px;
       height: 10px;
       margin: 0 15px;
       border: 1px solid #fff;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -9px;
+        bottom: -9px;
+        left: -9px;
+        right: -9px;
+      }
 
       &.selected {
         background: #fff;
@@ -1460,6 +1596,10 @@ $blur: 5px;
 
     @include respond-to-max($resp_step_1) {
       margin-bottom: 25px;
+
+      ._bodro_page & {
+        //margin-bottom: 18px;
+      }
     }
   }
 
@@ -1483,6 +1623,18 @@ $blur: 5px;
     .caroufredsel_wrapper {
       //padding: 0;
       //min-height: 520px;
+    }
+
+    ._bodro_page & {
+      padding-top: 82px;
+      padding-bottom: 65px;
+    }
+  }
+
+  @include respond-to-min($resp_step_1) {
+    ._bodro_page & {
+      margin-top: 35px;
+      padding-bottom: 70px;
     }
   }
 }
@@ -1594,6 +1746,21 @@ $blur: 5px;
   }
 }
 
+.dobro_preview_text {
+  padding: 63px 0 23px;
+  text-align: center;
+  letter-spacing: .01em;
+  max-width: 880px;
+  margin: 0 auto;
+  font: 300 17px/1.4 $MuseoSansCyrl;
+
+  @include respond-to-max($resp_step_1) {
+    padding: 7px 20px 15px;
+    line-height: 1.7;
+    font-size: 13px;
+  }
+}
+
 .dobro_preview {
   //margin: 0 auto;
   //max-width: 1440px;
@@ -1613,6 +1780,10 @@ $blur: 5px;
       .section_info_block {
         padding-top: 20px;
         margin-bottom: 35px;
+      }
+
+      ._bodro_page & {
+        padding-bottom: 20px;
       }
     }
   }
@@ -1702,6 +1873,21 @@ $blur: 5px;
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 20px;
+  }
+}
+
+.blog_see_more {
+  position: relative;
+  text-align: center;
+  padding: 30px 0 80px;
+
+  &:before {
+    border-top: 1px solid rgba(255, 255, 255, .25);
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30px;
+    left: -30px;
   }
 }
 
@@ -1856,14 +2042,59 @@ $blur: 5px;
   @include respond-to-min($resp_step_1) {
     padding: 75px 0;
     margin-bottom: 135px;
+
+    ._bodro_page & {
+      padding: 120px 0;
+      margin-bottom: 80px;
+
+      &:after,
+      &:before {
+        content: '';
+        position: absolute;
+        width: 256px;
+        height: 359px;
+        background: url(../i/splash_3.png) no-repeat 50% 50%;
+        top: 50%;
+        margin-top: -179px;
+        opacity: .5;
+      }
+
+      &:before {
+        left: 0;
+      }
+
+      &:after {
+        right: 0;
+      }
+    }
   }
 }
 
 .friend_controls {
-  display: none;
+  ._bodro_page & {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 256px;
+      height: 359px;
+      background: url(../i/splash_3.png) no-repeat 50% 50%;
+      top: 50%;
+      margin-top: -179px;
+      opacity: .5;
+      left: 50%;
+      margin-left: -128px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
 
-  @include respond-to-max($resp_step_1) {
-
+      @include respond-to-max($resp_step_1) {
+        width: 193px;
+        height: 270px;
+        margin-top: -165px;
+        margin-left: -87px;
+      }
+    }
   }
 }
 
@@ -1873,6 +2104,7 @@ $blur: 5px;
   z-index: 10;
   top: 50%;
   margin-top: -25px;
+  display: none !important;
 
   &._prev {
     left: -28px;
@@ -1920,6 +2152,12 @@ $blur: 5px;
 .insta_container {
   position: relative;
 
+  @include respond-to-min($resp_step_1) {
+    ._bodro_page & {
+      margin-top: 145px;
+    }
+  }
+
   @include respond-to-max($resp_step_1) {
     padding-top: 50px;
   }
@@ -1932,6 +2170,10 @@ $blur: 5px;
   @include respond-to-min($resp_step_1) {
     position: relative;
     padding: 62px 0 210px;
+
+    ._bodro_page & {
+      padding-bottom: 165px;
+    }
   }
 }
 

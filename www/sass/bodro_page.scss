@@ -1,0 +1,226 @@
+@mixin respond-to-max($custom) {
+  @media only screen and (max-width: $custom - 1) {
+    @content;
+  }
+}
+
+$resp_step_1: 980px;
+
+.test_holder {
+  margin: 150px auto 160px;
+  width: 960px;
+  max-width: 100%;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, .25);
+
+  @include respond-to-max($resp_step_1) {
+    margin-top: 90px;
+    margin-bottom: 85px;
+  }
+}
+
+.test_caption {
+  font: 500 25px $MuseoSansCyrl;
+  margin-bottom: 35px;
+  letter-spacing: .025em;
+
+  span {
+    font-size: 20px;
+    letter-spacing: .01em;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    font-size: 23px;
+    margin-bottom: 18px;
+
+    span {
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.test_holder_bottom,
+.test_holder_top {
+  position: absolute;
+  right: 0;
+  left: 0;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: .5;
+    background: url(../i/splash_bolt.png) no-repeat 0 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    @include respond-to-max($resp_step_1) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &:before {
+    left: 37px;
+
+    @include respond-to-max($resp_step_1) {
+      left: 15px;
+    }
+  }
+
+  &:after {
+    right: 37px;
+
+    @include respond-to-max($resp_step_1) {
+      right: 15px;
+    }
+  }
+}
+
+.test_holder_top {
+  top: 0;
+
+  &:after,
+  &:before {
+    top: 37px;
+
+    @include respond-to-max($resp_step_1) {
+      top: 12px;
+    }
+  }
+}
+
+.test_holder_bottom {
+  bottom: 0;
+
+  &:after,
+  &:before {
+    bottom: 27px;
+
+    @include respond-to-max($resp_step_1) {
+      bottom: 12px;
+    }
+  }
+}
+
+.test_block {
+  position: relative;
+  padding: 50px 85px 45px;
+
+  + .test_block {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      border-top: 1px solid rgba(255, 255, 255, .25);
+    }
+  }
+
+  p {
+    font: 500 17px/1.3 $MuseoSansCyrl;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    padding: 30px;
+
+    p {
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .btn_v2.test_btn {
+      padding: 0 25px;
+    }
+  }
+
+  .btn_v2.test_btn {
+
+    @include respond-to-min($resp_step_1) {
+      min-width: 205px;
+    }
+  }
+}
+
+.test_list {
+  margin-top: -10px;
+  margin-bottom: 58px;
+  padding-left: 40px;
+  font: 300 17px $MuseoSansCyrl;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    padding-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 48px;
+
+    .check_v2 .check_text:before {
+      left: -35px;
+    }
+
+    li {
+      margin-bottom: 17px;
+    }
+  }
+}
+
+.sticker_pack {
+  @extend %icon_pseudo;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  min-height: 310px;
+  margin-bottom: 10px;
+  padding-top: 32px;
+
+  &:before {
+    content: $i-tg;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 310px;
+    margin-left: -155px;
+    font-size: 310px;
+    opacity: .5;
+    color: #ff0;
+    z-index: -1;
+  }
+
+  p {
+    font: 500 30px/1.4 $MuseoSansCyrl;
+  }
+
+  .btn_v1.project_btn {
+    min-width: 292px;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    padding-top: 20px;
+    min-height: 250px;
+
+    &:before {
+      font-size: 200px;
+      top: -5px;
+    }
+
+    p {
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .btn_v1.project_btn {
+      min-width: 200px;
+    }
+  }
+}
+
+

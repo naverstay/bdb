@@ -589,11 +589,11 @@ $(window).on('scroll', function () {
 });
 
 function checkFullHeight() {
-  var h = $(window).height();
+  var h = $(window).height(), w = $(window).width();
 
+  $('.winW').css('width', w);
   $('.winH').css('height', h);
   $('.winHmin').css('min-height', h);
-
 }
 
 function getScrollTop() {

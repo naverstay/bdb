@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'bdb_icons';
-  src:  url('#{$icomoon-font-path}/bdb_icons.eot?ax41hg');
-  src:  url('#{$icomoon-font-path}/bdb_icons.eot?ax41hg#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/bdb_icons.ttf?ax41hg') format('truetype'),
-    url('#{$icomoon-font-path}/bdb_icons.woff?ax41hg') format('woff'),
-    url('#{$icomoon-font-path}/bdb_icons.svg?ax41hg#bdb_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/bdb_icons.eot?19alzp');
+  src:  url('#{$icomoon-font-path}/bdb_icons.eot?19alzp#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/bdb_icons.ttf?19alzp') format('truetype'),
+    url('#{$icomoon-font-path}/bdb_icons.woff?19alzp') format('woff'),
+    url('#{$icomoon-font-path}/bdb_icons.svg?19alzp#bdb_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-tg {
+  &:before {
+    content: $i-tg;
+  }
+}
 .i-be {
   &:before {
     content: $i-be;
@@ -44,6 +49,11 @@
 .i-fb {
   &:before {
     content: $i-fb;
+  }
+}
+.i-back-prev {
+  &:before {
+    content: $i-back-prev;
   }
 }
 .i-close {

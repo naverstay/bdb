@@ -1,17 +1,15 @@
 include mixins.pug
 doctype html
-html#skrollr-body(lang='ru')
-  +dev_head('bodro главная')
+html#skrollr-body._home(lang='ru')
+  +dev_head('bodro главная', true)
 
   body
-    //-.signboard
-      img(src='i/signboard.jpg')
     +header()
     +menu_holder()
     .hero_wrapper.winHmin
       .header_logo_holder
         .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=78)
-          a.logo(href='#')
+          a.logo(href='index.html')
             .logo_slide.firstLogo(data-target='hero_section')
               img.img_hover(src='i/bdb_a.png' width=144)
               img(src='i/bdb_w.png' width=144)
@@ -51,12 +49,11 @@ html#skrollr-body(lang='ru')
         div.main_content
           #bodro_section.section._bodro.logoTrigger
             .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='#')
+              a.logo(href='index.html')
                 .logo_slide.sectionLogo(data-target='bodro_section')
                   img(src='i/logo_bodro.png' width=174)
             .section_inner
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -64,7 +61,6 @@ html#skrollr-body(lang='ru')
               
               .bodro_hero
                 .bodro_hero_msg(
-                _style='transform: scale(.01); opacity: 0;'
                 data-200-center-top='transform: scale(.01); opacity: 1;'
                 data-100-center-top='transform: scale(1); opacity: 1;'
                 )
@@ -72,11 +68,9 @@ html#skrollr-body(lang='ru')
                   .bodro_hero_text Привет! Меня зовут Бодромен и я возглавляю BDB GROUP!<br>Если тебе нужны смелые и нестандартные решения для увеличения продаж в короткие сроки, то ты по адресу. Наши компетенции в области маркетинга, рекламных технологий, дизайна, психологии и управления проектами позволяют находить оптимальные решения даже в условиях ограниченного бюджета и времени.
                     
                 .hero_w(
-                data-_style='transform: translate(0, 100%);'
                 data-850-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
                 data-750-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
                 data-150-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
-                _data--500-center-top='transform: translate(0, -100%);transform-origin: 50% 0% 0;'
                 )
                   img(src='i/bodroman_web.png')
                 
@@ -88,7 +82,6 @@ html#skrollr-body(lang='ru')
             .projectors_holder
               .projector_left
                 .projector(
-                _style='transform: skew(10deg, -10deg);'
                 data-2300-bottom-bottom='transform: skew(29deg, -29deg);'
                 data-1650-bottom-bottom='transform: skew(10deg, -10deg);'
                 data-1250-bottom-bottom='transform: skew(20deg, -20deg);'
@@ -98,7 +91,6 @@ html#skrollr-body(lang='ru')
                 )
               .projector_right
                 .projector(
-                _style='transform: skew(0deg, 29deg);'
                 data-2700-bottom-bottom='transform: skew(0deg, 29deg);'
                 data-2300-bottom-bottom='transform: skew(5deg, 20deg);'
                 data-1950-bottom-bottom='transform: skew(10deg, 30deg);'
@@ -108,37 +100,17 @@ html#skrollr-body(lang='ru')
                 data-200-bottom-bottom='transform: skew(0deg, 0deg);'
                 )
                   
-            //-.projectors_holder
-              .projector_left
-                .projector(
-                _style='transform: skew(60deg, -60deg);'
-                data--20p-top-top='transform: skew(89deg, -89deg);'
-                data--40p-top-top='transform: skew(0deg, 0deg);'
-                data--70p-top-top='transform: skew(50deg, -70deg);'
-                data--100p-top-top='transform: skew(0deg, 0deg);'
-                )
-              .projector_right
-                .projector(
-                _style='transform: skew(60deg, -60deg);'
-                data-0p-top-top='transform: skew(0deg, 0deg);'
-                data-10p-top-top='transform: skew(80deg, 80deg);'
-                data-40p-top-top='transform: skew(0deg, 0deg);'
-                data-70p-top-top='transform: skew(30deg, -30deg);'
-                )
-                  
             .section_inner
               .project_holder
                 .project_col._left
                   .project_col_head
                     .section_title(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-350-center-top='transform: translate(0, 100%); opacity: 0;'
                     data-200-center-top='transform: translate(0, 0%); opacity: 1;'
                     )
                       span(data-title='Проекты') Проекты
                       
                     .text_center(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                     data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                     )
@@ -261,12 +233,11 @@ html#skrollr-body(lang='ru')
                     
           #dobro_section.section._dobro.logoTrigger
             .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='#')
+              a.logo(href='index.html')
                 .logo_slide.sectionLogo(data-target='dobro_section')
                   img(src='i/logo_dobro.png' width=174)
             .section_inner
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -274,12 +245,10 @@ html#skrollr-body(lang='ru')
                 
               .bodro_hero
                 .section_bg._dobro(
-                _style='opacity: 0;'
                 data-30p-center-top='opacity: 0;'
                 data-10p-center-top='opacity: .5;'
                 )
                 .bodro_hero_msg._dobro(
-                _style='transform: scale(.01); opacity: 0;'
                 data-200-center-top='transform: scale(.01); opacity: 1;'
                 data-100-center-top='transform: scale(1); opacity: 1;'
                 )
@@ -287,18 +256,15 @@ html#skrollr-body(lang='ru')
                   .bodro_hero_text Привет! Меня зовут Добромен и я творю добро вместе с BDB GROUP!<br>Делать добрые дела - это легко и круто. Если у тебя есть благотворительный фонд, товар, услуга или ты просто добрый и идейный человек, готовый вместе с нами менять окружающий мир в лучшую сторону, то смело пиши мне на dobroman@bodro.agency и мы приступим.
 
                 .hero_w(
-                data-_style='transform: translate(0, 100%);'
                 data-850-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
                 data-750-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
                 data-150-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
-                _data--500-center-top='transform: translate(0, -100%);transform-origin: 50% 0% 0;'
                 )
                   img(src='i/dobroman_web.png')
                   
               .dobro_preview._bodro
                 .section_info_block
                   .info_caption(
-                  _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ) 
@@ -307,19 +273,16 @@ html#skrollr-body(lang='ru')
                     span.mob_only <br>
                     span  к видео в 2 строки
                   p(
-                  _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ) Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                   p.dobro_preview_more(
-                  _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ): a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ')
                     span СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ
                     
                 .video_block(
-                _style='transform: translate(100%, 0); opacity: 0;'
                 data-40p-center-top='transform: translate(100%, 0); opacity: 0;'
                 data-10p-center-top='transform: translate(0, 0%); opacity: 1;'
                 )
@@ -327,7 +290,6 @@ html#skrollr-body(lang='ru')
                   .video_btn
                     
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -366,7 +328,6 @@ html#skrollr-body(lang='ru')
                   span СМОТРЕТЬ ДРУГИЕ СТАТЬИ
                       
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -375,25 +336,21 @@ html#skrollr-body(lang='ru')
               .partner_block
                 .partners_clouds
                   .cloud._c_1(
-                  _style='transform: translate(100%, 0); opacity: 0;'
                   data-100p-center-top='transform: translate(50%, 0); opacity: 0;'
                   data--100p-center-top='transform: translate(-20%, 0%); opacity: 1;'
                   )
                     img(src='i/cloud_1.png')
                   .cloud._c_2(
-                  _style='transform: translate(100%, 0); opacity: 0;'
                   data-100p-center-top='transform: translate(50%, 0); opacity: 0;'
                   data--100p-center-top='transform: translate(-20%, 0%); opacity: 1;'
                   )
                     img(src='i/cloud_2.png')
                   .cloud._c_3(
-                  _style='transform: translate(-100%, 0); opacity: 0;'
                   data-100p-center-top='transform: translate(-50%, 0); opacity: 0;'
                   data--100p-center-top='transform: translate(20%, 0%); opacity: 1;'
                   )
                     img(src='i/cloud_3.png')
                   .cloud._c_4(
-                  _style='transform: translate(-100%, 0); opacity: 0;'
                   data-100p-center-top='transform: translate(-50%, 0); opacity: 0;'
                   data--100p-center-top='transform: translate(20%, 0%); opacity: 1;'
                   )
@@ -406,12 +363,11 @@ html#skrollr-body(lang='ru')
                   
           #bordo_section.section._bordo.logoTrigger
             .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='#')
+              a.logo(href='index.html')
                 .logo_slide.sectionLogo(data-target='bordo_section')
                   img(src='i/logo_bordo_w.png' width=174)
             .section_inner
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -440,7 +396,6 @@ html#skrollr-body(lang='ru')
                         data--50p-center-top='transform: rotate(' + (rotation + (45 * k * (i % 8))) + 'deg);')
                     
                 .bodro_hero_msg._bordo(
-                _style='transform: scale(.01); opacity: 0;'
                 data-200-center-top='transform: scale(.01); opacity: 1;'
                 data-100-center-top='transform: scale(1); opacity: 1;'
                 )
@@ -448,11 +403,9 @@ html#skrollr-body(lang='ru')
                   .bodro_hero_text Привет! Меня зовут Человек Бордо и в BDB GROUP я отвечаю за полные бокалы креатива!<br>Вместе с Бодроменом и Доброменом мы создали несколько десятков успешных кейсов, поднявших бизнес клиентов на новую высоту. Кстати, пока ты читаешь этот текст, я уже готовлю для твоего бизнеса офигенный коктейль из сочных идей,  опьяняющего успеха, масштабных мероприятий и слёз твоих конкурентов. Хочешь его попробовать?<br>Пиши, звони, приходи – я всегда рад новым знакомствам!
 
                 .hero_w(
-                data-_style='transform: translate(0, 100%);'
                 data-850-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
                 data-750-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
                 data-150-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
-                _data--500-center-top='transform: translate(0, -100%);transform-origin: 50% 0% 0;'
                 )
                   img(src='i/bordo_hero.png')
                   
@@ -473,7 +426,6 @@ html#skrollr-body(lang='ru')
               .dobro_preview._bordo
                 .section_info_block
                   .info_caption(
-                  _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   )
@@ -483,13 +435,11 @@ html#skrollr-body(lang='ru')
                     span.mob_only <br>
                     span  в 2 строки
                   p(
-                  _style='transform: translate(0, 100%); opacity: 0;'
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ) Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
     
                 .video_block(
-                _style='transform: translate(100%, 0); opacity: 0;'
                 data-40p-center-top='transform: translate(100%, 0); opacity: 0;'
                 data-10p-center-top='transform: translate(0, 0%); opacity: 1;'
                 )
@@ -498,19 +448,16 @@ html#skrollr-body(lang='ru')
                     
               .project_holder._bordo_projects
                 .bordo_glass._left.mob_hidden(
-                _style='left: 50%;'
                 data-45p-center-top='left: 50%;'
                 data--30p-center-top='left: -20%;'
                 )
                 .bordo_glass._right.mob_hidden(
-                _style='left: 50%;'
                 data-45p-center-top='left: 50%;'
                 data--30p-center-top='left: 120%;'
                 )
                 .project_col._left
                   .project_col_head
                     .section_title(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-350-center-top='transform: translate(0, 100%); opacity: 0;'
                     data-200-center-top='transform: translate(0, 0%); opacity: 1;'
                     )
@@ -547,7 +494,6 @@ html#skrollr-body(lang='ru')
                       span СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ
                       
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -583,13 +529,12 @@ html#skrollr-body(lang='ru')
         
           #contact_section.logoTrigger.section._contacts
             .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='#')
+              a.logo(href='index.html')
                 .logo_slide.sectionLogo(data-target='contact_section')
                   img.img_hover(src='i/bdb_a.png' width=144)
                   img(src='i/bdb_w.png' width=144)
             .section_inner
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -597,7 +542,6 @@ html#skrollr-body(lang='ru')
                 
               .contacts_form
                 p.text_center(
-                _style='transform: translate(0, 100%); opacity: 0; line-height: 2;'
                 data-50p-center-top='transform: translate(0, 100%); opacity: 0; line-height: 2;'
                 data-25p-center-top='transform: translate(0, 0%); opacity: 1; line-height: 1.2;'
                 ) Ты энергичен/энергична, талантлив/талантлива и полон/полна смелых идей?!<br> Тогда заполняй бодрее форму, возможно, ты тот/та самый/самая кого мы ищем!
@@ -605,14 +549,12 @@ html#skrollr-body(lang='ru')
                 form(action='#')
                   .form_row
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
                       input.f_input_v1.f_input(placeholder='Как тебя зовут')
                   .form_row
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -620,14 +562,12 @@ html#skrollr-body(lang='ru')
                     
                   .form_row._half
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
                       input.f_input_v1.f_input(placeholder='Твой номер телефона')
                     
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -635,7 +575,6 @@ html#skrollr-body(lang='ru')
                     
                   .form_row
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -643,7 +582,6 @@ html#skrollr-body(lang='ru')
                     
                   .form_row._half
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -651,7 +589,6 @@ html#skrollr-body(lang='ru')
                         img(src='i/captcha_j.png')
 
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -659,7 +596,6 @@ html#skrollr-body(lang='ru')
                       
                   .form_row.text_center
                     .input_w(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -668,7 +604,6 @@ html#skrollr-body(lang='ru')
                         
                   .form_row
                     .agreement_holder(
-                    _style='transform: translate(0, 100%); opacity: 0;'
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
@@ -691,7 +626,6 @@ html#skrollr-body(lang='ru')
                   
             .section_inner
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-450-center-top='transform: translate(0, 100%); opacity: 0;'
               data-300-center-top='transform: translate(0, 0%); opacity: 1;'
               )
@@ -716,7 +650,6 @@ html#skrollr-body(lang='ru')
                   #friend_next.friend_control._next
                     
               .section_title(
-              _style='transform: translate(0, 100%); opacity: 0;'
               data-450-center-top='transform: translate(0, 100%); opacity: 0;'
               data-300-center-top='transform: translate(0, 0%); opacity: 1;'
               )

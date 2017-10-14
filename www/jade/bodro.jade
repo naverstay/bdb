@@ -1,0 +1,350 @@
+include mixins.pug
+doctype html
+html#skrollr-body._inner_page._bodro_page(lang='ru')
+  +dev_head('bodro page')
+
+  body
+    +header()
+    +menu_holder()
+    
+    .wrapper
+      .base
+        div.main_content
+          #bodro_section.section._bodro.logoTrigger
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+              a.logo(href='index.html')
+                .logo_slide.sectionLogo(data-target='bodro_section')
+                  img(src='i/logo_bodro.png' width=174)
+            .section_inner
+              .bodro_hero
+                .bodro_hero_msg(
+                data-200-center-top='transform: scale(.01); opacity: 1;'
+                data-100-center-top='transform: scale(1); opacity: 1;'
+                )
+                  .bodro_hero_corner
+                  .bodro_hero_text
+                    .bodro_hero_title BODRO agency приветствует тебя и отправляет тебе заряд креатива и позитива на весь день!
+                    p
+                      span • Создаём брендинг • Генерим креатив • Творим дизайн • Снимаем видео
+                      span.dt_only <br>
+                      span  • Продвигаем digital • Проводим события • Производим подарки
+                    
+                .hero_w(
+                data-850-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
+                data-750-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
+                data-150-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
+                )
+                  img(src='i/bodroman_web.png')
+                  
+            .projectors_holder
+              .projector_left
+                .projector(
+                data-2300-bottom-bottom='transform: skew(29deg, -29deg);'
+                data-1650-bottom-bottom='transform: skew(10deg, -10deg);'
+                data-1250-bottom-bottom='transform: skew(20deg, -20deg);'
+                data-850-bottom-bottom='transform: skew(0deg, 0deg);'
+                data-400-bottom-bottom='transform: skew(15deg, -15deg);'
+                data-bottom-bottom='transform: skew(0deg, 0deg);'
+                )
+              .projector_right
+                .projector(
+                data-2700-bottom-bottom='transform: skew(0deg, 29deg);'
+                data-2300-bottom-bottom='transform: skew(5deg, 20deg);'
+                data-1950-bottom-bottom='transform: skew(10deg, 30deg);'
+                data-1500-bottom-bottom='transform: skew(0deg, 15deg);'
+                data-1050-bottom-bottom='transform: skew(10deg, 0deg);'
+                data-750-bottom-bottom='transform: skew(20deg, 10deg);'
+                data-200-bottom-bottom='transform: skew(0deg, 0deg);'
+                )
+                  
+            .section_inner
+              .project_holder
+                .project_col._left
+                  .project_col_head
+                    .section_title(
+                    data-350-center-top='transform: translate(0, 100%); opacity: 0;'
+                    data-200-center-top='transform: translate(0, 0%); opacity: 1;'
+                    )
+                      span(data-title='Проекты') Проекты
+                      
+                    .text_center(
+                    data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
+                    data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
+                    )
+                      p Мы любим то, что делаем и гордимся своими проектами!
+                  
+                  .project_block
+                    img(src='i/project_4.jpg')
+                    .project_info
+                      .gl_table
+                        .gl_table_cell
+                          .project_name ХК “Ак Барс”
+                          .project_text Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+                          p.text_center
+                            a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ПРОЕКТ')
+                              span СМОТРЕТЬ ПРОЕКТ
+                  
+                  .project_block
+                    img(src='i/project_3.jpg')
+                    .project_info
+                      .gl_table
+                        .gl_table_cell
+                          .project_name ХК “Ак Барс”
+                          .project_text Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+                          p.text_center
+                            a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ПРОЕКТ')
+                              span СМОТРЕТЬ ПРОЕКТ
+    
+                .project_col._right
+                  .project_block
+                    img(src='i/project_1.jpg')
+                    .project_info
+                      .gl_table
+                        .gl_table_cell
+                          .project_name ХК “Ак Барс”
+                          .project_text Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+                          p.text_center
+                            a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ПРОЕКТ')
+                              span СМОТРЕТЬ ПРОЕКТ
+    
+                  .project_block
+                    img(src='i/project_2.jpg')
+                    .project_info
+                      .gl_table
+                        .gl_table_cell
+                          .project_name ХК “Ак Барс”
+                          .project_text Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+                          p.text_center
+                            a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ПРОЕКТ')
+                              span СМОТРЕТЬ ПРОЕКТ
+                
+                  .more_projects
+                    a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='ЗАГРУЗИТЬ ЕЩЕ ПРОЕКТЫ')
+                      span ЗАГРУЗИТЬ ЕЩЕ ПРОЕКТЫ
+
+            .section_inner
+              .idea_slider
+                .idea_slider_splash
+                .ideaSlider.slider_inner
+                  +loop_while(3)
+                    .slide
+                      .slide_img
+                        img(src='i/slide_1.jpg')
+                      .slide_text
+                        p 
+                          span Есть идеи, что ещё должно быть на нашем сайте?!
+                          span.dt_only <br>
+                          span  Присылай на 
+                          a.slide_link(href='#') ideas@bodro.agency!
+                          span <br>На кону 2 заряженных на успех футболки!
+              
+                .idea_controls
+                  #idea_prev.idea_control._prev.mob_hidden
+                  #idea_next.idea_control._next.mob_hidden
+                    
+                  #idea_pager.idea_pager
+                  
+            .bodro_hero.bg_bodro: .gl_table: .gl_table_cell
+              .section_inner.winW
+                .bodro_hero_msg._wide(
+                data-200-center-top='transform: scale(.01); opacity: 1;'
+                data-100-center-top='transform: scale(1); opacity: 1;'
+                )
+                  .bodro_hero_corner
+                  .bodro_hero_text: .bodro_hero_caption Согласно исследованиям британских ученых, скачивание нашего бодрого портфолио на компьютер ускоряет работу процессора в 4 раза!
+
+                .hero_w(
+                data-450-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
+                data-150-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
+                data-0-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
+                )
+                  img(src='i/bodro_man_face.png')
+                  
+                .text_center
+                  a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СКАЧАТЬ ПОРТФОЛИО В PDF')
+                    span СКАЧАТЬ ПОРТФОЛИО В PDF
+
+            .section_inner
+              .test_holder
+                .test_holder_top
+                .test_holder_bottom
+                .test_block.text_center
+                  .test_caption Тест на совместимость
+                  p Мы ценим твоё и своё Время, поэтому работаем только с адекватными заказчиками, знающими значение слова “маркетинг” и ценящими юмор. Предлагаем пройти коротенький тест на совместимость. Всего 15 вопросов, которые позволят сэкономить кучу Времени и нервов! <br>Желаем удачи, и верим в тебя наш дорогой потенциальный заказчик!
+                  
+                .test_block
+                  .test_caption: span Вам нужен логотип, Ваши действия:
+                
+                  ul.test_list
+                    li: label.check_v2
+                      input.inp_hidden(type='radio' name='question_1')
+                      span.check_text Нарисую его сам
+                    li: label.check_v2
+                      input.inp_hidden(type='radio' name='question_1')
+                      span.check_text Что такое логотип?
+                    li: label.check_v2
+                      input.inp_hidden(type='radio' name='question_1')
+                      span.check_text Сделаю в Ворде
+                    li: label.check_v2
+                      input.inp_hidden(type='radio' name='question_1')
+                      span.check_text Обращусь в агентство
+                      
+                  p.text_center
+                    a.fz_13.btn_v2.btn_white.test_btn(href='#' data-text='ДАЛЕЕ')
+                      span ДАЛЕЕ
+                      
+            .section_footer
+              .section_inner
+                .footer_slider
+                  .text_line.lineSlider2
+                    +loop_while(5)
+                      .line_slide: span ЛЮБИ ТО, ЧТО ТЫ ДЕЛАЕШЬ!
+                      .line_slide: span САМЫЙ ЦЕННЫЙ РЕСУРС - ВРЕМЯ!
+                      .line_slide: span ДЬЯВОЛ КРОЕТСЯ В ДЕТАЛЯХ!
+                      
+            .section_inner
+              .exercises_block
+                .boardGrid
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                      
+                  .exercise_item.gridItem._x2
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem.mob_hidden
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem.dt_only
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem.dt_only
+                    .exercise_box
+                      +exercise_info()
+                      
+              .more_exercises
+                a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ЕЩЕ BDB ЗАРЯДКУ')
+                  span СМОТРЕТЬ ЕЩЕ BDB ЗАРЯДКУ
+                  
+            .section_inner
+              .text_center
+                .sticker_pack
+                  p Парам-пам-пам,<br>тут стикерпак для Telegram
+                  a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СКАЧАТЬ СТИКЕРПАК')
+                    span СКАЧАТЬ СТИКЕРПАК
+                  
+              .dobro_preview._bodro
+                .section_title(
+                data-350-center-top='transform: translate(0, 100%); opacity: 0;'
+                data-200-center-top='transform: translate(0, 0%); opacity: 1;'
+                )
+                  span(data-title='Ободрено') Ободрено
+                
+              .dobro_preview_text
+                p Производишь крутой товар или оказываешь уникальную услугу? Точно-точно!? Тогда давай дружить компаниями! Приходи к нам в гости или пригласи нас к себе, пообщаемся, расскажем о твоей компании в нашем блоге и обязательно найдём варианты взаимовыгодного сотрудничества!
+                  
+              ul.blog_list
+                li
+                  .blog_item
+                    .blog_img
+                    .info_caption Заголовок статьи из блога
+                    
+                    p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
+                    p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                      span ПОДРОБНЕЕ
+                    
+                li
+                  .blog_item
+                    .blog_img
+                    .info_caption Заголовок статьи из блога<br>в две строки
+                    
+                    p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
+                    p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                      span ПОДРОБНЕЕ
+                    
+                li.dt_only
+                  .blog_item
+                    .blog_img
+                    .info_caption Заголовок статьи из блога
+                    p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
+                    p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                      span ПОДРОБНЕЕ
+                      
+              .blog_see_more.mob_only
+                a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='СМОТРЕТЬ ДРУГИЕ СТАТЬИ')
+                  span СМОТРЕТЬ ДРУГИЕ СТАТЬИ
+                      
+            .section_inner
+              .insta_container
+                .insta_holder
+                  .instaSlider.insta_list
+                    +loop_while(15)
+                      .slide: a.insta_link(href='#')
+                .insta_controls
+                  #insta_prev.insta_control._prev
+                  #insta_next.insta_control._next
+                  .insta_url @bodro.agency
+                  .insta_tag #bdbgroup
+                  
+            .section_inner
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Друзья и партнеры') Друзья и партнеры
+
+              .friend_list
+                .friendSlider
+                  +loop_while(2)
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_1.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_2.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_3.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_4.png')
+                    .slide: a.friend_link(href='#')
+                      img(src='i/friend_5.png')
+                      
+                .friend_controls
+                  #friend_prev.friend_control._prev
+                  #friend_next.friend_control._next
+                    
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+                
+              .text_center.subscribe_block
+                a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
+                  span СВЯЗАТЬСЯ
+                
+            .footer
+              .section_inner.clearfix
+                .footer_logo_holder.mob_hidden
+                  a.footer_logo
+                    img(src='i/bdb_w.png' width=124)
+                  
+                .copyright © Copyright «BDB Group», 2017
+                .dev_block
+                  span Сайт сделан:&nbsp;
+                  span 
+                    img(src='i/friend_5.png' width=58)
+                    
+    +popups()
+
+    +scripts()
+    

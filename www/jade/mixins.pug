@@ -1,4 +1,4 @@
-mixin dev_head(page_title)
+mixin dev_head(page_title, home)
   head
     title=page_title
     | <!-- saved from url=(0014)about:internet -->
@@ -7,8 +7,9 @@ mixin dev_head(page_title)
     meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
     meta(name="apple-mobile-web-app-capable", content="yes")
     meta(name="format-detection", content="telephone=no")
-    style
-      include ../styles/html.css
+    -if (home)
+      style
+        include ../styles/html.css
     link(rel='stylesheet', href='styles/main_global.css', media='all')
 
 mixin loop_while(counter)
@@ -32,7 +33,7 @@ mixin menu_holder()
             ul.main_nav
               li
                 .nav_item
-                  a.nav_link._nav_bodro(href='#')
+                  a.nav_link._nav_bodro(href='bodro.html')
                     .nav_link_bg
                       - var i=0;
                         while i < 63
@@ -46,7 +47,7 @@ mixin menu_holder()
                       
               li
                 .nav_item
-                  a.nav_link._nav_dobro(href='#')
+                  a.nav_link._nav_dobro(href='dobro.html')
                     .nav_link_bg
                       
                     .gl_table
@@ -56,7 +57,7 @@ mixin menu_holder()
                       
               li
                 .nav_item
-                  a.nav_link._nav_bordo(href='#')
+                  a.nav_link._nav_bordo(href='bordo.html')
                     .nav_link_bg
                       - var i=0;
                         while i < 40
