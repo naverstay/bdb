@@ -662,6 +662,19 @@ body {
       padding-top: 140px;
     }
   }
+
+  &._shelve {
+
+    @include respond-to-max($resp_step_1) {
+      padding-top: 20px;
+    }
+
+    @include respond-to-min($resp_step_1) {
+      .section_inner {
+        padding-top: 65px;
+      }
+    }
+  }
 }
 
 .section_bg {
@@ -686,6 +699,16 @@ body {
     top: 240px;
     background: none;
     //background: url(../i/bg_bordo.png) repeat-x 50% 0;
+
+    ._bordo_page & {
+      @include respond-to-min($resp_step_1) {
+        top: 215px;
+      }
+
+      @include respond-to-max($resp_step_1) {
+        top: 200px;
+      }
+    }
   }
 }
 
@@ -783,6 +806,14 @@ $glass_height: 110px;
   .section._bordo & {
     margin-top: 50px;
     margin-bottom: 80px;
+
+    ._bordo_page & {
+      margin-top: -35px;
+
+      @include respond-to-max($resp_step_1) {
+        margin-top: -15px;
+      }
+    }
 
     @include respond-to-max($resp_step_1) {
       margin-bottom: 50px;
@@ -981,6 +1012,18 @@ $glass_height: 110px;
 
       @include respond-to-max($resp_step_1) {
         @include transform_translate(0, 24px);
+        margin-bottom: 50px;
+      }
+    }
+
+    ._bordo_page & {
+      @include respond-to-min($resp_step_1) {
+        @include transform_translate(0, 42px);
+        margin-bottom: -30px;
+      }
+
+      @include respond-to-max($resp_step_1) {
+        @include transform_translate(0, 48px);
         margin-bottom: 50px;
       }
     }
@@ -1256,6 +1299,16 @@ $glass_height: 110px;
     @include respond-to-max($resp_step_1) {
       padding-top: 45px;
       padding-bottom: 90px;
+
+      ._bordo_page & {
+        padding-bottom: 10px;
+      }
+    }
+
+    @include respond-to-min($resp_step_1) {
+      ._bordo_page & {
+        padding-bottom: 35px;
+      }
     }
   }
 
@@ -1291,6 +1344,12 @@ $glass_height: 110px;
 
     &._right {
       left: 126%;
+    }
+  }
+
+  @include respond-to-min($resp_step_1) {
+    ._bordo_page & {
+      top: 90px;
     }
   }
 }
@@ -1683,6 +1742,17 @@ $blur: 5px;
       margin-bottom: -25px;
     }
   }
+
+  ._bordo_page & {
+    &:after,
+    &:before {
+      display: none !important;
+    }
+
+    @include respond-to-min($resp_step_1) {
+      margin-bottom: 35px;
+    }
+  }
 }
 
 .exercises_block {
@@ -1805,6 +1875,7 @@ $blur: 5px;
     line-height: 1.7;
     font-size: 13px;
 
+    ._bordo_page &,
     ._dobro_page & {
       padding-top: 25px;
     }
@@ -2017,7 +2088,8 @@ $blur: 5px;
     padding: 0 58px;
 
     @include respond-to-max($resp_step_1) {
-      padding: 0 18px;
+      padding: 0 23px;
+      font-size: 11px;
     }
   }
 
@@ -2053,6 +2125,10 @@ $blur: 5px;
     ._dobro_page & {
       padding-bottom: 170px;
     }
+
+    ._bordo_page & {
+      padding-bottom: 165px;
+    }
   }
 
   @include respond-to-max($resp_step_2) {
@@ -2072,6 +2148,10 @@ $blur: 5px;
 
     ._dobro_page & {
       padding-bottom: 97px;
+    }
+
+    ._bordo_page & {
+      padding-bottom: 115px;
     }
   }
 }
@@ -2379,6 +2459,13 @@ $blur: 5px;
     letter-spacing: .02em;
   }
 
+  @include respond-to-min($resp_step_1) {
+    ._bordo_page & {
+      margin-top: 117px;
+      margin-bottom: 95px;
+    }
+  }
+
   @include respond-to-max($resp_step_1) {
     margin-top: 73px;
     margin-bottom: 52px;
@@ -2502,7 +2589,6 @@ $blur: 5px;
 }
 
 .review_controls {
-
   .review_control {
     @extend %slider_btn;
     position: absolute;
@@ -2516,6 +2602,24 @@ $blur: 5px;
 
     &._next {
       right: 0;
+    }
+  }
+}
+
+.book_controls {
+  .book_control {
+    @extend %slider_btn;
+    position: absolute;
+    z-index: 10;
+    top: 43%;
+    //margin-top: -5px;
+
+    &._prev {
+      left: 28px;
+    }
+
+    &._next {
+      right: 28px;
     }
   }
 }
@@ -2600,10 +2704,11 @@ $blur: 5px;
   padding-left: 35px;
   font-weight: 300;
   font-size: 13px;
-  
+
   p {
     color: #666;
 
+    ._bordo_page &,
     ._dobro_page & {
       color: rgba(255, 255, 255, .5);
     }

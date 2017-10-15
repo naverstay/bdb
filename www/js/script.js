@@ -1,6 +1,6 @@
 var s, wnd, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0, updateSkrlr,
   menu_timer, resizeTimer, thanks_popup, callback_popup, agreement_popup, reviewSlider, friendSlider, instaSlider,
-  partnerSlider;
+  bookSlider, partnerSlider;
 
 $(function ($) {
 
@@ -295,7 +295,44 @@ function initSlider(cb) {
     }
   });
 
+  initBookSlider();
+
   cb();
+}
+
+function initBookSlider() {
+  var w = wnd.width();
+
+  if (wnd.width() > 980) {
+    if (bookSlider) {
+      bookSlider.trigger("destroy");
+
+      $('.bookSlider').removeAttr('style').find('*').each(function (ind) {
+        $(this).removeAttr('style');
+      });
+    }
+  } else {
+    if (!bookSlider) {
+      bookSlider = $('.bookSlider').carouFredSel({
+        circular: true,
+        infinite: true,
+        width: '100%',
+        align: "center",
+        items: {
+          visible: 1
+        },
+        auto: {
+          play: false
+        },
+        swipe: {
+          onTouch: true,
+          onMouse: true
+        },
+        prev: '#book_prev',
+        next: '#book_next'
+      });
+    }
+  }
 }
 
 function initTabs() {
@@ -586,6 +623,9 @@ $(window).on('scroll', function () {
         reInit: true //not sure that you need this
       });
   }
+
+  initBookSlider();
+
 });
 
 function checkFullHeight() {

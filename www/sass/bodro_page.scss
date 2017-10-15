@@ -223,4 +223,87 @@ $resp_step_1: 980px;
   }
 }
 
+.book_shelves {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 100px 65px 90px;
+  font-size: 0;
 
+  @include respond-to-max($resp_step_1) {
+    padding: 47px 40px 63px;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 110px;
+      left: 50%;
+      margin-left: -1000px;
+      width: 2000px;
+      height: 4px;
+      background: #fff;
+      z-index: 1;
+    }
+  }
+}
+
+.book_unit {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0 25px 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .25), 0 15px 20px rgba(0, 0, 0, .25);
+
+  &.slide {
+    .caroufredsel_wrapper & {
+      float: left;
+    }
+  }
+
+  @include respond-to-min($resp_step_1) {
+    margin: 0 15px 100px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -1000px;
+      width: 2000px;
+      height: 4px;
+      background: #fff;
+      z-index: 2;
+    }
+  }
+}
+
+.book_info {
+  @include transition_all(transform .3s);
+  @include transform_translate(0, 100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #830938;
+  color: #fff;
+}
+
+.book_name {
+  font: 500 17px/1.4 $MuseoSansCyrl;
+  margin-bottom: 20px;
+}
+
+.book_item {
+  width: 230px;
+  height: 320px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .book_info {
+      @include transform_translate(0, 0);
+    }
+  }
+}
