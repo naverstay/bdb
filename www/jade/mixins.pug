@@ -29,6 +29,13 @@ mixin menu_holder()
     .gl_table
       .gl_table_cell
         .section_inner
+          .menu_logo_holder
+            a.logo(href='index.html')
+              .logo_slide
+                img(src='i/bdb_w.png' width=144)
+          .mob_phone.mob_only
+            a.header_phone(href='tel:88005555555') 8 800 555 55 55
+
           .main_menu
             ul.main_nav
               li
@@ -71,10 +78,10 @@ mixin menu_holder()
                       
           .menu_links_w: ul.menu_links
             li
-              a.menu_link(href='#')
+              a.menu_link(href='blog.html')
                 span БЛОГ
             li
-              a.menu_link(href='#')
+              a.menu_link(href='contacts.html')
                 span КОНТАКТЫ
               
           .main_menu_footer
@@ -91,6 +98,43 @@ mixin menu_holder()
                 span.i-yt
     
 mixin header()
+  //-.hide
+    <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+    <filter id="drop-shadow-black">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"></feGaussianBlur>
+    <feOffset in="blur" dx="0" dy="2" result="offsetBlur"></feOffset>
+    <feFlood in="offsetBlur" flood-color="#000" flood-opacity="1" result="offsetColor"></feFlood>
+    <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite>
+    <feMerge>
+    <feMergeNode in="offsetBlur"></feMergeNode>
+    <feMergeNode in="SourceGraphic"></feMergeNode>
+    </feMerge>
+    </filter>
+    </svg>
+    <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+    <filter id="drop-shadow-blue">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"></feGaussianBlur>
+    <feOffset in="blur" dx="0" dy="2" result="offsetBlur"></feOffset>
+    <feFlood in="offsetBlur" flood-color="#6ba3ee" flood-opacity="1" result="offsetColor"></feFlood>
+    <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite>
+    <feMerge>
+    <feMergeNode in="offsetBlur"></feMergeNode>
+    <feMergeNode in="SourceGraphic"></feMergeNode>
+    </feMerge>
+    </filter>
+    </svg>
+    <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+    <filter id="drop-shadow-red">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"></feGaussianBlur>
+    <feOffset in="blur" dx="0" dy="2" result="offsetBlur"></feOffset>
+    <feFlood in="offsetBlur" flood-color="#840938" flood-opacity="1" result="offsetColor"></feFlood>
+    <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite>
+    <feMerge>
+      <feMergeNode in="offsetBlur"></feMergeNode>
+      <feMergeNode in="SourceGraphic"></feMergeNode>
+    </feMerge>
+    </filter>
+    </svg>
   div.header
     .section_inner.clearfix
       .nav_block
@@ -111,8 +155,25 @@ mixin header()
             img.img_hover(src='i/bdb_a.png' width=144)
             img(src='i/bdb_w.png' width=144)
 
-      .callback_block
-        a.header_phone(href='#') 8 800 555 55 55
+      .callback_block.mob_hidden
+        a.header_phone(href='tel:88005555555') 8 800 555 55 55
+
+mixin blog_projects()
+  .mosaic_holder: #mosaic.mosaic
+    .mosaic_item: img(src='i/stock-photo-businessman-superhero-with-sunset-in-city-399222445.jpg' data-high-res-image-src='i/stock-photo-businessman-superhero-with-sunset-in-city-399222445.jpg')
+    .mosaic_item: img(src='i/stock-photo-colorado-usa-march-studio-shot-of-lego-minifigure-batman-and-superman-with-building-in-394845412.jpg' data-high-res-image-src='i/stock-photo-colorado-usa-march-studio-shot-of-lego-minifigure-batman-and-superman-with-building-in-394845412.jpg')
+    .mosaic_item: img(src='i/stock-photo-funny-nerdy-superman-363881918.jpg' data-high-res-image-src='i/stock-photo-funny-nerdy-superman-363881918.jpg')
+    .mosaic_item: img(src='i/stock-vector-business-man-characters-business-mans-in-casual-clothes-emotions-and-expressions-435684289.jpg' data-high-res-image-src='i/stock-vector-business-man-characters-business-mans-in-casual-clothes-emotions-and-expressions-435684289.jpg')
+    .mosaic_item: img(src='i/stock-vector-comic-book-superhero-opening-shirt-to-reveal-costume-underneath-101586406.jpg' data-high-res-image-src='i/stock-vector-comic-book-superhero-opening-shirt-to-reveal-costume-underneath-101586406.jpg')
+    .mosaic_item: img(src='i/stock-vector-male-businessman-superhero-pop-art-retro-vector-illustration-strong-businessman-in-glasses-in-671605834.jpg' data-high-res-image-src='i/stock-vector-male-businessman-superhero-pop-art-retro-vector-illustration-strong-businessman-in-glasses-in-671605834.jpg')
+    .mosaic_item: img(src='i/stock-vector-super-hero-showing-his-strength-vector-illustration-224588869.jpg' data-high-res-image-src='i/stock-vector-super-hero-showing-his-strength-vector-illustration-224588869.jpg')
+    .mosaic_item: img(src='i/stock-vector-super-hero-vector-illustration-on-a-background-226184161.jpg' data-high-res-image-src='i/stock-vector-super-hero-vector-illustration-on-a-background-226184161.jpg')
+    .mosaic_item: img(src='i/stock-vector-superhero-banners-set-of-superhero-banners-no-transparency-or-gradients-used-381201916.jpg' data-high-res-image-src='i/stock-vector-superhero-banners-set-of-superhero-banners-no-transparency-or-gradients-used-381201916.jpg')
+    .mosaic_item: img(src='i/stock-vector-superhero-facing-supervillain-no-transparency-used-basic-linear-gradients-a-proportions-240409474.jpg' data-high-res-image-src='i/stock-vector-superhero-facing-supervillain-no-transparency-used-basic-linear-gradients-a-proportions-240409474.jpg')
+    .mosaic_item: img(src='i/stock-vector-superhero-on-the-roof-looks-into-the-distance-vector-illustration-336762965.jpg' data-high-res-image-src='i/stock-vector-superhero-on-the-roof-looks-into-the-distance-vector-illustration-336762965.jpg')
+    .mosaic_item: img(src='i/stock-vector-superman-businessman-open-his-shirt-superhero-222840589.jpg' data-high-res-image-src='i/stock-vector-superman-businessman-open-his-shirt-superhero-222840589.jpg')
+    .mosaic_item: img(src='i/stock-vector-symbol-vector-logo-of-pizza-delivery-flying-hero-659482669.jpg' data-high-res-image-src='i/stock-vector-symbol-vector-logo-of-pizza-delivery-flying-hero-659482669.jpg')
+    .mosaic_item: img(src='i/stock-vector-vector-super-man-hero-dad-happy-father-day-141477061.jpg' data-high-res-image-src='i/stock-vector-vector-super-man-hero-dad-happy-father-day-141477061.jpg')
 
 mixin exercise_info()
   .exercise_info
@@ -194,11 +255,11 @@ mixin popups(white)
       span  и если она интересная обязательно свяжемся!
           
 
-mixin scripts()
+mixin scripts(contacts, blog)
   script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js")
-  //script(src='TweenMax.min.js')
-  //script(src='ScrollToPlugin.min.js')
+  //-script(src='TweenMax.min.js')
+  //-script(src='ScrollToPlugin.min.js')
   script(src='//www.youtube.com/player_api')
   script(src='js/jquery1.10.js')
   script(src='js/jquery.plugin.js')
@@ -208,14 +269,21 @@ mixin scripts()
   script(src='js/jquery-ui-1.11.4.js')
   script(src='js/jquery.ba-throttle-debounce.min.js')
   script(src='js/jquery.sticky-kit.min.js')
-  //script(src='js/smooth-scrollbar.js')
+  //-script(src='js/smooth-scrollbar.js')
   script(src='js/jquery.touchSwipe.min.js')
   script(src='js/jquery.carouFredSel-6.0.4-packed.js')
   script(src='js/isotop/isotope.pkgd.js')
-  //script(src='js/isotop/cells-by-column.js')
-  //script(src='js/isotop/cells-by-row.js')
-  //script(src='js/isotop/fit-columns.js')
-  //script(src='js/isotop/horizontal.js')
-  //script(src='js/isotop/masonry-horizontal.js')
+  //-script(src='js/isotop/cells-by-column.js')
+  //-script(src='js/isotop/cells-by-row.js')
+  //-script(src='js/isotop/fit-columns.js')
+  //-script(src='js/isotop/horizontal.js')
+  //-script(src='js/isotop/masonry-horizontal.js')
   script(src='js/isotop/packery-mode.pkgd.js')
   script(src='js/script.js')
+  - if (blog)
+    script(src='js/jquery.mosaic.min.js')
+    script(src='js/blog.js')
+  - if (contacts)
+    script(src='js/contacts.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7THpWflv0u70jhfuU4T6KbuNy0fuxME&callback=loadMap')
+    

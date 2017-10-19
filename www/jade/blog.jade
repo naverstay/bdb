@@ -1,0 +1,117 @@
+include mixins.pug
+doctype html
+html#skrollr-body(lang='ru')
+  +dev_head('bodro blog')
+
+  body
+    +header()
+    +menu_holder()
+    .wrapper
+      .header_logo_holder
+        .section_logo(data-sticky-class='_stuck' data-margin-top=80)
+          a.logo(href='index.html')
+            .logo_slide()
+              img.img_hover(src='i/bdb_a.png' width=144)
+              img(src='i/bdb_w.png' width=144)
+      .base
+        div.main_content
+          .section._blog
+            .section_inner
+              .section_title(
+              data-350-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-200-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Блог') Блог
+
+              .blog_filter_holder
+                p Показывать:
+                ul.blog_filter
+                  li
+                    label.check_v3
+                      input.inp_hidden(type='radio' checked name='blog_filter')
+                      span.check_text.btn_white.check_btn.btn_v2(data-text='ВСЕ СТАТЬИ'): span ВСЕ СТАТЬИ
+                  li
+                    label.check_v3
+                      input.inp_hidden(type='radio' name='blog_filter')
+                      span.check_text.btn_white.check_btn.btn_v2(data-text='BODRO'): span BODRO
+                  li
+                    label.check_v3
+                      input.inp_hidden(type='radio' name='blog_filter')
+                      span.check_text.btn_white.check_btn.btn_v2(data-text='DOBRO'): span DOBRO
+                  li
+                    label.check_v3
+                      input.inp_hidden(type='radio' name='blog_filter')
+                      span.check_text.btn_white.check_btn.btn_v2(data-text='BORDO'): span BORDO
+
+              ul.blog_list
+                +loop_while(2)
+                  li
+                    .blog_item
+                      .blog_img
+                      .info_caption Заголовок статьи из блога
+
+                      p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
+                      p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                        span ПОДРОБНЕЕ
+
+                  li
+                    .blog_item
+                      .blog_img
+                      .info_caption Заголовок статьи из блога<br>в две строки
+
+                      p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
+                      p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                        span ПОДРОБНЕЕ
+
+                  li.dt_only
+                    .blog_item
+                      .blog_img
+                      .info_caption Заголовок статьи из блога
+
+                      p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
+                      p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
+                        span ПОДРОБНЕЕ
+
+              ul.blog_pagination
+                li._prev
+                  a.pagination_link.btn_white._prev(href='#')
+                li._page
+                  a.pagination_link.btn_white(data-text='1' href='#') 1
+                li._page
+                  a.pagination_link.btn_white._active(data-text='2' href='#') 2
+                li._page
+                  a.pagination_link.btn_white(data-text='3' href='#') 3
+                li._page
+                  span.pagination_link() ...
+                li._page
+                  a.pagination_link.btn_white(data-text='5' href='#') 5
+                li._next
+                  a.pagination_link.btn_white._next(href='#')
+
+            .section_inner
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+
+              .text_center.subscribe_block
+                a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
+                  span СВЯЗАТЬСЯ
+
+            .footer
+              .section_inner.clearfix
+                .footer_logo_holder.mob_hidden
+                  a.footer_logo
+                    img(src='i/bdb_w.png' width=124)
+
+                .copyright © Copyright «BDB Group», 2017
+                .dev_block
+                  span Сайт сделан:&nbsp;
+                  span
+                    img(src='i/friend_5.png' width=58)
+
+    +popups()
+
+    +scripts()
+    

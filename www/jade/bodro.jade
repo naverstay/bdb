@@ -14,7 +14,7 @@ html#skrollr-body._inner_page._bodro_page(lang='ru')
             .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
               a.logo(href='index.html')
                 .logo_slide.sectionLogo(data-target='bodro_section')
-                  img(src='i/logo_bodro.png' width=174)
+                  img._bodro(src='i/logo_bodro.png' width=174)
             .section_inner
               .bodro_hero
                 .bodro_hero_msg(
@@ -38,24 +38,9 @@ html#skrollr-body._inner_page._bodro_page(lang='ru')
                   
             .projectors_holder
               .projector_left
-                .projector(
-                data-2300-bottom-bottom='transform: skew(29deg, -29deg);'
-                data-1650-bottom-bottom='transform: skew(10deg, -10deg);'
-                data-1250-bottom-bottom='transform: skew(20deg, -20deg);'
-                data-850-bottom-bottom='transform: skew(0deg, 0deg);'
-                data-400-bottom-bottom='transform: skew(15deg, -15deg);'
-                data-bottom-bottom='transform: skew(0deg, 0deg);'
-                )
+                .projector()
               .projector_right
-                .projector(
-                data-2700-bottom-bottom='transform: skew(0deg, 29deg);'
-                data-2300-bottom-bottom='transform: skew(5deg, 20deg);'
-                data-1950-bottom-bottom='transform: skew(10deg, 30deg);'
-                data-1500-bottom-bottom='transform: skew(0deg, 15deg);'
-                data-1050-bottom-bottom='transform: skew(10deg, 0deg);'
-                data-750-bottom-bottom='transform: skew(20deg, 10deg);'
-                data-200-bottom-bottom='transform: skew(0deg, 0deg);'
-                )
+                .projector()
                   
             .section_inner
               .project_holder
@@ -234,7 +219,7 @@ html#skrollr-body._inner_page._bodro_page(lang='ru')
                       +exercise_info()
                       
               .more_exercises
-                a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ЕЩЕ BDB ЗАРЯДКУ')
+                a.fz_13.btn_v1.btn_white.project_btn(href='jerks.html' data-text='СМОТРЕТЬ ЕЩЕ BDB ЗАРЯДКУ')
                   span СМОТРЕТЬ ЕЩЕ BDB ЗАРЯДКУ
                   
             .section_inner

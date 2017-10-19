@@ -1,0 +1,73 @@
+include mixins.pug
+doctype html
+html#skrollr-body(lang='ru')
+  +dev_head('bodro contacts')
+
+  body
+    +header()
+    +menu_holder()
+    .wrapper
+      .header_logo_holder
+        .section_logo(data-sticky-class='_stuck' data-margin-top=80)
+          a.logo(href='index.html')
+            .logo_slide()
+              img.img_hover(src='i/bdb_a.png' width=144)
+              img(src='i/bdb_w.png' width=144)
+      .base
+        div.main_content
+          .section._contacts
+            .section_inner
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Контакты') Контакты
+                
+              .contacts_block
+                .contacts_info
+                  dl.contacts_list
+                    dt E-mail:
+                    dd 
+                      a.contact_link(href='mailto:hello@bdb.ru') hello@bdb.ru
+                      
+                    dt Телефон:
+                    dd 
+                      a.contact_link(href='tel:88005555555') 8 800 555 55 55
+                      
+                    dt Адрес:
+                    dd г. Казань, ул. Островского, 67, 4 этаж, офис 10
+                    
+                    dt Время работы:
+                    dd Пн-Пт с 09.00 до 21.00
+                  
+                .contacts_map_holder: .contacts_map_w.mapWrapper
+                  #bdb_map.map_block
+                    
+                
+                
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+                
+              .text_center.subscribe_block
+                a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
+                  span СВЯЗАТЬСЯ
+                
+            .footer
+              .section_inner.clearfix
+                .footer_logo_holder.mob_hidden
+                  a.footer_logo
+                    img(src='i/bdb_w.png' width=124)
+                  
+                .copyright © Copyright «BDB Group», 2017
+                .dev_block
+                  span Сайт сделан:&nbsp;
+                  span 
+                    img(src='i/friend_5.png' width=58)
+                    
+    +popups()
+
+    +scripts(true)
+    

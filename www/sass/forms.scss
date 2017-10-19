@@ -96,7 +96,7 @@ div.f_input_v1.f_input {
       background: #404040;
       border: 1px solid #fff;
 
-      ._bordo_page & ,
+      ._bordo_page &,
       ._dobro_page & {
         background-color: rgba(255, 255, 255, .25) !important;
       }
@@ -163,6 +163,22 @@ div.f_input_v1.f_input {
     &:before {
       border-color: #fff;
     }
+  }
+}
+
+.check_v3 {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+
+  &:hover {
+    .check_text {
+    
+    }
+  }
+
+  .inp_hidden:checked + .check_text {
+    @extend .btn_white:hover;
   }
 }
 

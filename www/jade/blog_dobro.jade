@@ -1,0 +1,77 @@
+include mixins.pug
+doctype html
+html#skrollr-body._dobro_blog._blog_page(lang='ru')
+  +dev_head('bodro blog')
+
+  body
+    +header()
+    +menu_holder()
+    .wrapper
+      .blog_wide_image
+        img(src='i/bars_big.jpg')
+      .header_logo_holder
+        .section_logo(data-sticky-class='_stuck' data-margin-top=80)
+          a.logo(href='index.html')
+            .logo_slide.sectionLogo(data-target='bodro_section')
+              img._bodro(src='i/logo_dobro.png' width=174)
+      .base
+        div.main_content
+          .section_inner
+            .blog_page_info
+              .blog_page_name 
+                h2 ХК “Ак Барс”
+                p Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
+              .blog_page_description
+                p Зрелищнее “Игр Престолов” только наш хоккей! В поддержку любимой саги мы интегрировали элементы “Игр Престолов” в рекламную кампанию нового сезона игр “Ак Барс”.<br>Идея была проста до гениальности. Самым сложным оказалось выкрасть клюшки у команд конкурентов... В результате трон получился шикарный!
+
+                p За время матча, от желающих ощутить себя королем семи королевств отбоя не было. А бой был, ведь трон оказался чудодейственным! 12 человек излечились от облысения, веган Григорий стал мясоедом, а у 9-летнего Миши начал ломаться голос.
+                
+            .video_block._wide
+              .video_w
+                <iframe id="video_1" class="playOnScroll" width="560" height="315" src="https://www.youtube.com/embed/eKXjnhpKEMw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+              .video_btn
+              
+            +blog_projects()
+                
+            .project_slider
+              .projectSlider
+                +loop_while(3)
+                  .slide: .gl_table: .gl_table_cell
+                    a.blog_project_link(href='#') Название предыдущего проекта
+                  .slide: .gl_table: .gl_table_cell
+                    a.blog_project_link(href='#') Название следующего проекта
+                    
+              .project_controls
+                #project_prev.project_control._prev
+                  span СМОТРЕТЬ ПРОЕКТ
+                #project_next.project_control._next
+                  span СМОТРЕТЬ ПРОЕКТ
+
+          .section
+            .section_inner
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+
+              .text_center.subscribe_block
+                a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
+                  span СВЯЗАТЬСЯ
+
+            .footer
+              .section_inner.clearfix
+                .footer_logo_holder.mob_hidden
+                  a.footer_logo
+                    img(src='i/bdb_w.png' width=124)
+
+                .copyright © Copyright «BDB Group», 2017
+                .dev_block
+                  span Сайт сделан:&nbsp;
+                  span
+                    img(src='i/friend_5.png' width=58)
+
+    +popups()
+
+    +scripts(false, true)
+    

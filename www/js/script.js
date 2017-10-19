@@ -1,10 +1,26 @@
-var s, wnd, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0, updateSkrlr,
-  menu_timer, resizeTimer, thanks_popup, callback_popup, agreement_popup, reviewSlider, friendSlider, instaSlider,
-  bookSlider, partnerSlider;
+var s, wnd, html_var, body_var, boardGrid, logoTrigger, scrollbar, cur_scroll = 0, updateSkrlr,
+  menu_timer, resizeTimer,
+  thanks_popup, callback_popup, agreement_popup,
+  reviewSlider, friendSlider, instaSlider,
+  bookSlider,
+  projectSlider,
+  partnerSlider,
+  form_pos_settings = {
+    my: "top center",
+    at: "top center",
+    of: window,
+    using: function (obj, info) {
+      var dialog_form = $(this);
+      dialog_form.css({
+        left: ((wnd.width() - dialog_form.width()) / 2) + 'px'
+      });
+    }
+  };
 
 $(function ($) {
 
   wnd = $(window);
+  html_var = $('html');
   body_var = $('body');
   logoTrigger = $('.logoTrigger');
 
@@ -51,6 +67,8 @@ $(function ($) {
     })
     .delegate('.menuBtn', 'click', function () {
       var btn = $(this);
+
+      html_var.toggleClass('ov_hidden');
 
       //btn.toggleClass('allow-hover');
       body_var.toggleClass('menu-is-open');
@@ -168,6 +186,22 @@ function initSlider(cb) {
       updateSkrollr();
     },
     scroll: _scroll
+  });
+
+  projectSlider = $('.projectSlider').carouFredSel({
+    circular: true,
+    infinite: true,
+    responsive: true,
+    direction: "left",
+    width: '100%',
+    auto: {
+      play: false
+    },
+    items: {
+      visible: 2
+    },
+    prev: '#project_prev',
+    next: '#project_next'
   });
 
   instaSlider = $('.instaSlider').carouFredSel({
@@ -303,7 +337,7 @@ function initSlider(cb) {
 function initBookSlider() {
   var w = wnd.width();
 
-  if (wnd.width() > 980) {
+  if (w > 980) {
     if (bookSlider) {
       bookSlider.trigger("destroy");
 
@@ -317,8 +351,9 @@ function initBookSlider() {
         circular: true,
         infinite: true,
         width: '100%',
-        align: "center",
+        align: false,
         items: {
+          width: 'variable',
           visible: 1
         },
         auto: {
@@ -445,7 +480,7 @@ function initCallbackPopup() {
     width: 750,
     draggable: true,
     collision: "fit",
-    position: {my: "top center", at: "top center", of: window},
+    position: form_pos_settings,
     open: function (event, ui) {
       body_var.addClass('modal_opened overlay_v2');
     },
@@ -469,7 +504,7 @@ function initCallbackPopup() {
     width: 750,
     draggable: true,
     collision: "fit",
-    position: {my: "top center", at: "top center", of: window},
+    position: form_pos_settings,
     open: function (event, ui) {
       body_var.addClass('modal_opened overlay_v2');
     },
@@ -488,7 +523,7 @@ function initCallbackPopup() {
     width: 750,
     draggable: true,
     collision: "fit",
-    position: {my: "top center", at: "top center", of: window},
+    position: form_pos_settings,
     open: function (event, ui) {
       body_var.addClass('modal_opened overlay_v2');
     },
@@ -534,9 +569,9 @@ function initSkrollr() {
     s = skrollr.init({
       forceHeight: false,
       //scale: .6,
-      mobileCheck: function () {
-        return false;
-      },
+      //mobileCheck: function () {
+      //  return false;
+      //},
       skrollrBody: 'scroll-content',
       //edgeStrategy: 'style',
       easing: 'easeOutQuad'
@@ -594,7 +629,18 @@ $(window).on('scroll', function () {
             max: w >= 1280 ? 3 : (w >= 980 ? 2 : 1)
           }
         },
-        reInit: true //not sure that you need this
+        reInit: true
+      });
+  }
+
+  if (projectSlider) {
+    projectSlider
+      .trigger("finish")
+      .trigger("configuration", {
+        items: {
+          visible: 2
+        },
+        reInit: true
       });
   }
 
@@ -607,7 +653,7 @@ $(window).on('scroll', function () {
             max: w >= 1280 ? 5 : (w >= 980 ? 4 : w >= 768 ? 3 : 2)
           }
         },
-        reInit: true //not sure that you need this
+        reInit: true
       });
   }
 
@@ -620,7 +666,7 @@ $(window).on('scroll', function () {
             max: w >= 1280 ? 5 : (w >= 980 ? 4 : w >= 768 ? 3 : 2)
           }
         },
-        reInit: true //not sure that you need this
+        reInit: true
       });
   }
 

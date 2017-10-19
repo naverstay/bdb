@@ -163,8 +163,11 @@ $resp_step_1: 980px;
     margin-top: 25px;
     margin-bottom: 48px;
 
-    .check_v2 .check_text:before {
-      left: -35px;
+    .check_v2 .check_text {
+      &:after,
+      &:before {
+        left: -35px;
+      }
     }
 
     li {
@@ -232,7 +235,7 @@ $resp_step_1: 980px;
 
   @include respond-to-max($resp_step_1) {
     padding: 47px 40px 63px;
-    
+
     &:before {
       content: '';
       position: absolute;
@@ -244,6 +247,10 @@ $resp_step_1: 980px;
       background: #fff;
       z-index: 1;
     }
+  }
+
+  @include respond-to-max($resp_step_0) {
+    padding: 47px 0 63px;
   }
 }
 
@@ -275,6 +282,11 @@ $resp_step_1: 980px;
       z-index: 2;
     }
   }
+
+  @include respond-to-max($resp_step_0) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 .book_info {
@@ -285,6 +297,7 @@ $resp_step_1: 980px;
   bottom: 0;
   left: 0;
   right: 0;
+  padding: 10px;
   background: #830938;
   color: #fff;
 }

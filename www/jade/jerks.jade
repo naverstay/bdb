@@ -1,0 +1,104 @@
+include mixins.pug
+doctype html
+html#skrollr-body._inner_page(lang='ru')
+  +dev_head('bodro зарядка')
+
+  body
+    +header()
+    +menu_holder()
+    .wrapper
+      .base
+        div.main_content
+          #bodro_section.section._jerks
+            .section_inner
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='BDB зарядка') BDB зарядка
+
+              .exercises_block._mod_1
+                .boardGrid
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                      
+                  .exercise_item.gridItem._x2._mob_x2
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                      
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                      
+                  .exercise_item.gridItem._x2._mob_x2
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+                      
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+
+                  .exercise_item.gridItem
+                    .exercise_box
+                      +exercise_info()
+
+            .section_inner
+              .section_title(
+              data-450-center-top='transform: translate(0, 100%); opacity: 0;'
+              data-300-center-top='transform: translate(0, 0%); opacity: 1;'
+              )
+                span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
+                
+              .text_center.subscribe_block
+                a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
+                  span СВЯЗАТЬСЯ
+                
+            .footer
+              .section_inner.clearfix
+                .footer_logo_holder.mob_hidden
+                  a.footer_logo
+                    img(src='i/bdb_w.png' width=124)
+                  
+                .copyright © Copyright «BDB Group», 2017
+                .dev_block
+                  span Сайт сделан:&nbsp;
+                  span 
+                    img(src='i/friend_5.png' width=58)
+                    
+    +popups()
+
+    +scripts()
+    

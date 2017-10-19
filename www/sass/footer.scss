@@ -23,6 +23,7 @@ $resp_step_1: 980px;
   z-index: 150;
   display: none;
   background: #000;
+  overflow-x: hidden;
   overflow-y: auto;
 
   .modal_opened & {
@@ -183,7 +184,7 @@ $resp_step_1: 980px;
 
 .dev_block,
 .copyright {
-  opacity: .25;
+  opacity: .75;
   top: 12px;
   font: 300 11px/60px 'MuseoSansCyrl', sans-serif;
 
@@ -217,4 +218,8 @@ $resp_step_1: 980px;
   @include respond-to-min($resp_step_1) {
     right: 35px;
   }
+}
+
+.hide {
+  display: none !important;
 }
