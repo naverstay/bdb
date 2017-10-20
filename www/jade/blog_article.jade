@@ -1,22 +1,23 @@
 include mixins.pug
 doctype html
-html#skrollr-body._bodro_blog._blog_page(lang='ru')
+html#skrollr-body._blog_page(lang='ru')
   +dev_head('blog article')
 
   body
     +header()
     +menu_holder()
     .wrapper
-      .blog_wide_image._article
+      .blog_wide_image._article.winHthird
         img(src='i/article_1.jpg')
+        .header_logo_holder._bodro_shadow._article
+          .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            a.logo(href='index.html')
+              .logo_slide()
+                img.img_hover(src='i/bdb_a.png' width=144)
+                img(src='i/bdb_w.png' width=144)
       .base
         div.main_content
           .section._article_white
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='index.html')
-                .logo_slide()
-                  img.img_hover(src='i/bdb_a.png' width=144)
-                  img(src='i/bdb_w.png' width=144)
             .section_inner
               .article 
                 h1 Очень длинное название статьи<br>в две строки
@@ -51,9 +52,9 @@ html#skrollr-body._bodro_blog._blog_page(lang='ru')
                       
                 .project_controls
                   #project_prev.project_control._prev
-                    span СМОТРЕТЬ ПРОЕКТ
+                    span ЧИТАТЬ СТАТЬЮ
                   #project_next.project_control._next
-                    span СМОТРЕТЬ ПРОЕКТ
+                    span ЧИТАТЬ СТАТЬЮ
 
           .section._last
             .section_inner

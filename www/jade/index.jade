@@ -580,7 +580,7 @@ html#skrollr-body._home(lang='ru')
                     )
                       textarea.f_input_v1.f_input(placeholder='Несколько слов о себе')
                     
-                  .form_row._half
+                  //-.form_row._half
                     .input_w(
                     data-150-bottom-top='transform: translate(0, 50px); opacity: 0;'
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
@@ -593,6 +593,10 @@ html#skrollr-body._home(lang='ru')
                     data--150-bottom-top='transform: translate(0, 0); opacity: 1;'
                     )
                       input.f_input_v1.f_input(placeholder='Введите текст с картинки')
+                      
+                  .form_row.text_center.captcha_row
+                    .input_w.text_center
+                      img(src='i/Captcha.png')
                       
                   .form_row.text_center
                     .input_w(

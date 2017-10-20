@@ -246,7 +246,7 @@ span.pagination_link {
   text-align: center;
   overflow: hidden;
 
-  img {
+  > img {
     display: inline-block;
     vertical-align: top;
     max-width: 100%;
@@ -254,18 +254,19 @@ span.pagination_link {
   }
 
   &._article {
-    height: 325px;
+    min-height: 325px;
+    height: 500px;
 
-    img {
+    > img {
       min-width: 580px;
     }
 
     @include respond-to-min($resp_step_1) {
-      height: 550px;
+      //height: 550px;
     }
 
     @include respond-to-min($resp_step_2) {
-      height: 600px;
+      //height: 600px;
     }
   }
 }

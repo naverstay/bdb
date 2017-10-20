@@ -60,13 +60,12 @@ body {
   }
 
   ._dobro_blog & {
-    background: #6ba3ee;
+    background: #7fa5d8;
   }
 
   ._bordo_blog & {
     background: #840938;
   }
-
 }
 
 .hide {
@@ -233,6 +232,7 @@ body {
     border-right-color: #000;
   }
 
+  ._bodro_blog &,
   .section._bodro & {
     border-color: #ff0;
 
@@ -252,6 +252,7 @@ body {
     }
   }
 
+  ._bordo_blog &,
   .section._bordo & {
     &:hover {
       background-color: #fff;
@@ -263,6 +264,7 @@ body {
     }
   }
 
+  ._dobro_blog &,
   .section._dobro & {
     &:hover {
 
@@ -343,11 +345,17 @@ body {
   @include respond-to-max($resp_step_1) {
     height: 120px;
   }
-  
+
   ._home & {
     top: 0;
     height: 100%;
     position: absolute;
+  }
+
+  &._article {
+    position: fixed !important;
+    top: 0;
+    height: 153px;
   }
 
   ._blog_page & {
@@ -359,29 +367,31 @@ body {
       left: 0;
       height: 200px;
     }
+
+    &._article:after {
+      top: 0;
+    }
   }
 
-  &:after {
-    ._bodro_blog & {
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=0);
-    }
+  &._bodro_shadow:after {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=0);
+  }
 
-    ._dobro_blog & {
-      background: -moz-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
-      background: -webkit-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
-      background: linear-gradient(to bottom, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6ba3ee', endColorstr='#006ba3ee', GradientType=0);
-    }
+  &._dobro_shadow:after {
+    background: -moz-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
+    background: linear-gradient(to bottom, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6ba3ee', endColorstr='#006ba3ee', GradientType=0);
+  }
 
-    ._bordo_blog & {
-      background: -moz-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
-      background: -webkit-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
-      background: linear-gradient(to bottom, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#840938', endColorstr='#00840938', GradientType=0);
-    }
+  &._bordo_shadow:after {
+    background: -moz-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    background: linear-gradient(to bottom, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#840938', endColorstr='#00840938', GradientType=0);
   }
 }
 
@@ -439,7 +449,7 @@ body {
 
   .section_inner {
     max-width: 1600px;
-    white-space: nowrap;
+    //white-space: nowrap;
   }
 
   .hero_caption {
@@ -722,38 +732,41 @@ body {
     padding-bottom: 1px;
   }
 
-  &._bodro {
-    //padding-top: 225px;
-    padding-top: 240px;
+  ._home & {
+    &._bodro {
+      //padding-top: 225px;
+      padding-top: 240px;
 
-    ._bodro_page & {
-      padding-top: 145px;
+      ._bodro_page & {
+        padding-top: 145px;
+      }
+
+      @include respond-to-max($resp_step_1) {
+        padding-top: 130px;
+      }
     }
 
-    @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
+    &._dobro {
+      //padding-top: 215px;
+      padding-top: 240px;
+      background: #7fa5d8;
+
+      @include respond-to-max($resp_step_1) {
+        padding-top: 130px;
+      }
+    }
+
+    &._bordo {
+      //padding-top: 195px;
+      padding-top: 240px;
+      background: #840938;
+
+      @include respond-to-max($resp_step_1) {
+        padding-top: 130px;
+      }
     }
   }
-
-  &._dobro {
-    //padding-top: 215px;
-    padding-top: 240px;
-    background: #7fa5d8;
-
-    @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
-    }
-  }
-
-  &._bordo {
-    //padding-top: 195px;
-    padding-top: 240px;
-    background: #840938;
-
-    @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
-    }
-  }
+  
 
   &._contacts {
     padding-top: 252px;
@@ -797,7 +810,7 @@ body {
   &._jerks {
     padding-top: 250px;
   }
-  
+
   &._last {
     padding-top: 85px;
 
@@ -1219,7 +1232,7 @@ $glass_height: 110px;
   @include respond-to-max($resp_step_1) {
     margin-bottom: 60px;
   }
-  
+
   &._mod_1 {
     margin-bottom: 15px;
 
@@ -1288,6 +1301,7 @@ $glass_height: 110px;
     display: none;
   }
 
+  ._bodro_blog &,
   .section._bodro & {
     border-color: #ff0;
 
@@ -1305,6 +1319,7 @@ $glass_height: 110px;
     }
   }
 
+  ._dobro_blog &,
   .section._dobro & {
     border-color: #7fa5d8;
 
@@ -1322,6 +1337,7 @@ $glass_height: 110px;
     }
   }
 
+  ._bordo_blog &,
   .section._bordo & {
     border-color: #840938;
 
@@ -1704,15 +1720,7 @@ $blur: 5px;
   //margin: 0 auto;
   position: relative;
   padding: 155px 155px 125px;
-
-  .slider_inner {
-    //padding-top: 175px;
-
-    //@include respond-to-max($resp_step_1) {
-    //  //padding-top: 70px;
-    //}
-  }
-
+  
   .slide_text {
     font: 500 25px/1.8 $MuseoSansCyrl;
     text-align: center;
@@ -1736,10 +1744,6 @@ $blur: 5px;
       height: 123px;
       margin-top: 65px;
       left: 0;
-
-      ._bodro_page & {
-        //top: 38%;
-      }
     }
   }
 
@@ -1754,10 +1758,6 @@ $blur: 5px;
       width: 75px;
       height: 105px;
       margin-top: 78px;
-
-      ._bodro_page & {
-        //top: 38%;
-      }
     }
   }
 
@@ -1851,10 +1851,6 @@ $blur: 5px;
 
     @include respond-to-max($resp_step_1) {
       margin-bottom: 25px;
-
-      ._bodro_page & {
-        //margin-bottom: 18px;
-      }
     }
   }
 
@@ -1874,11 +1870,6 @@ $blur: 5px;
 
   @include respond-to-max($resp_step_1) {
     padding: 72px 0 30px;
-
-    .caroufredsel_wrapper {
-      //padding: 0;
-      //min-height: 520px;
-    }
 
     ._inner_page & {
       padding-top: 82px;
@@ -1918,7 +1909,6 @@ $blur: 5px;
 
 .exercises_block {
   margin: 160px auto 28px;
-  //max-width: 1440px;
 
   .exercise_item {
     float: left;
@@ -2064,8 +2054,6 @@ $blur: 5px;
 }
 
 .dobro_preview {
-  //margin: 0 auto;
-  //max-width: 1440px;
   @extend %clearfix;
   padding: 83px 0 235px;
   position: relative;
@@ -2126,7 +2114,6 @@ $blur: 5px;
 }
 
 .dobro_preview_more {
-
   @include respond-to-max($resp_step_2) {
     position: absolute;
     bottom: 135px;
@@ -2305,9 +2292,10 @@ $blur: 5px;
   padding-top: 8px;
   padding-bottom: 147px;
   text-align: center;
-  //border-top: 1px solid rgba(255, 255, 255, .25);
 
   @include respond-to-min($resp_step_1) {
+    border-top: 1px solid rgba(255, 255, 255, .25);
+
     .project_btn {
       min-width: 294px;
     }
@@ -2674,6 +2662,7 @@ $blur: 5px;
 .bordo_counter {
   @extend %clearfix;
   border-top: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 0 0 20px 20px;
 
   .countdown-row {
     width: 100%;
@@ -2735,23 +2724,27 @@ $blur: 5px;
   .slide {
     float: left;
     position: relative;
-  }
 
-  @include respond-to-max($resp_step_2) {
     &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 70px;
-      z-index: 1;
-      border-left: 1px solid #840938;
-    }
 
-    .slide {
-      border-left: 1px solid rgba(255, 255, 255, .25);
     }
   }
+
+  //@include respond-to-max($resp_step_2) {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70px;
+    z-index: 1;
+    border-left: 1px solid #840938;
+  }
+
+  .slide {
+    border-left: 1px solid rgba(255, 255, 255, .25);
+  }
+  //}
 
   @include respond-to-max($resp_step_1) {
     padding: 38px 50px 65px;

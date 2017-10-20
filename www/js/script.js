@@ -98,15 +98,18 @@ $(function ($) {
     });
 
   var today = new Date(),
-    friday = new Date((new Date()).setHours(24, 0, 0, 0) + (today.getDay() > 5 ?
-      today.getDay() : 5 - today.getDay()) * 24 * 60 * 60 * 1000);
+    closest_friday = new Date(
+      (new Date()).setHours(0, 0, 0, 0) +
+      (today.getDay() === 5 ? 7 : (today.getDay() > 5 ? today.getDay() % 7 : 5 - today.getDay()))
+      * 24 * 60 * 60 * 1000
+    );
 
   $.countdown.regionalOptions['ru'];
 
   $("#getting-started").countdown({
     format: 'dHMS',
     padZeroes: true,
-    until: new Date(friday.getFullYear(), friday.getMonth(), friday.getDate(), 0, 0)
+    until: new Date(closest_friday.getFullYear(), closest_friday.getMonth(), closest_friday.getDate(), 0, 0)
   });
 
   initMask();
@@ -559,14 +562,26 @@ function updateSkrollr() {
   }, 1000);
 }
 
+function destroySkrollr() {
+  if (s) {
+    var elements = $('.skrollable');
+    s.destroy();
+    elements.removeAttr('style');
+  }
+}
+
+function mobileCheck() {
+  return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera) || (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+}
+
 function initSkrollr() {
-  var $window = $(window);		//Window object
+  var $window = $(window);
 
   if ($window.width() > 980) {
     var scrollTime = .1;			//Scroll time
     var scrollDistance = 50;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
 
-    $window.on("mousewheel DOMMouseScroll", function (event) {
+/*    $window.on("mousewheel DOMMouseScroll", function (event) {
       event.preventDefault();
 
       var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
@@ -579,25 +594,25 @@ function initSkrollr() {
         autoKill: true,
         overwrite: 5
       });
-    });
+    });*/
 
-    s = skrollr.init({
-      forceHeight: false,
-      //scale: .6,
-      //mobileCheck: function () {
-      //  return false;
-      //},
-      skrollrBody: 'scroll-content',
-      //edgeStrategy: 'style',
-      easing: 'easeOutQuad'
-    });
-
-  } else {
-    if (s) {
-      var elements = $('.skrollable');
-      s.destroy();
-      elements.removeAttr('style');
+    if (mobileCheck()) {
+      destroySkrollr();
+    } else {
+      s = skrollr.init({
+        forceHeight: false,
+        //scale: .6,
+        mobileCheck: function () {
+          console.log((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera) || (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)));
+          return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera) || (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+        },
+        skrollrBody: 'scroll-content',
+        //edgeStrategy: 'reset',
+        easing: 'easeOutQuad'
+      });
     }
+  } else {
+    destroySkrollr();
   }
 }
 
@@ -626,7 +641,7 @@ $(window).on('scroll', function () {
     checkScroll();
   });
 
-}).on('resize', function () {
+}).on('resize orientationchange', function () {
   var w = wnd.width();
 
   checkFullHeight();
@@ -694,6 +709,7 @@ function checkFullHeight() {
 
   $('.winW').css('width', w);
   $('.winH').css('height', h);
+  $('.winHthird').css('height', Math.floor(h / 3));
   $('.winHmin').css('min-height', h);
 }
 

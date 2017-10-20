@@ -9,14 +9,13 @@ html#skrollr-body._bodro_blog._blog_page(lang='ru')
     .wrapper
       .blog_wide_image
         img(src='i/bars_big.jpg')
+        .header_logo_holder._article._bodro_shadow
+          .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            a.logo(href='index.html')
+              .logo_slide.sectionLogo(data-target='bodro_section')
+                img._bodro(src='i/logo_bodro.png' width=174)
       .base
         div.main_content
-          .section
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
-              a.logo(href='index.html')
-                .logo_slide()
-                  img.img_hover(src='i/bdb_a.png' width=144)
-                  img(src='i/bdb_w.png' width=144)
           .section_inner
             .blog_page_info
               .blog_page_name 
@@ -48,7 +47,7 @@ html#skrollr-body._bodro_blog._blog_page(lang='ru')
                 #project_next.project_control._next
                   span СМОТРЕТЬ ПРОЕКТ
 
-          .section
+          .section._bodro
             .section_inner
               .section_title(
               data-450-center-top='transform: translate(0, 100%); opacity: 0;'
