@@ -234,7 +234,7 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                 .book_shelves: .bookSlider
                   +loop_while(10)
                     .book_unit.slide
-                      .book_item
+                      .book_wrapper: .book_item
                         .book_info: .gl_table: .gl_table_cell
                           .book_name Название книги, композиции или презентации 
                           p
@@ -262,7 +262,7 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                   a.footer_logo
                     img(src='i/bdb_w.png' width=124)
                   
-                .copyright © Copyright «BDB Group», 2017
+                .copyright: span © Copyright «BDB Group», 2017
                 .dev_block
                   span Сайт сделан:&nbsp;
                   span 

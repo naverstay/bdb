@@ -346,15 +346,30 @@ function initBookSlider() {
       });
     }
   } else {
-    if (!bookSlider) {
+    if (bookSlider) {
+      bookSlider
+        .trigger("finish")
+        .trigger("configuration", {
+          items: {
+            visible: {
+              min: 1,
+              max: w >= 768 ? 2 : 1
+            }
+          },
+          reInit: true
+        });
+    } else {
       bookSlider = $('.bookSlider').carouFredSel({
         circular: true,
         infinite: true,
+        responsive: true,
         width: '100%',
         align: false,
         items: {
-          width: 'variable',
-          visible: 1
+          visible: {
+            min: 1,
+            max: w >= 768 ? 2 : 1
+          }
         },
         auto: {
           play: false

@@ -139,10 +139,16 @@
 
     li {
       padding: 6px 10px;
-      
+
       &.mob_separator {
         display: block;
       }
+    }
+  }
+
+  @include respond-to-max(480px) {
+    li {
+      padding: 6px 3px;
     }
   }
 }
@@ -217,7 +223,7 @@ span.pagination_link {
   overflow: hidden;
   padding-bottom: 55px;
   margin: 20px -70px 0;
-  
+
   img {
     display: inline-block;
     vertical-align: top;
@@ -249,7 +255,7 @@ span.pagination_link {
 
   &._article {
     height: 325px;
-    
+
     img {
       min-width: 580px;
     }
@@ -584,7 +590,7 @@ span.pagination_link {
 
 .mosaic_item {
   overflow: hidden;
-  
+
   img {
     display: block;
     width: 102%;
