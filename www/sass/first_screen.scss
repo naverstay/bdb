@@ -732,42 +732,43 @@ body {
     padding-bottom: 1px;
   }
 
-  ._home & {
-    &._bodro {
-      //padding-top: 225px;
-      padding-top: 240px;
+  &._bodro {
+    //padding-top: 225px;
+    padding-top: 240px;
 
-      ._bodro_page & {
-        padding-top: 145px;
-      }
-
-      @include respond-to-max($resp_step_1) {
-        padding-top: 130px;
-      }
+    ._bodro_page & {
+      padding-top: 145px;
     }
 
-    &._dobro {
-      //padding-top: 215px;
-      padding-top: 240px;
-      background: #7fa5d8;
-
-      @include respond-to-max($resp_step_1) {
-        padding-top: 130px;
-      }
-    }
-
-    &._bordo {
-      //padding-top: 195px;
-      padding-top: 240px;
-      background: #840938;
-
-      @include respond-to-max($resp_step_1) {
-        padding-top: 130px;
-      }
+    @include respond-to-max($resp_step_1) {
+      padding-top: 130px;
     }
   }
-  
 
+  &._dobro {
+    //padding-top: 215px;
+    padding-top: 240px;
+    background: #7fa5d8;
+
+    @include respond-to-max($resp_step_1) {
+      padding-top: 130px;
+    }
+  }
+
+  &._bordo {
+    //padding-top: 195px;
+    padding-top: 240px;
+    background: #840938;
+
+    @include respond-to-max($resp_step_1) {
+      padding-top: 130px;
+    }
+  }
+
+  ._blog_page & {
+    padding-top: 0;
+  }
+  
   &._contacts {
     padding-top: 252px;
     background: #000;
