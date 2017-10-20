@@ -7,15 +7,14 @@ html#skrollr-body(lang='ru')
     +header()
     +menu_holder()
     .wrapper
-      .header_logo_holder
-        .section_logo(data-sticky-class='_stuck' data-margin-top=80)
-          a.logo(href='index.html')
-            .logo_slide()
-              img.img_hover(src='i/bdb_a.png' width=144)
-              img(src='i/bdb_w.png' width=144)
       .base
         div.main_content
           .section._blog
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+              a.logo(href='index.html')
+                .logo_slide()
+                  img.img_hover(src='i/bdb_a.png' width=144)
+                  img(src='i/bdb_w.png' width=144)
             .section_inner
               .section_title(
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
@@ -30,6 +29,7 @@ html#skrollr-body(lang='ru')
                     label.check_v3
                       input.inp_hidden(type='radio' checked name='blog_filter')
                       span.check_text.btn_white.check_btn.btn_v2(data-text='ВСЕ СТАТЬИ'): span ВСЕ СТАТЬИ
+                  li.mob_separator &nbsp;
                   li
                     label.check_v3
                       input.inp_hidden(type='radio' name='blog_filter')
@@ -72,7 +72,11 @@ html#skrollr-body(lang='ru')
                       p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                         span ПОДРОБНЕЕ
 
-              ul.blog_pagination
+              .mob_only
+                a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ДРУГИЕ СТАТЬИ')
+                  span СМОТРЕТЬ ДРУГИЕ СТАТЬИ
+                
+              ul.blog_pagination.mob_hidden
                 li._prev
                   a.pagination_link.btn_white._prev(href='#')
                 li._page

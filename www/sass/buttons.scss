@@ -152,18 +152,6 @@ $resp_step_1: 980px;
     }
   }
 
-  ._bordo_projects .project_info & {
-    border-color: #840938;
-
-    &:hover {
-      background: #840938;
-
-      &:after {
-        color: #fff;
-      }
-    }
-  }
-
   .section._bodro & {
     border-color: #ff0;
     color: #ff0;
@@ -202,6 +190,30 @@ $resp_step_1: 980px;
     }
   }
 
+  ._bordo_projects .project_info & {
+    border-color: #840938;
+
+    &:hover {
+      background: #840938;
+
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+
+  ._dobro_projects .project_info & {
+    border-color: #6ba3ee;
+
+    &:hover {
+      background: #6ba3ee;
+
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+  
   &[disabled='disabled'] {
     opacity: .25;
     color: #fff !important;

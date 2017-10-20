@@ -97,8 +97,17 @@
   @include respond-to-max($resp_step_1) {
     max-width: 150px;
 
+    .section_logo &,
+    .section._contacts &,
     .header_logo_holder & {
-      max-width: 100px;
+      
+      .img_hover {
+        max-width: 90px;
+        
+        + img {
+          max-width: 90px;
+        }
+      }
     }
 
     ._dobro_page & {
@@ -638,7 +647,7 @@ body.menu-is-closing .header__burger span:nth-child(2):after {
   }
 
   @include respond-to-max($resp_step_1) {
-    top: 25px;
+    top: 30px;
 
     .logo {
       max-width: 100px;
@@ -648,7 +657,7 @@ body.menu-is-closing .header__burger span:nth-child(2):after {
 
 .mob_phone {
   text-align: center;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .main_menu {

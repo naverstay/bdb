@@ -139,6 +139,10 @@
 
     li {
       padding: 6px 10px;
+      
+      &.mob_separator {
+        display: block;
+      }
     }
   }
 }

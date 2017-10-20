@@ -340,6 +340,10 @@ body {
   top: 70px;
   height: 200px;
 
+  @include respond-to-max($resp_step_1) {
+    height: 120px;
+  }
+  
   ._home & {
     top: 0;
     height: 100%;
@@ -2409,6 +2413,7 @@ $blur: 5px;
         top: 50%;
         margin-top: -179px;
         opacity: .5;
+        z-index: -1;
       }
 
       &:before {
