@@ -355,7 +355,7 @@ body {
   &._article {
     position: fixed !important;
     top: 0;
-    height: 153px;
+    //height: 153px;
   }
 
   ._blog_page & {
@@ -381,16 +381,26 @@ body {
   }
 
   &._dobro_shadow:after {
-    background: -moz-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
-    background: -webkit-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
-    background: linear-gradient(to bottom, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6ba3ee', endColorstr='#006ba3ee', GradientType=0);
+    //background: -moz-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
+    //background: -webkit-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
+    //background: linear-gradient(to bottom, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 100%);
+    //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6ba3ee', endColorstr='#006ba3ee', GradientType=0);
+
+    background: -moz-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 53%, rgba(125, 185, 232, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 53%, rgba(125, 185, 232, 0) 100%);
+    background: linear-gradient(to bottom, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 53%, rgba(125, 185, 232, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6ba3ee', endColorstr='#007db9e8', GradientType=0);
   }
 
   &._bordo_shadow:after {
-    background: -moz-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
-    background: -webkit-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
-    background: linear-gradient(to bottom, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    //background: -moz-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    //background: -webkit-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    //background: linear-gradient(to bottom, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 100%);
+    //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#840938', endColorstr='#00840938', GradientType=0);
+
+    background: -moz-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 53%, rgba(132, 9, 56, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 53%, rgba(132, 9, 56, 0) 100%);
+    background: linear-gradient(to bottom, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 53%, rgba(132, 9, 56, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#840938', endColorstr='#00840938', GradientType=0);
   }
 }
@@ -706,8 +716,9 @@ body {
 
 .section_logo {
   @extend %translate3d;
-  position: absolute;
+  will-change: transform;
   top: 0;
+  position: absolute;
   left: 0;
   right: 0;
   text-align: center;
@@ -715,6 +726,10 @@ body {
 
   &._stuck {
     z-index: 23;
+  }
+
+  ._article & {
+    top: 0 !important;
   }
 
   .menu-is-open & {
@@ -768,7 +783,7 @@ body {
   ._blog_page & {
     padding-top: 0;
   }
-  
+
   &._contacts {
     padding-top: 252px;
     background: #000;
@@ -864,6 +879,7 @@ $glass_width: 144px;
 $glass_height: 110px;
 
 .bg_glass {
+  will-change: transform;
   position: absolute;
   height: $glass_height;
   width: $glass_width;
@@ -1721,7 +1737,7 @@ $blur: 5px;
   //margin: 0 auto;
   position: relative;
   padding: 155px 155px 125px;
-  
+
   .slide_text {
     font: 500 25px/1.8 $MuseoSansCyrl;
     text-align: center;
@@ -2489,11 +2505,7 @@ $blur: 5px;
 
 .insta_holder {
   position: relative;
-  height: 244px;
-
-  @include respond-to-max($resp_step_1) {
-    height: 234px;
-  }
+  min-height: 244px;
 }
 
 .insta_container {
@@ -2512,7 +2524,7 @@ $blur: 5px;
 
 .insta_controls {
   text-align: center;
-  padding-bottom: 85px;
+  padding: 25px 0 85px;
 
   @include respond-to-min($resp_step_1) {
     position: relative;
@@ -2805,7 +2817,7 @@ $blur: 5px;
       left: 28px;
 
       @include respond-to-max($resp_step_0) {
-        left: 1px;
+        left: 10px;
       }
     }
 
@@ -2813,7 +2825,7 @@ $blur: 5px;
       right: 28px;
 
       @include respond-to-max($resp_step_0) {
-        right: 1px;
+        right: 10px;
       }
     }
   }

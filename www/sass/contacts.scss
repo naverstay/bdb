@@ -472,7 +472,8 @@ span.pagination_link {
   height: 60px;
 
   @include respond-to-max($resp_step_2) {
-    bottom: 8px;
+    bottom: 0;
+    height: 35px;
   }
 }
 
@@ -502,11 +503,30 @@ span.pagination_link {
     }
 
     @include respond-to-max($resp_step_2) {
-      left: 120px;
+      right: 50%;
+      left: auto;
+      margin-right: 22%;
+
+      span {
+        left: 50%;
+        margin-right: 0;
+        width: 200px;
+        margin-left: -100px;
+        text-align: center;
+        bottom: 100%;
+        margin-bottom: 20px;
+        font-size: 16px;
+        padding: 0;
+      }
     }
 
     @include respond-to-max($resp_step_1) {
-      left: 0;
+      //left: 0;
+
+      span {
+        font-size: 11px;
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -519,11 +539,30 @@ span.pagination_link {
     }
 
     @include respond-to-max($resp_step_2) {
-      right: 120px;
+      left: 50%;
+      right: auto;
+      margin-left: 22%;
+
+      span {
+        right: 50%;
+        margin-right: -100px;
+        margin-left: 0;
+        width: 200px;
+        text-align: center;
+        bottom: 100%;
+        margin-bottom: 20px;
+        font-size: 16px;
+        padding: 0;
+      }
     }
 
     @include respond-to-max($resp_step_1) {
-      right: 0;
+      //right: 0;
+
+      span {
+        font-size: 11px;
+        margin-bottom: 10px;
+      }
     }
   }
 }

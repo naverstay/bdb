@@ -89,6 +89,7 @@
 
 .logo {
   @include transform_translate(0, -45px);
+  will-change: transform;
   display: inline-block;
   position: relative;
   overflow: hidden;

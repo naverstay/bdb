@@ -30,6 +30,7 @@ $resp_step_1: 980px;
     display: block;
   }
 
+  ._dobro_blog &,
   ._dobro_page & {
     background: #7fa5d8;
 
@@ -38,6 +39,7 @@ $resp_step_1: 980px;
     }
   }
 
+  ._bordo_blog &,
   ._bordo_page & {
     background: #840938;
 
@@ -104,10 +106,12 @@ $resp_step_1: 980px;
     }
   }
 
+  ._dobro_blog &,
   ._dobro_page & {
     background: #7fa5d8;
   }
 
+  ._bordo_blog &,
   ._bordo_page & {
     background: #840938;
   }
@@ -202,7 +206,7 @@ $resp_step_1: 980px;
     vertical-align: middle;
     line-height: 1;
   }
-  
+
   @include respond-to-min($resp_step_1) {
     left: 30px;
   }
@@ -223,16 +227,16 @@ $resp_step_1: 980px;
 
   img {
     display: block;
-    
+
     @include respond-to-max(480px) {
-      max-width: 40px; 
+      max-width: 40px;
     }
   }
 
   @include respond-to-min($resp_step_1) {
     right: 35px;
   }
-  
+
   @include respond-to-max(480px) {
     margin-right: -10px;
   }
