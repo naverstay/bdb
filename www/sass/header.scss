@@ -59,7 +59,7 @@
   &._fixed {
     //top: 10px;
   }
-  
+
   .menu-is-open & {
     background: #000;
 
@@ -71,7 +71,7 @@
   @include respond-to-min($resp_step_1) {
     top: 65px;
     line-height: 70px;
-    
+
     &:after {
       top: -65px;
     }
@@ -101,10 +101,10 @@
     .section_logo &,
     .section._contacts &,
     .header_logo_holder & {
-      
+
       .img_hover {
         max-width: 90px;
-        
+
         + img {
           max-width: 90px;
         }
@@ -214,6 +214,10 @@
   left: 20px;
   top: 8px;
 
+  @include respond-to-min($resp_step_1) {
+    left: 70px;
+  }
+
   @include respond-to-max($resp_step_1) {
     top: 17px;
   }
@@ -232,10 +236,9 @@
   will-change: transform;
 
   @include respond-to-min($resp_step_1) {
-    -webkit-transform: translate3d(50px, 0, 0);
-    transform: translate3d(50px, 0, 0);
+    //-webkit-transform: translate3d(50px, 0, 0);
+    //transform: translate3d(50px, 0, 0);
   }
-
 }
 
 .header__burger.allow-hover {
@@ -887,11 +890,15 @@ $splash_width: 145px;
     padding: 12px 15px 0 0;
   }
 
-  @include respond-to-max($resp_step_1) {
-    max-width: 80%;
+  @include respond-to-max($resp_step_2) {
+    max-width: 60%;
     margin: 0 auto;
-    width: 130px;
     padding-right: 0 !important;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    width: 130px;
+    max-width: 80%;
 
     &:before,
     &:after {
@@ -932,6 +939,13 @@ $splash_width: 145px;
         width: 20px;
       }
     }
+  }
+}
+
+@media only screen and (min-width: $resp_step_01) and (max-width: $resp_step_1 - 1) {
+  .nav_img {
+    width: 230px;
+    margin: 0 auto;
   }
 }
 
@@ -1017,16 +1031,30 @@ $splash_width: 145px;
 }
 
 .menu_links {
+  text-align: center;
   display: table;
   width: 100%;
   table-layout: fixed;
 
   li {
     display: table-cell;
-    text-align: center;
     vertical-align: middle;
-    padding: 5px;
   }
+}
+
+@media only screen and (max-width: ($resp_step_1 - 1)) and (orientation: portrait) {
+  .menu_links {
+    display: block;
+
+    li {
+      display: block;
+
+      + li {
+        margin-top: 30px;
+      }
+    }
+  }
+
 }
 
 .menu_link {

@@ -46,9 +46,25 @@ body {
   overflow-x: hidden;
   opacity: 0;
 
+  &:before {
+    @include transition_all(right .3s);
+    content: '';
+    position: fixed;
+    top: -300px;
+    bottom: -300px;
+    left: 0;
+    right: 100%;
+    background: #000;
+    z-index: 23;
+  }
+
   &.modal_opened,
   &.menu-is-open {
     overflow: hidden;
+
+    &:before {
+      right: 0;
+    }
   }
 
   &.dom-is-loaded {
@@ -430,8 +446,12 @@ body {
     }
   }
 
+  @include respond-to-max($resp_step_2) {
+  }
+
   @include respond-to-max($resp_step_1) {
     height: 640px;
+    min-height: 0 !important;
   }
 }
 
@@ -825,6 +845,14 @@ body {
 
   &._jerks {
     padding-top: 250px;
+
+    @include respond-to-max($resp_step_2) {
+      padding-top: 230px;
+    }
+
+    @include respond-to-max($resp_step_1) {
+      padding-top: 140px;
+    }
   }
 
   &._last {
@@ -1001,7 +1029,7 @@ $glass_height: 110px;
     background-size: cover;
 
     @include respond-to-max($resp_step_1) {
-      height: 400px;
+      height: 480px;
     }
   }
 }
@@ -1965,6 +1993,10 @@ $blur: 5px;
     }
   }
 
+  &._mod_1 {
+    margin-bottom: 70px;
+  }
+
   @include respond-to-min($resp_step_1) {
     &._mod_1 {
       margin-bottom: 170px;
@@ -2128,6 +2160,10 @@ $blur: 5px;
       padding-top: 170px;
     }
   }
+
+  &._mod_1 {
+    padding-bottom: 0;
+  }
 }
 
 .dobro_preview_more {
@@ -2195,14 +2231,16 @@ $blur: 5px;
   text-align: center;
   padding: 30px 0 80px;
 
-  //&:before {
-  //  border-top: 1px solid rgba(255, 255, 255, .25);
-  //  content: '';
-  //  position: absolute;
-  //  top: 0;
-  //  right: -30px;
-  //  left: -30px;
-  //}
+  ._bodro_page & {
+    &:before {
+      border-top: 1px solid rgba(255, 255, 255, .25);
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -30px;
+      left: -30px;
+    }
+  }
 }
 
 .blog_list {
@@ -2513,7 +2551,7 @@ $blur: 5px;
 
   @include respond-to-min($resp_step_1) {
     ._bodro_page & {
-      margin-top: 145px;
+      margin-top: 45px;
     }
   }
 
@@ -2641,7 +2679,7 @@ $blur: 5px;
   overflow: hidden;
   width: 666px;
   margin: 135px auto 75px;
-  border-radius: 20px;
+  //border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, .25);
   text-align: center;
   color: #fff;
@@ -2675,13 +2713,13 @@ $blur: 5px;
 .bordo_counter {
   @extend %clearfix;
   border-top: 1px solid rgba(255, 255, 255, .25);
-  border-radius: 0 0 20px 20px;
+  //border-radius: 0 0 20px 20px;
 
   .countdown-row {
     width: 100%;
     display: table;
     table-layout: fixed;
-    border-radius: 0 0 20px 20px;
+    //border-radius: 0 0 20px 20px;
     overflow: hidden;
   }
 
@@ -2694,11 +2732,11 @@ $blur: 5px;
 
     &:first-child {
       border-left: 0;
-      border-radius: 0 0 0 20px;
+      //border-radius: 0 0 0 20px;
     }
-    
+
     &:last-child {
-      border-radius: 0 0 20px 0;
+      //border-radius: 0 0 20px 0;
     }
 
     @include respond-to-max($resp_step_1) {
@@ -2992,6 +3030,12 @@ $blur: 5px;
 
 .dt_hidden {
   @include respond-to-min($resp_step_1) {
+    display: none !important;
+  }
+}
+
+.wide_hidden {
+  @include respond-to-min($resp_step_2) {
     display: none !important;
   }
 }

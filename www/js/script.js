@@ -340,7 +340,7 @@ function initSlider(cb) {
 function initBookSlider() {
   var w = wnd.width();
 
-  if (w > 980) {
+  if (w > 1280) {
     if (bookSlider) {
       bookSlider.trigger("destroy");
 
@@ -356,7 +356,7 @@ function initBookSlider() {
           items: {
             visible: {
               min: 1,
-              max: w >= 768 ? 2 : 1
+              max: w >= 980 ? 3 : w >= 768 ? 2 : 1
             }
           },
           reInit: true
@@ -371,7 +371,7 @@ function initBookSlider() {
         items: {
           visible: {
             min: 1,
-            max: w >= 768 ? 2 : 1
+            max: w >= 980 ? 3 : w >= 768 ? 2 : 1
           }
         },
         auto: {
@@ -581,20 +581,20 @@ function initSkrollr() {
     var scrollTime = .1;			//Scroll time
     var scrollDistance = 50;		//Distance. Use smaller value for shorter scroll and greater value for longer scroll
 
-/*    $window.on("mousewheel DOMMouseScroll", function (event) {
-      event.preventDefault();
-
-      var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
-      var scrollTop = getScrollTop();
-      var finalScroll = scrollTop - parseInt(delta * scrollDistance);
-
-      TweenMax.to($window, scrollTime, {
-        scrollTo: {y: finalScroll, autoKill: true},
-        ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
-        autoKill: true,
-        overwrite: 5
-      });
-    });*/
+    /*    $window.on("mousewheel DOMMouseScroll", function (event) {
+          event.preventDefault();
+    
+          var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
+          var scrollTop = getScrollTop();
+          var finalScroll = scrollTop - parseInt(delta * scrollDistance);
+    
+          TweenMax.to($window, scrollTime, {
+            scrollTo: {y: finalScroll, autoKill: true},
+            ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
+            autoKill: true,
+            overwrite: 5
+          });
+        });*/
 
     if (mobileCheck()) {
       destroySkrollr();
