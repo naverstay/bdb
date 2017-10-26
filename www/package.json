@@ -1,6 +1,6 @@
 {
-  "name": "Sarah",
-  "version": "0.0.1",
+  "name": "DBD",
+  "version": "0.9.1",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-pug": "^1.0.0",
