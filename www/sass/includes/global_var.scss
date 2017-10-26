@@ -800,7 +800,7 @@ $placeholder_color: #ccc;
   }
 }
 
-@mixin animation($animation, $duration, $timing-function : linear, $delay : 0, $direction : normal, $iteration-count : infinite, $fill-mode : both, $check : false, $full : false) {
+@mixin animation($animation, $duration, $timing-function : linear, $delay : 0s, $direction : normal, $iteration-count : infinite, $fill-mode : both, $check : false, $full : false) {
   @if $check == false {
     @if $all == true {
       @if $full != true {

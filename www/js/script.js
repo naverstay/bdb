@@ -46,6 +46,21 @@ $(function ($) {
   });
 
   body_var
+    .delegate('.playVideo', 'click', function () {
+      var video = $(this).closest('.video_block'), frame = video.find('iframe');
+
+      if (frame && frame.length) {
+        if (video.hasClass('_playing')) {
+          video.removeClass('_playing');
+          callPlayer(frame, 'pauseVideo');
+        } else {
+          video.addClass('_playing');
+          callPlayer(frame, 'playVideo');
+        }
+      }
+      
+      return false;
+    })
     .delegate('.callbackForm', 'submit', function () {
 
       if ($('#agreement_check').prop('checked')) {

@@ -1,3 +1,93 @@
+@include keyframe_sub('clouds') {
+  100% {
+    @include transform_translate(-2073px);
+  }
+}
+
+@include keyframe_sub('spin') {
+  100% {
+    @include transform_rotate(360);
+  }
+}
+
+@include keyframe_sub('left_projector_1') {
+  20% {
+    @include transform_skew(29, -29);
+  }
+  40% {
+    @include transform_skew(20, -20);
+  }
+  60% {
+    @include transform_skew(0, 0);
+  }
+  80% {
+    @include transform_skew(29, -29);
+  }
+  100% {
+    @include transform_skew(0, 0);
+  }
+}
+
+@include keyframe_sub('right_projector_1') {
+  20% {
+    @include transform_skew(0, 29);
+  }
+  40% {
+    @include transform_skew(5, 20);
+  }
+  60% {
+    @include transform_skew(10, 30);
+  }
+  80% {
+    @include transform_skew(10, 0);
+  }
+  90% {
+    @include transform_skew(20, 10);
+  }
+  100% {
+    @include transform_skew(0, 0);
+  }
+}
+
+@include keyframe_sub('left_projector_2') {
+  20% {
+    @include transform_skew(-10, -20);
+  }
+  40% {
+    @include transform_skew(9, -29);
+  }
+  60% {
+    @include transform_skew(10, 10);
+  }
+  80% {
+    @include transform_skew(-19, -29);
+  }
+  100% {
+    @include transform_skew(0, 0);
+  }
+}
+
+@include keyframe_sub('right_projector_2') {
+  20% {
+    @include transform_skew(5, 20);
+  }
+  40% {
+    @include transform_skew(0, 29);
+  }
+  60% {
+    @include transform_skew(20, 10);
+  }
+  80% {
+    @include transform_skew(10, 0);
+  }
+  90% {
+    @include transform_skew(10, 30);
+  }
+  100% {
+    @include transform_skew(0, 0);
+  }
+}
+
 html, body {
   //height: 100%;
 }
@@ -877,6 +967,10 @@ body {
   opacity: .5;
 
   &._dobro {
+    @extend %translate3d;
+    @include animation(clouds, 20s, linear, 0s);
+    left: -5000px;
+    right: -5000px;
     background: url(../i/bg_dobro.png) repeat-x 50% 0;
 
     @include respond-to-max($resp_step_1) {
@@ -934,6 +1028,22 @@ $glass_height: 110px;
         }
       }
     }
+  }
+
+  &.bg_glass_1 {
+    @include animation(spin, 4s, linear, 0s);
+  }
+
+  &.bg_glass_2 {
+    @include animation(spin, 4s, linear, 1s);
+  }
+
+  &.bg_glass_3 {
+    @include animation(spin, 4s, linear, 2s);
+  }
+
+  &.bg_glass_4 {
+    @include animation(spin, 4s, linear, 3s);
   }
 }
 
@@ -1435,7 +1545,6 @@ $glass_height: 110px;
   bottom: -435px;
 
   .projector {
-    //left: 0;
     left: -120px;
     width: 2669px;
     height: 1802px;
@@ -1443,11 +1552,26 @@ $glass_height: 110px;
     //transform-origin: 0 0;
     //transform-origin: bottom;
 
-    &:before {
-      width: 2669px;
-      height: 1802px;
-      background: url(../i/proj_l.png) no-repeat 0 0;
+    &._proj_1 {
+      @include animation(left_projector_1, 15s, linear);
+
+      &:before {
+        width: 2669px;
+        height: 1802px;
+        background: url(../i/ray_left_1.png) no-repeat 0 0;
+      }
     }
+
+    &._proj_2 {
+      @include animation(left_projector_2, 15s, linear);
+
+      &:before {
+        width: 2611px;
+        height: 1499px;
+        background: url(../i/ray_left_2.png) no-repeat 0 0;
+      }
+    }
+
   }
 
   @include respond-to-max($resp_step_1) {
@@ -1471,10 +1595,24 @@ $glass_height: 110px;
     height: 2396px;
     transform-origin: 100% 100%;
 
-    &:before {
-      width: 2641px;
-      height: 2396px;
-      background: url(../i/proj_r.png) no-repeat 0 0;
+    &._proj_1 {
+      @include animation(right_projector_1, 15s, linear);
+
+      &:before {
+        width: 2631px;
+        height: 2396px;
+        background: url(../i/ray_right_1.png) no-repeat 0 0;
+      }
+    }
+
+    &._proj_2 {
+      @include animation(right_projector_2, 15s, linear);
+
+      &:before {
+        width: 2641px;
+        height: 2046px;
+        background: url(../i/ray_right_2.png) no-repeat 0 0;
+      }
     }
   }
 
@@ -1488,6 +1626,7 @@ $glass_height: 110px;
 }
 
 .projector {
+  @extend %translate3d;
   position: absolute;
   bottom: 0;
   //width: 1500px;

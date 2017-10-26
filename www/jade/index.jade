@@ -77,28 +77,15 @@ html#skrollr-body._home(lang='ru')
               .video_block
                 .video_w
                   <iframe id="video_1" class="playOnScroll" width="560" height="315" src="https://www.youtube.com/embed/eKXjnhpKEMw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-                .video_btn
+                .video_btn.playVideo
                   
             .projectors_holder
               .projector_left
-                .projector(
-                data-2300-bottom-bottom='transform: skew(29deg, -29deg);'
-                data-1650-bottom-bottom='transform: skew(10deg, -10deg);'
-                data-1250-bottom-bottom='transform: skew(20deg, -20deg);'
-                data-850-bottom-bottom='transform: skew(0deg, 0deg);'
-                data-400-bottom-bottom='transform: skew(15deg, -15deg);'
-                data-bottom-bottom='transform: skew(0deg, 0deg);'
-                )
+                .projector._proj_1
+                .projector._proj_2
               .projector_right
-                .projector(
-                data-2700-bottom-bottom='transform: skew(0deg, 29deg);'
-                data-2300-bottom-bottom='transform: skew(5deg, 20deg);'
-                data-1950-bottom-bottom='transform: skew(10deg, 30deg);'
-                data-1500-bottom-bottom='transform: skew(0deg, 15deg);'
-                data-1050-bottom-bottom='transform: skew(10deg, 0deg);'
-                data-750-bottom-bottom='transform: skew(20deg, 10deg);'
-                data-200-bottom-bottom='transform: skew(0deg, 0deg);'
-                )
+                .projector._proj_1
+                .projector._proj_2
                   
             .section_inner
               .project_holder
@@ -287,7 +274,7 @@ html#skrollr-body._home(lang='ru')
                 data-10p-center-top='transform: translate(0, 0%); opacity: 1;'
                 )
                   .video_w
-                  .video_btn
+                  .video_btn.playVideo
                     
               .section_title(
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
@@ -379,21 +366,13 @@ html#skrollr-body._home(lang='ru')
                     while i < 24
                       - i++;
                       - k = 1;
-                      .bg_glass(_style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40 
-                        data-50p-center-top='transform: rotate(' + (45 * k * (i % 8)) + 'deg);'
-                        data--50p-center-top='transform: rotate(' + (rotation + (45 * k * (i % 8))) + 'deg);')
+                      .bg_glass(class='bg_glass_1' _style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40)
                       - k = 2;
-                      .bg_glass(_style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40
-                        data-50p-center-top='transform: rotate(' + (45 * k * (i % 8)) + 'deg);'
-                        data--50p-center-top='transform: rotate(' + (rotation + (45 * k * (i % 8))) + 'deg);')
+                      .bg_glass(class='bg_glass_2' _style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40)
                       - k = 3;
-                      .bg_glass(_style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40
-                        data-50p-center-top='transform: rotate(' + (45 * k * (i % 8)) + 'deg);'
-                        data--50p-center-top='transform: rotate(' + (rotation + (45 * k * (i % 8))) + 'deg);')
+                      .bg_glass(class='bg_glass_3' _style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40)
                       - k = 4;
-                      .bg_glass(_style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40
-                        data-50p-center-top='transform: rotate(' + (45 * k * (i % 8)) + 'deg);'
-                        data--50p-center-top='transform: rotate(' + (rotation + (45 * k * (i % 8))) + 'deg);')
+                      .bg_glass(class='bg_glass_4' _style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k-1) * 40)
                     
                 .bodro_hero_msg._bordo(
                 data-200-center-top='transform: scale(.01); opacity: 1;'
@@ -444,7 +423,7 @@ html#skrollr-body._home(lang='ru')
                 data-10p-center-top='transform: translate(0, 0%); opacity: 1;'
                 )
                   .video_w
-                  .video_btn
+                  .video_btn.playVideo
                     
               .project_holder._bordo_projects
                 .bordo_glass._left.mob_hidden(
