@@ -20,6 +20,13 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                   - var i=0, rotation = 360;
                     while i < 24
                       - i++;
+                      .bg_glass(class='bg_glass_1')
+                      .bg_glass(class='bg_glass_2')
+                      .bg_glass(class='bg_glass_3')
+                      .bg_glass(class='bg_glass_4')
+
+                    //-while i < 24
+                      - i++;
                       - k = 1;
                       .bg_glass(_style='transform: rotate(' + (45 * k * (i % 8)) + 'deg);' data-index= i + (k - 1) * 40
                       data-50p-center-top='transform: rotate(' + (45 * k * (i % 8)) + 'deg);'
@@ -42,12 +49,12 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                 data-100-center-top='transform: scale(1); opacity: 1;'
                 )
                   .bodro_hero_corner
-                  .bodro_hero_text 
+                  .bodro_hero_text
                     .bodro_hero_title IN BORDO VERITAS!
-                    p 
-                      span Здесь, в BODRO, мы находим необычное в самых обычных вещах, делаем то, что до этого считалось невозможным, экспериментируем с креативом и дизайном, создаём тренды, 
-                      span.mob_hidden <br> 
-                      span  а не следуем им. 
+                    p
+                      span Здесь, в BODRO, мы находим необычное в самых обычных вещах, делаем то, что до этого считалось невозможным, экспериментируем с креативом и дизайном, создаём тренды,
+                      span.mob_hidden <br>
+                      span  а не следуем им.
 
                 .hero_w(
                 data-850-center-top='transform: translate(0, 100%);transform-origin: 50% 0% 0;'
@@ -64,12 +71,12 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                       .line_slide: span НЕ ТАМ, МОЛОДОЙ САМУРАЙ, ИЩЕШЬ ТЫ РАДОСТЕЙ В ЖИЗНИ. ДОРОГА ТЕБЕ - В BODRO!
                       .line_slide: span САМЫЙ ЦЕННЫЙ РЕСУРС - ВРЕМЯ!
                       .line_slide: span ДЬЯВОЛ КРОЕТСЯ В ДЕТАЛЯХ!
-                      
+
             .section_inner
               .bordo_counter_holder
                 p До пятницы осталось
                 #getting-started.bordo_counter
-                  
+
               .project_holder._bordo_projects
                 .bordo_glass._left.mob_hidden(
                 data-45p-center-top='left: 50%;'
@@ -116,7 +123,7 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                   .more_projects
                     a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ')
                       span СМОТРЕТЬ ЕЩЕ ПРОЕКТЫ
-                      
+
             .section_inner
               .idea_slider
                 .ideaSlider.slider_inner
@@ -128,7 +135,7 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                         p
                           span Есть идеи, что ещё должно быть на нашем сайте?!
                           span.dt_only <br>
-                          span  Присылай на 
+                          span  Присылай на
                           a.slide_link(href='#') ideas@bodro.agency!
                           span <br>На кону 2 заряженных на успех футболки!
 
@@ -144,7 +151,7 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
                 span(data-title='Блог') Блог
-                
+
               .dobro_preview_text.mob_only
                 p Производишь крутой товар или оказываешь уникальную услугу? Точно-точно!? Тогда давай дружить компаниями! Приходи к нам в гости или пригласи нас к себе, пообщаемся, расскажем о твоей компании в нашем блоге и обязательно найдём варианты взаимовыгодного сотрудничества!
 
@@ -153,33 +160,33 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога
-                    
+
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                     p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
-                    
+
                 li
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога<br>в две строки
-                    
+
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                     p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
-                    
+
                 li.dt_only
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога
-                    
+
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                     p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
-                      
+
               .blog_footer
                 a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ДРУГИЕ СТАТЬИ')
                   span СМОТРЕТЬ ДРУГИЕ СТАТЬИ
-                      
+
               .section_title(
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
@@ -224,23 +231,23 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
                 data-45p-center-top='left: 50%;'
                 data--30p-center-top='left: 120%;'
                 )
-                  
+
                 .section_title(
                 data-450-center-top='transform: translate(0, 100%); opacity: 0;'
                 data-300-center-top='transform: translate(0, 0%); opacity: 1;'
                 )
                   span(data-title='Книжная полка') Книжная полка
-                  
+
                 .book_shelves: .bookSlider
                   +loop_while(10)
                     .book_unit.slide
                       .book_wrapper: .book_item
                         .book_info: .gl_table: .gl_table_cell
-                          .book_name Название книги, композиции или презентации 
+                          .book_name Название книги, композиции или презентации
                           p
                             a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='СКАЧАТЬ')
                               span СКАЧАТЬ
-                              
+
                 .book_controls.wide_hidden
                   #book_prev.book_control._prev
                   #book_next.book_control._next
@@ -251,24 +258,24 @@ html#skrollr-body._inner_page._bordo_page(lang='ru')
               data-300-center-top='transform: translate(0, 0%); opacity: 1;'
               )
                 span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
-                
+
               .text_center.subscribe_block
                 a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
                   span СВЯЗАТЬСЯ
-                
+
             .footer
               .section_inner.clearfix
                 .footer_logo_holder.mob_hidden
                   a.footer_logo
                     img(src='i/bdb_w.png' width=124)
-                  
+
                 .copyright: span © Copyright «BDB Group», 2017
                 .dev_block
                   span Сайт сделан:&nbsp;
-                  span 
+                  span
                     img(src='i/friend_5.png' width=58)
-                    
+
     +popups(true)
 
     +scripts()
-    
+

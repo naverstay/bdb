@@ -1022,12 +1022,16 @@ $glass_height: 110px;
           left: $i * $glass_width / 2;
           top: ($k - 1) * $glass_height / 2;
           margin-left: (1 - $k % 2) * 22px;
-          -webkit-transform: scale(.5) rotate(45deg * ($i * $k % 8));
-          -ms-transform: scale(.5) rotate(45deg * ($i * $k % 8));
-          transform: scale(.5) rotate(45deg * ($i * $k % 8));
+          //-webkit-transform: scale(.5) rotate(45deg * ($i * $k % 8));
+          //-ms-transform: scale(.5) rotate(45deg * ($i * $k % 8));
+          //transform: scale(.5) rotate(45deg * ($i * $k % 8));
         }
       }
     }
+  }
+
+  @include respond-to-max($resp_step_1) {
+    background-size: 12%;
   }
 
   &.bg_glass_1 {
@@ -1202,6 +1206,20 @@ $glass_height: 110px;
       @include respond-to-max($resp_step_1) {
         margin-top: 10px;
       }
+    }
+  }
+}
+
+.bodro_hero_msg_holder {
+  position: relative;
+  padding-bottom: 1px;
+
+  .section_bg {
+    top: 100%;
+    bottom: auto;
+
+    @include respond-to-min($resp_step_2) {
+      margin-top: 70px;
     }
   }
 }
