@@ -13,11 +13,13 @@ html#skrollr-body._home(lang='ru')
             .logo_slide.firstLogo(data-target='hero_section')
               img._bodro.img_hover(src='i/bdb_a.png' width=144)
               img._bodro(src='i/bdb_w.png' width=144)
-      .hero_block.winH
+      .hero_block
         .hero_slider.heroSlider
           +loop_while(3)
             .slide
-              .gl_table
+              .main_slide
+                img(src='i/signboard.jpg')
+              .hero_block_text.winH: .gl_table
                 .gl_table_cell
                   .section_inner.winW
                     .hero_caption
@@ -28,21 +30,22 @@ html#skrollr-body._home(lang='ru')
                       span  Вселенной*
                     p *по данным межгалактического креативного союза
 
-        .hero_pager
-          #hero_pager.section_inner
+        .main_slider_controls: .hero_block_text.winH
+          .hero_pager
+            #hero_pager.section_inner
 
-        .hero_controls
-          .section_inner
-            #hero_prev.hero_control._prev
-            #hero_next.hero_control._next
+          .hero_controls
+            .section_inner
+              #hero_prev.hero_control._prev
+              #hero_next.hero_control._next
 
-        .hero_footer
-          .section_inner
-            .text_line.lineSlider
-              +loop_while(5)
-                .line_slide: span БУДЬ БОДР, ДЕЛАЙ ДОБРО, ПЕЙ БОРДО!
-                .line_slide: span БОДРО ПЬЁМ БОРДО, ДЕЛАЕМ ДОБРО!
-                .line_slide: span РАБОТАЕМ БОДРО, ТВОРИМ ДОБРО, ЛЮБИМ БОРДО!
+          .hero_footer
+            .section_inner
+              .text_line.lineSlider
+                +loop_while(5)
+                  .line_slide: span БУДЬ БОДР, ДЕЛАЙ ДОБРО, ПЕЙ БОРДО!
+                  .line_slide: span БОДРО ПЬЁМ БОРДО, ДЕЛАЕМ ДОБРО!
+                  .line_slide: span РАБОТАЕМ БОДРО, ТВОРИМ ДОБРО, ЛЮБИМ БОРДО!
 
     .wrapper
       .base

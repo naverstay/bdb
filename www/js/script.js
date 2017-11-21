@@ -58,7 +58,7 @@ $(function ($) {
           callPlayer(frame, 'playVideo');
         }
       }
-      
+
       return false;
     })
     .delegate('.callbackForm', 'submit', function () {
@@ -272,6 +272,30 @@ function initSlider(cb) {
       updateSkrollr();
     },
     scroll: _scroll
+  });
+
+  $('.mainSlider').carouFredSel({
+    circular: true,
+    infinite: true,
+    responsive: true,
+    direction: "left",
+    width: '100%',
+    items: {
+      visible: 1,
+      start: 0
+    },
+    auto: {
+      play: false
+    },
+    swipe: {
+      onTouch: true,
+      onMouse: true
+    },
+    prev: '#hero_prev',
+    next: '#hero_next',
+    pagination: {
+      container: '#hero_pager'
+    }
   });
 
   $('.heroSlider').carouFredSel({
@@ -598,11 +622,11 @@ function initSkrollr() {
 
     /*    $window.on("mousewheel DOMMouseScroll", function (event) {
           event.preventDefault();
-    
+
           var delta = event.originalEvent.wheelDelta / 50 || -event.originalEvent.detail / 3;
           var scrollTop = getScrollTop();
           var finalScroll = scrollTop - parseInt(delta * scrollDistance);
-    
+
           TweenMax.to($window, scrollTime, {
             scrollTo: {y: finalScroll, autoKill: true},
             ease: Power1.easeOut,	//For more easing functions see https://api.greensock.com/js/com/greensock/easing/package-detail.html
@@ -765,7 +789,7 @@ function checkScroll() {
       w = video.width,
       h = video.height,
       r, //right
-      b, //bottom 
+      b, //bottom
       visibleX, visibleY, visible,
       parent;
 
@@ -809,7 +833,7 @@ function callPlayer(frame_id, func, args) {
     iframe = iframe.getElementsByTagName('iframe')[0];
   }
   if (iframe) {
-    // Frame exists, 
+    // Frame exists,
     iframe.contentWindow.postMessage(JSON.stringify({
       "event": "command",
       "func": func,
