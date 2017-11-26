@@ -21,9 +21,9 @@ function checkMapSize() {
   clearTimeout(map_timer);
 
   map_timer = setTimeout(function () {
-    var mapW = $('.mapWrapper');
+    //var mapW = $('.mapWrapper');
 
-    mapW.css('width', wnd.width() - mapW.offset().left);
+    //mapW.css('width', wnd.width() - mapW.offset().left);
 
     if (gmap && center) gmap.setCenter(center);
   }, 50);
@@ -37,7 +37,7 @@ function loadMap() {
     center = new google.maps.LatLng(55.783742, 49.125809);
     gmap = new google.maps.Map(document.getElementById("bdb_map"), mapProp);
     gmap.setCenter(center);
-    
+
     createPin(gmap, 'BDB', {
       lat: 55.783742,
       lng: 49.125809
