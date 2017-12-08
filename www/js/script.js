@@ -176,9 +176,16 @@ function initSlider(cb) {
     width: '100%',
     align: false,
     items: {
-      width: 'variable',
-      visible: 1
+      visible: {
+        min: 1,
+        max: w >= 1280 ? 6 : (w >= 980 ? 5 : w >= 768 ? 3 : 2)
+      },
+      start: 0
     },
+    //items: {
+    //  width: 'variable',
+    //  visible: 1
+    //},
     onCreate: function (el) {
       updateSkrollr();
     },
@@ -642,7 +649,6 @@ function initSkrollr() {
         forceHeight: false,
         //scale: .6,
         mobileCheck: function () {
-          console.log((/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera) || (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)));
           return (/Android|iPhone|iPad|iPod|BlackBerry/i).test(navigator.userAgent || navigator.vendor || window.opera) || (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
         },
         skrollrBody: 'scroll-content',
