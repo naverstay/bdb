@@ -3,14 +3,14 @@ doctype html
 html#skrollr-body._inner_page._dobro_page(lang='ru')
   +dev_head('dobro page')
 
-  body
+  body(data-shadow='dobro')
     +header()
     +menu_holder()
     .wrapper
       .base
         div.main_content
           #dobro_section.section._dobro.logoTrigger
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80 data-shadow='dobro')
               a.logo(href='index.html')
                 .logo_slide
                   img._dobro(src='i/logo_dobro.png' width=174)
@@ -27,8 +27,8 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   .bodro_hero_corner
                   .bodro_hero_text
                     .bodro_hero_title DOBRO пожаловать!
-                    p 
-                      span Мы искренне верим в то, что доброта спасёт мир. Let`s go словом и делом менять окружающий мир в лучшую сторону. Если у тебя есть благотворительный фонд, товар, услуга или ты просто добрый и идейный человек, то скорее напиши сюда – 
+                    p
+                      span Мы искренне верим в то, что доброта спасёт мир. Let`s go словом и делом менять окружающий мир в лучшую сторону. Если у тебя есть благотворительный фонд, товар, услуга или ты просто добрый и идейный человек, то скорее напиши сюда –
                       a.hero_link(href='#') dobroman@bodro.agency
 
                 .hero_w(
@@ -37,14 +37,14 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                 data-150-center-top='transform: translate(0, 0%);transform-origin: 50% 0% 0;'
                 )
                   img(src='i/dobroman_web.png')
-                  
+
               .dobro_preview._bodro._no_more
                 .section_info_block
                   .info_caption(
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
-                  ) 
-                    span Заголовок 
+                  )
+                    span Заголовок
                     span.dt_only <br>
                     span.mob_only <br>
                     span  к видео в 2 строки
@@ -52,14 +52,14 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   data-40p-center-top='transform: translate(0, 100%); opacity: 0;'
                   data-20p-center-top='transform: translate(0, 0%); opacity: 1;'
                   ) Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
-                  
+
                 .video_block(
                 data-40p-center-top='transform: translate(100%, 0); opacity: 0;'
                 data-10p-center-top='transform: translate(0, 0%); opacity: 1;'
                 )
                   .video_w
                   //-.video_btn.playVideo
-                    
+
             .section_inner
               .project_holder._dobro_projects
                 .project_col._left
@@ -102,7 +102,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   .more_projects
                     a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='ЗАГРУЗИТЬ ЕЩЕ ПРОЕКТЫ')
                       span ЗАГРУЗИТЬ ЕЩЕ ПРОЕКТЫ
-                      
+
             .section_inner
               .idea_slider
                 .ideaSlider.slider_inner
@@ -114,7 +114,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                         p
                           span Есть идеи, что ещё должно быть на нашем сайте?!
                           span.dt_only <br>
-                          span  Присылай на 
+                          span  Присылай на
                           a.slide_link(href='#') ideas@bodro.agency!
                           span <br>На кону 2 заряженных на успех футболки!
 
@@ -130,7 +130,7 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
                 span(data-title='Блог') Блог
-                
+
               .dobro_preview_text.mob_only
                 p Производишь крутой товар или оказываешь уникальную услугу? Точно-точно!? Тогда давай дружить компаниями! Приходи к нам в гости или пригласи нас к себе, пообщаемся, расскажем о твоей компании в нашем блоге и обязательно найдём варианты взаимовыгодного сотрудничества!
 
@@ -139,39 +139,39 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога
-                    
+
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                     p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
-                    
+
                 li
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога<br>в две строки
-                    
+
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                     p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
-                    
+
                 li.dt_only
                   .blog_item
                     .blog_img
                     .info_caption Заголовок статьи из блога
-                    
+
                     p Дело было предновогодним вечером, делать было много чего… Но мы нашли время для Добра и Волшебства, экипировались и отправились на улицу Петербургскую раздавать новогоднее настроение всем прохожим!
                     p.mob_tc: a.fz_13.btn_v2.btn_white.blog_btn(href='#' data-text='ПОДРОБНЕЕ')
                       span ПОДРОБНЕЕ
-                      
+
               .blog_footer
                 a.fz_13.btn_v1.btn_white.project_btn(href='#' data-text='СМОТРЕТЬ ДРУГИЕ СТАТЬИ')
                   span СМОТРЕТЬ ДРУГИЕ СТАТЬИ
-                      
+
               .section_title(
               data-350-center-top='transform: translate(0, 100%); opacity: 0;'
               data-200-center-top='transform: translate(0, 0%); opacity: 1;'
               )
                 span(data-title='Добрые партнёры') Добрые партнёры
-                
+
               .partner_block._mod_1
                 .partners_clouds
                   .cloud._c_1(
@@ -194,36 +194,36 @@ html#skrollr-body._inner_page._dobro_page(lang='ru')
                   data--100p-center-top='transform: translate(20%, 0%); opacity: 1;'
                   )
                     img(src='i/cloud_4.png')
-                    
+
                 .partner_list: .partnerSlider
                   +loop_while(10)
                     .slide: a.partner_link(href='#')
                       img(src='i/partner_1.png')
-                      
+
             .section_inner
               .section_title(
               data-450-center-top='transform: translate(0, 100%); opacity: 0;'
               data-300-center-top='transform: translate(0, 0%); opacity: 1;'
               )
                 span(data-title='Что-нибудь замутим?') Что-нибудь замутим?
-                
+
               .text_center.subscribe_block
                 a.btn_v1.contact_btn.btn_white.fz_13.callbackBtn(data-text='СВЯЗАТЬСЯ' href='#')
                   span СВЯЗАТЬСЯ
-                
+
             .footer
               .section_inner.clearfix
                 .footer_logo_holder.mob_hidden
                   a.footer_logo
                     img(src='i/bdb_w.png' width=124)
-                  
+
                 .copyright: span © Copyright «BDB Group», 2017
                 .dev_block
                   span Сайт сделан:&nbsp;
-                  span 
+                  span
                     img(src='i/friend_5.png' width=58)
-                    
+
     +popups(true)
 
     +scripts()
-    
+

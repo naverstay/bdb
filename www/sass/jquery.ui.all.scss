@@ -85,8 +85,6 @@
 
 .ui-dialog-titlebar-close {
   .dialog_close_butt_mod_1 & {
-    // виды крестиков закрытия
-
     cursor: pointer;
     position: absolute;
     top: 10px;
@@ -130,7 +128,7 @@
       background: #fff;
       transform-origin: 50% 50% !important;
     }
-    
+
     &:hover  {
       opacity: 1;
     }

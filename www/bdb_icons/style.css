@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'bdb_icons';
-  src:  url('fonts/bdb_icons.eot?19alzp');
-  src:  url('fonts/bdb_icons.eot?19alzp#iefix') format('embedded-opentype'),
-    url('fonts/bdb_icons.ttf?19alzp') format('truetype'),
-    url('fonts/bdb_icons.woff?19alzp') format('woff'),
-    url('fonts/bdb_icons.svg?19alzp#bdb_icons') format('svg');
+  src:  url('fonts/bdb_icons.eot?e1xwbw');
+  src:  url('fonts/bdb_icons.eot?e1xwbw#iefix') format('embedded-opentype'),
+    url('fonts/bdb_icons.ttf?e1xwbw') format('truetype'),
+    url('fonts/bdb_icons.woff?e1xwbw') format('woff'),
+    url('fonts/bdb_icons.svg?e1xwbw#bdb_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-phone:before {
+  content: "\e907";
+}
 .i-tg:before {
   content: "\e906";
 }

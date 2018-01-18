@@ -1,1 +1,19 @@
-html._home{position:relative;min-height:100%;}html._home:before{content:'';position:absolute;top:0;right:0;left:0;min-height: 640px;padding-bottom:56.25%;background:url(i/signboard.jpg) no-repeat 50% 50%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}
+html:after {
+    -webkit-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 1;
+    pointer-events: none;
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: #000 url(../i/preloader.gif) no-repeat 50% 50%
+}
+
+html.hide_preloader:after {
+    opacity: 0
+}

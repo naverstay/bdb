@@ -3,14 +3,14 @@ doctype html
 html#skrollr-body._bordo_blog._blog_page(lang='ru')
   +dev_head('bodro blog')
 
-  body
+  body(data-shadow='bordo')
     +header()
     +menu_holder()
     .wrapper
       .blog_wide_image
         img(src='i/bars_big.jpg')
         .header_logo_holder._article._bordo_shadow
-          .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+          .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80 data-shadow='bordo')
             a.logo(href='index.html')
               .logo_slide
                 img._bodro(src='i/logo_bordo_w.png' width=174)
@@ -18,20 +18,20 @@ html#skrollr-body._bordo_blog._blog_page(lang='ru')
         div.main_content
           .section_inner
             .blog_page_info
-              .blog_page_name 
+              .blog_page_name
                 h2 ХК “Ак Барс”
                 p Наружная реклама и арт-объект.<br>“Игры Престолов” в игре!
               .blog_page_description
                 p Зрелищнее “Игр Престолов” только наш хоккей! В поддержку любимой саги мы интегрировали элементы “Игр Престолов” в рекламную кампанию нового сезона игр “Ак Барс”.<br>Идея была проста до гениальности. Самым сложным оказалось выкрасть клюшки у команд конкурентов... В результате трон получился шикарный!
 
                 p За время матча, от желающих ощутить себя королем семи королевств отбоя не было. А бой был, ведь трон оказался чудодейственным! 12 человек излечились от облысения, веган Григорий стал мясоедом, а у 9-летнего Миши начал ломаться голос.
-                
+
           .mega_wide_img
             img(src='i/bars_wide.jpg')
-            
+
           .section_inner
             +blog_projects()
-                
+
             .project_slider
               .projectSlider
                 +loop_while(3)
@@ -39,7 +39,7 @@ html#skrollr-body._bordo_blog._blog_page(lang='ru')
                     a.blog_project_link(href='#') Название предыдущего проекта
                   .slide: .gl_table: .gl_table_cell
                     a.blog_project_link(href='#') Название следующего проекта
-                    
+
               .project_controls
                 #project_prev.project_control._prev
                   span СМОТРЕТЬ ПРОЕКТ
@@ -73,4 +73,4 @@ html#skrollr-body._bordo_blog._blog_page(lang='ru')
     +popups(true)
 
     +scripts(false, true)
-    
+

@@ -51,7 +51,7 @@ html#skrollr-body._home(lang='ru')
       .base
         div.main_content
           #bodro_section.section._bodro.logoTrigger
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80 data-shadow='bodro')
               a.logo(href='index.html')
                 .logo_slide
                   img._bodro(src='i/logo_bodro.png' width=174)
@@ -80,6 +80,12 @@ html#skrollr-body._home(lang='ru')
               .video_block
                 .video_w
                   <iframe id="video_1" class="playOnScroll" width="560" height="315" src="https://www.youtube.com/embed/eKXjnhpKEMw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+              .video_block
+                .video_w
+                  <iframe id="video_2" class="playOnScroll" width="560" height="315" src="https://www.youtube.com/embed/eKXjnhpKEMw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+              .video_block
+                .video_w
+                  <iframe id="video_3" class="playOnScroll" width="560" height="315" src="https://www.youtube.com/embed/eKXjnhpKEMw?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
                 //-.video_btn.playVideo
 
             .projectors_holder
@@ -222,7 +228,7 @@ html#skrollr-body._home(lang='ru')
                   span СМОТРЕТЬ ЕЩЕ BDB ЗАРЯДКУ
 
           #dobro_section.section._dobro.logoTrigger
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=74)
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=74 data-shadow-prev='bodro' data-shadow='dobro')
               a.logo(href='index.html')
                 .logo_slide
                   img._dobro(src='i/logo_dobro.png' width=174)
@@ -352,7 +358,7 @@ html#skrollr-body._home(lang='ru')
                       img(src='i/partner_1.png')
 
           #bordo_section.section._bordo.logoTrigger
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80 data-shadow-prev='dobro' data-shadow='bordo')
               a.logo(href='index.html')
                 .logo_slide
                   img._bordo(src='i/logo_bordo_w.png' width=174)
@@ -507,7 +513,7 @@ html#skrollr-body._home(lang='ru')
                   #review_next.review_control._next
 
           #contact_section.logoTrigger.section._contacts
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80 data-shadow-prev='bordo')
               a.logo(href='index.html')
                 .logo_slide
                   img._bodro.img_hover(src='i/bdb_a.png' width=144)

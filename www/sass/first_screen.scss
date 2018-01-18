@@ -97,6 +97,26 @@ html {
   overflow-y: auto !important;
   overflow-x: hidden;
 
+  &:after {
+    @include transition_all(opacity .3s);
+    opacity: 1;
+    pointer-events: none;
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: #000 url(../i/preloader.gif) no-repeat 50% 50%;
+  }
+
+  &.hide_preloader {
+    &:after {
+      opacity: 0;
+    }
+  }
+
   &._home {
     min-height: 530px;
   }
@@ -138,23 +158,46 @@ body {
   position: relative;
 
   &:before {
-    @include transition_all(right .3s);
     content: '';
     position: fixed;
     top: -300px;
     bottom: -300px;
-    left: 0;
-    right: 100%;
+
     background: #000;
     z-index: 23;
   }
 
-  &.modal_opened,
-  &.menu-is-open {
-    overflow: hidden;
-
+  @include respond-to-max($resp_step_1) {
     &:before {
+      @include transition_all(left .3s);
       right: 0;
+      left: 100%;
+    }
+
+    &.modal_opened,
+    &.menu-is-open {
+      overflow: hidden;
+
+      &:before {
+        left: 0;
+      }
+    }
+  }
+
+  @include respond-to-min($resp_step_1) {
+    &:before {
+      @include transition_all(right .3s);
+      left: 0;
+      right: 100%;
+    }
+
+    &.modal_opened,
+    &.menu-is-open {
+      overflow: hidden;
+
+      &:before {
+        right: 0;
+      }
     }
   }
 
@@ -290,6 +333,29 @@ body {
 
   @include respond-to-max($resp_step_1) {
     bottom: 73px;
+
+    .section_inner {
+      position: static;
+    }
+
+    .hero_control {
+      position: absolute;
+      bottom: 36.5vh;
+
+      &._prev {
+        left: 14px;
+      }
+
+      &._next {
+        right: 28px;
+      }
+    }
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: $resp_step_1) {
+  .hero_controls .hero_control {
+    bottom: 1vh;
   }
 }
 
@@ -421,7 +487,7 @@ body {
 
 .hero_control {
   @extend %slider_btn;
-  display: inline-block;
+  display: inline-block !important;
   vertical-align: top;
   margin-left: 12px;
 
@@ -473,12 +539,12 @@ body {
 
   ._blog_page & {
     &:after {
-      content: '';
-      position: absolute;
-      top: -70px;
-      right: 0;
-      left: 0;
-      height: 200px;
+      //content: '';
+      //position: absolute;
+      //top: -70px;
+      //right: 0;
+      //left: 0;
+      //height: 200px;
     }
 
     &._article:after {
@@ -548,7 +614,7 @@ body {
 
   @include respond-to-max($resp_step_1) {
     height: 640px;
-    min-height: 0 !important;
+    //min-height: 0 !important;
   }
 }
 
@@ -561,15 +627,15 @@ body {
   text-align: center;
   overflow: hidden;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  right: 0;
+  //  left: 0;
+  //  bottom: 0;
+  //  background: rgba(0, 0, 0, 0.5);
+  //}
 
   > img {
     display: inline-block;
@@ -803,6 +869,7 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
+  background: rgba(0, 0, 0, .5);
   border: solid rgba(255, 255, 255, .25);
   border-width: 1px 0;
 
@@ -873,6 +940,7 @@ body {
 
 .section_logo {
   @extend %translate3d;
+  pointer-events: none;
   will-change: transform;
   top: 0;
   position: absolute;
@@ -882,7 +950,7 @@ body {
   z-index: 1;
 
   &._stuck {
-    z-index: 23;
+    z-index: 27;
   }
 
   ._article & {
@@ -913,7 +981,7 @@ body {
     }
 
     @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
+      padding-top: 150px;
     }
   }
 
@@ -923,7 +991,7 @@ body {
     background: #7fa5d8;
 
     @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
+      padding-top: 150px;
     }
   }
 
@@ -933,7 +1001,7 @@ body {
     background: #840938;
 
     @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
+      padding-top: 150px;
     }
   }
 
@@ -950,7 +1018,7 @@ body {
     }
 
     @include respond-to-max($resp_step_1) {
-      padding-top: 130px;
+      padding-top: 150px;
     }
   }
 
@@ -2640,6 +2708,10 @@ $blur: 5px;
   .slide {
     float: left;
     border-left: 1px solid rgba(255, 255, 255, .25);
+
+    &:last-child {
+      border-right: 1px solid rgba(255, 255, 255, .25);
+    }
   }
 
   @include respond-to-min($resp_step_1) {

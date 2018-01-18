@@ -1,0 +1,97 @@
+.projectSlider {
+    overflow: hidden;
+}
+
+.projectSlider:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.project_slider .slide {
+    width: 50%;
+    position: relative;
+}
+.project_slider .slide:first-child:before {
+    display: none;
+}
+
+.project_control._prev,
+.project_control._next {
+    color: #000;
+}
+
+._bodro_blog._blog_page .project_control._prev,
+._bodro_blog._blog_page .project_control._next,
+._dobro_blog._blog_page .project_control._prev,
+._dobro_blog._blog_page .project_control._next,
+._bordo_blog._blog_page .project_control._prev,
+._bordo_blog._blog_page .project_control._next {
+    color: #fff;
+}
+
+.site-error {
+    max-width: 1140px;
+    margin: auto;
+    padding: 250px 0;
+}
+
+#re-captcha-callback-recaptcha,
+#re-captcha-jobs-recaptcha {
+    display: inline-block;
+}
+
+.form-group.has-error .f_input {
+    border-color: #8e0c15;
+}
+
+.form-group.has-error .help-block,
+.form-group.has-error .check_text {
+    color: #8e0c15;
+}
+
+@media only screen and (min-width: 1280px) {
+    .contacts_block {
+        padding: 100px 0 85px;
+    }
+}
+
+@media only screen and (max-width: 979px) {
+    .blog_wide_image > img {
+        min-width: 0;
+    }
+}
+
+.hero_pager {
+    pointer-events: none;
+}
+.hero_pager a {
+    pointer-events: all;
+}
+
+.review_text {
+    height: auto;
+    min-height: 5.2em;
+}
+
+.exercise_info {
+    background: rgba(0, 0, 0, 0);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+}
+
+.bdb-description {
+    text-align: center;
+    text-align: center;
+    letter-spacing: .01em;
+    max-width: 880px;
+    margin: 50px auto 60px;
+    font: 300 17px/1.4 "MuseoSansCyrl",sans-serif;
+}
+
+.bdb-description-bodro {
+    margin: -50px auto 100px;
+}
+
+.project_block {
+    color: #fff;
+}

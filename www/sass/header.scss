@@ -88,7 +88,7 @@
 }
 
 .logo {
-  @include transform_translate(0, -45px);
+  @include transform_translate(0, -10px);
   will-change: transform;
   display: inline-block;
   position: relative;
@@ -112,7 +112,7 @@
     }
 
     ._dobro_page & {
-      @include transform_translate(0, -58px);
+      @include transform_translate(0, -25px);
     }
   }
 
@@ -184,28 +184,101 @@
 
 .callback_block {
   position: absolute;
-  right: 30px;
-  top: 35px;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 0;
   line-height: normal;
+  text-align: left;
+
+  .lang_block {
+    position: relative;
+    z-index: 1;
+    padding: 4px 26px 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+
+    li {
+      padding-right: 22px;
+    }
+  }
 
   @include respond-to-min($resp_step_1) {
     right: 83px;
     top: 23px;
+    left: auto;
+    height: auto;
+    padding-right: 65px;
+    text-align: right;
+
+    .lang_block {
+      border: none;
+      padding: 0;
+    }
   }
 }
 
 .header_phone {
-  color: #fff;
-  font-size: 13px;
-  font-weight: 300;
-  text-decoration: none;
+  float: left;
+  margin: 30px 25px;
 
-  &:hover {
+  &:hover .phone_text {
     text-decoration: underline;
   }
 
   @include respond-to-min($resp_step_1) {
     font-size: 20px;
+    top: -12px;
+    position: absolute;
+    right: -5px;
+    white-space: nowrap;
+    margin: 0;
+  }
+}
+
+.phone_icon {
+  @extend %icon_pseudo;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+
+  &:before {
+    font-size: 36px;
+    content: $i-phone;
+
+    @include respond-to-min($resp_step_1) {
+      font-size: 50px;
+    }
+  }
+}
+
+.phone_text {
+  @include transition_all(opacity .3s, margin-left .1s .2s, margin-right .3s);
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 0;
+  white-space: nowrap;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
+  //margin-right: -100%;
+  margin-left: -150px;
+  pointer-events: none;
+
+  ._show_phone & {
+    @include transition_all(opacity .3s, margin-left .2s, margin-right .3s);
+    opacity: 1;
+    margin-left: 10px;
+    margin-right: 12px;
+    pointer-events: all;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    display: none;
   }
 }
 
@@ -219,7 +292,10 @@
   }
 
   @include respond-to-max($resp_step_1) {
-    top: 17px;
+    z-index: 1;
+    top: 50px;
+    left: auto;
+    right: 14px;
   }
 }
 
@@ -583,39 +659,49 @@ body.menu-is-closing .header__burger span:nth-child(2):after {
     position: static;
   }
 
-  .menu-is-open & {
-    @include transform_translate(0, 0);
+  @include respond-to-max($resp_step_1) {
+    @include transform_translate(100%, 0);
+    padding-top: 80px;
   }
 
-  @include respond-to-max($resp_step_1) {
-    padding-top: 80px;
+  .menu-is-open & {
+    @include transform_translate(0, 0);
   }
 }
 
 .lang_block {
-  position: absolute;
-  top: 80px;
-  right: 45px;
+  //position: absolute;
+  //top: 80px;
+  //right: 45px;
+  @include transition_all(opacity .3s .2s);
   white-space: nowrap;
 
   li {
     display: inline-block;
     vertical-align: top;
-    padding-right: 45px;
+    //padding-right: 45px;
   }
 
   @include respond-to-max($resp_step_1) {
-    right: 0;
-    top: 35px;
-
-    li {
-      padding-right: 30px;
-    }
+    //right: 0;
+    //top: 35px;
+    //
+    //li {
+    //  padding-right: 30px;
+    //}
   }
 
   @include respond-to-max($resp_step_0) {
     li {
-      padding-right: 10px;
+      //padding-right: 10px;
+    }
+  }
+
+  @include respond-to-min($resp_step_1) {
+    ._show_phone & {
+      @include transition_all(opacity .3s);
+      opacity: 0;
+      pointer-events: none;
     }
   }
 }
@@ -635,6 +721,10 @@ body.menu-is-closing .header__burger span:nth-child(2):after {
   &._active {
     opacity: 1;
     text-decoration: none;
+  }
+
+  @include respond-to-max($resp_step_1) {
+    font-size: 12px;
   }
 }
 
@@ -675,7 +765,7 @@ body.menu-is-closing .header__burger span:nth-child(2):after {
     margin-bottom: 65px;
 
     li {
-      margin-top: 40px;
+      margin-top: 20px;
     }
   }
 
@@ -1104,3 +1194,128 @@ $splash_width: 145px;
   }
 }
 
+.header__overlay {
+  pointer-events: none;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 200px;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=0); /* IE6-9 */
+
+  body[data-shadow='bodro'] & {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#00000000', GradientType=0);
+  }
+
+  body[data-shadow='dobro'] & {
+    background: -moz-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 53%, rgba(125, 185, 232, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 53%, rgba(125, 185, 232, 0) 100%);
+    background: linear-gradient(to bottom, rgba(107, 163, 238, 1) 0%, rgba(107, 163, 238, 0) 53%, rgba(125, 185, 232, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6ba3ee', endColorstr='#007db9e8', GradientType=0);
+  }
+
+  body[data-shadow='bordo'] & {
+    background: -moz-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 53%, rgba(132, 9, 56, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 53%, rgba(132, 9, 56, 0) 100%);
+    background: linear-gradient(to bottom, rgba(132, 9, 56, 1) 0%, rgba(132, 9, 56, 0) 53%, rgba(132, 9, 56, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#840938', endColorstr='#00840938', GradientType=0);
+  }
+
+  @include respond-to-max($resp_step_1) {
+    height: 120px;
+  }
+}
+
+.preloader {
+  background: #000;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  img {
+    position: absolute;
+    @extend %hor_vert_centr;
+  }
+}
+
+.mob_phone_popup {
+  @extend %vert_centr;
+  z-index: 50;
+  display: none;
+  margin-top: -8px;
+  text-align: center;
+  background: #000;
+  padding: 30px 50px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  font-size: 12px;
+  font-weight: 300;
+
+  //&:after,
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  right: 0;
+  //  left: 0;
+  //  height: 50vh;
+  //}
+
+  //&:before {
+  //  top: 100%;
+  //  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 100%); /* FF3.6-15 */
+  //  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+  //  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40000000', endColorstr='#000000', GradientType=0); /* IE6-9 */
+  //}
+  //
+  //&:after {
+  //  bottom: 100%;
+  //  background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.25) 100%); /* FF3.6-15 */
+  //  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.25) 100%); /* Chrome10-25,Safari5.1-6 */
+  //  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.25) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  //  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#40000000', GradientType=0); /* IE6-9 */
+  //}
+
+  p {
+    + p {
+      margin-top: 25px;
+    }
+  }
+
+  @include respond-to-max($resp_step_1) {
+    ._show_phone & {
+      display: block;
+    }
+  }
+}
+
+.mob_phone_link {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.phone_close {
+  @extend %icon_pseudo;
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  font-size: 22px;
+  color: #fff;
+
+  &:before {
+    content: $i-close;
+  }
+}

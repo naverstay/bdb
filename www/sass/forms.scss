@@ -175,12 +175,24 @@ div.f_input_v1.f_input {
 
   &:hover {
     .check_text {
-    
+
     }
   }
 
   .inp_hidden:checked + .check_text {
-    @extend .btn_white:hover;
+    background-color: #fff;
+
+    &:after {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    > span {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -25%, 0);
+      transform: translate3d(0, -25%, 0);
+    }
   }
 }
 

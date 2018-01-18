@@ -3,14 +3,14 @@ doctype html
 html#skrollr-body._inner_page._bordo_page(lang='ru')
   +dev_head('bordo page')
 
-  body
+  body(data-shadow='bordo')
     +header()
     +menu_holder()
     .wrapper
       .base
         div.main_content
           #bordo_section.section._bordo.logoTrigger
-            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80)
+            .section_logo.sticky(data-sticky-class='_stuck' data-margin-top=80 data-shadow='bordo')
               a.logo(href='index.html')
                 .logo_slide
                   img._bordo(src='i/logo_bordo_w.png' width=174)

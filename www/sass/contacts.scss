@@ -207,9 +207,21 @@
     }
 
     &._active {
-      @extend .btn_white:hover;
+      background-color: #fff;
       border-color: #fff;
       cursor: default;
+
+      &:after {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      > span {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -25%, 0);
+        transform: translate3d(0, -25%, 0);
+      }
     }
   }
 }
