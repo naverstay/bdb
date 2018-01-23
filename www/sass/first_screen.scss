@@ -2065,6 +2065,7 @@ $blur: 5px;
   }
 
   &:after {
+    display: none;
     right: 5px;
     margin-top: -263px;
     width: 256px;
@@ -2724,6 +2725,7 @@ $blur: 5px;
 
       &:after,
       &:before {
+        display: none;
         content: '';
         position: absolute;
         width: 256px;
@@ -2749,6 +2751,7 @@ $blur: 5px;
 .friend_controls {
   ._bodro_page & {
     &:before {
+      display: none;
       content: '';
       position: absolute;
       z-index: -1;
