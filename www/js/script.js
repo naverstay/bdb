@@ -782,7 +782,7 @@ function checkFullHeight() {
 
     $('.winW').css('width', w);
     $('.winH').css('height', h);
-    $('.winHthird').css('height', Math.floor(h / 3));
+    $('.winHthird').css('height', Math.floor(h / 2));
     $('.winHmin').css('min-height', h);
 }
 
