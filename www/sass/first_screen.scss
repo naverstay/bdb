@@ -267,7 +267,7 @@ body {
 
 .hero_pager {
   position: absolute;
-  bottom: 153px;
+  bottom: 100px;
   right: 430px;
   left: 430px;
   text-align: center;
@@ -325,7 +325,7 @@ body {
 .hero_controls {
   position: absolute;
   text-align: right;
-  bottom: 140px;
+  bottom: 95px;
   right: 0;
   left: 0;
   z-index: 10;
@@ -640,8 +640,21 @@ body {
   > img {
     display: inline-block;
     vertical-align: top;
-    margin: 0 -1000px;
-    height: 100%;
+
+    &.mob_hidden {
+      //height: 100%;
+    }
+
+    @include respond-to-min($resp_step_1) {
+      //min-height: 100%;
+      //margin: 0 -1000px;
+      width: 100%;
+    }
+
+    @include respond-to-max($resp_step_1) {
+      min-width: 100%;
+      //margin: 0 -1000px;
+    }
   }
 }
 
@@ -760,7 +773,7 @@ body {
   }
 
   @include respond-to-max($resp_step_1) {
-    max-height: 640px;
+    //max-height: 640px;
   }
 }
 
@@ -1679,8 +1692,10 @@ $glass_height: 110px;
 
   .projector {
     left: -120px;
-    width: 2669px;
-    height: 1802px;
+    //width: 2669px;
+    //height: 1802px;
+    width: 3748px;
+    height: 2524px;
     transform-origin: 0 100%;
     //transform-origin: 0 0;
     //transform-origin: bottom;
@@ -1689,8 +1704,8 @@ $glass_height: 110px;
       @include animation(left_projector_1, 15s, linear);
 
       &:before {
-        width: 2669px;
-        height: 1802px;
+        width: 3748px;
+        height: 2524px;
         background: url(../i/ray_left_1.png) no-repeat 0 0;
       }
     }
@@ -1699,8 +1714,8 @@ $glass_height: 110px;
       @include animation(left_projector_2, 15s, linear);
 
       &:before {
-        width: 2611px;
-        height: 1499px;
+        width: 3682px;
+        height: 2114px;
         background: url(../i/ray_left_2.png) no-repeat 0 0;
       }
     }
@@ -1732,8 +1747,8 @@ $glass_height: 110px;
       @include animation(right_projector_1, 15s, linear);
 
       &:before {
-        width: 2631px;
-        height: 2396px;
+        width: 3700px;
+        height: 3371px;
         background: url(../i/ray_right_1.png) no-repeat 0 0;
       }
     }
@@ -1742,8 +1757,8 @@ $glass_height: 110px;
       @include animation(right_projector_2, 15s, linear);
 
       &:before {
-        width: 2641px;
-        height: 2046px;
+        width: 3710px;
+        height: 2875px;
         background: url(../i/ray_right_2.png) no-repeat 0 0;
       }
     }
@@ -2499,6 +2514,15 @@ $blur: 5px;
   }
 }
 
+a.info_caption {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .blog_see_more {
   position: relative;
   text-align: center;
@@ -2611,6 +2635,7 @@ $blur: 5px;
 }
 
 .blog_img {
+  display: block;
   background: #fff;
   height: 270px;
   margin-bottom: 25px;

@@ -271,6 +271,7 @@ span.pagination_link {
 
     > img {
       min-width: 580px;
+      width: 100%;
     }
 
     @include respond-to-min($resp_step_1) {

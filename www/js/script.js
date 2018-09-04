@@ -773,8 +773,6 @@ $(window).on('scroll', function () {
 function initLazyLoad() {
     var images = document.querySelectorAll(".lazy");
     lazyload(images);
-
-    console.log(images);
 }
 
 function checkFullHeight() {
@@ -782,7 +780,7 @@ function checkFullHeight() {
 
     $('.winW').css('width', w);
     $('.winH').css('height', h);
-    $('.winHthird').css('height', Math.floor(h / 2));
+    $('.winHthird').css('height', Math.floor(h / 3));
     $('.winHmin').css('min-height', h);
 }
 
